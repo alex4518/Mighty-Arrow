@@ -66,12 +66,12 @@ static HelloWorldLayer* sharedGameLayer;
         self.bgLayer = [_themap layerNamed:@"bg"];
         [self addChild:_themap z:-1];
         
-        }
+    }
     
     Hero* hero = [Hero hero];
     hero.tag = 1;
 
-    [hero setPosition:ccp(50,50)];
+    [hero setPosition:ccp(100,100)];
     [self addChild:hero];
    
  

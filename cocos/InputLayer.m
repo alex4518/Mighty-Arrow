@@ -44,11 +44,21 @@
 {
     HelloWorldLayer* game = [HelloWorldLayer sharedGameLayer];
 
-
     Hero* hero = [game defaultHero];
     
 	CGPoint velocity = ccpMult(joystick.velocity, 2000 * delta);
-	hero.position = CGPointMake(hero.position.x + velocity.x * delta,hero.position.y + velocity.y * delta);
+    
+    hero.position = CGPointMake(hero.position.x + velocity.x * delta, hero.position.y + velocity.y * delta);
+    game.position = CGPointMake(game.position.x - velocity.x * delta, game.position.y - velocity.y * delta);
+    
+    if (hero.position.x < 24.0f) {
+        hero.position = ccp(24.0f, hero.position.y);
+        game.position = ccp(100.0f, game.position.y);
+    } else if (hero.position.x > (game.themap.mapSize.width * game.themap.tileSize.width)/2 - 24.0f) {
+        hero.position = ccp((game.themap.mapSize.width * game.themap.tileSize.width)/2 - 24.0f, hero.position.y);
+        game.position = ccp((game.themap.mapSize.width * game.themap.tileSize.width)/2 - 1100.0f, game.position.y);
+    }
+    
 }
 
 @end
