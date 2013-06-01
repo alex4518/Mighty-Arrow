@@ -57,7 +57,8 @@
     
     hero.position = CGPointMake(hero.position.x + velocity.x * delta, hero.position.y + velocity.y * delta);
     game.position = CGPointMake(game.position.x - velocity.x * delta, game.position.y - velocity.y * delta);
-    
+
+    // Make sure player doesn't walk out of the screen
     if (hero.position.x < 24.0f) {
         hero.position = ccp(24.0f, hero.position.y);
         game.position = ccp(screenHeight/2 - 24.0f, game.position.y);
