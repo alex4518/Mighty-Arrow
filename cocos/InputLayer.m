@@ -21,11 +21,6 @@
         
 		[self scheduleUpdate];
         
-        HelloWorldLayer* game = [HelloWorldLayer sharedGameLayer];
-        
-        
-        Hero* hero = [game defaultHero];
-        
         NSMutableArray *walkAnimFrames = [NSMutableArray array];
         
         [walkAnimFrames addObject:
@@ -39,12 +34,7 @@
         CCAnimation *walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.3f];
         
         self.walkAction = [CCRepeatForever actionWithAction:
-                           [CCAnimate actionWithAnimation:walkAnim]];
-
-        if (joystick.velocity.x == 0.0f) {
-            [hero runAction:self.walkAction];
-        }
-        
+                           [CCAnimate actionWithAnimation:walkAnim]];        
 	}
 	return self;
 }
@@ -96,6 +86,14 @@
     } else if (hero.position.y > (game.themap.mapSize.height * game.themap.tileSize.height)/2) {
         hero.position = ccp(hero.position.x, mapWidth);
         game.position = ccp(game.position.x, -mapHeight + screenWidth/2);
+    }
+    
+    if (joystick.velocity.x != 0.0f) {
+        if (hero.numberOfRunningActions == 0) {
+            [hero runAction:self.walkAction];
+        }
+    } else {
+        [hero stopAllActions];
     }
     
 }
