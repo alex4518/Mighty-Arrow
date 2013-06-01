@@ -71,7 +71,11 @@ static HelloWorldLayer* sharedGameLayer;
     Hero* hero = [Hero hero];
     hero.tag = 1;
 
-    [hero setPosition:ccp(100,100)];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    
+    [hero setPosition:ccp(screenHeight/2 , screenWidth/2)];
     [self addChild:hero];
    
  

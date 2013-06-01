@@ -46,6 +46,13 @@
 
     Hero* hero = [game defaultHero];
     
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    
+    float mapWidth = (game.themap.mapSize.width * game.themap.tileSize.width)/2;
+    float mapHeight = (game.themap.mapSize.height * game.themap.tileSize.height)/2;
+        
 	CGPoint velocity = ccpMult(joystick.velocity, 2000 * delta);
     
     hero.position = CGPointMake(hero.position.x + velocity.x * delta, hero.position.y + velocity.y * delta);
@@ -53,10 +60,16 @@
     
     if (hero.position.x < 24.0f) {
         hero.position = ccp(24.0f, hero.position.y);
-        game.position = ccp(100.0f, game.position.y);
+        game.position = ccp(screenHeight/2 - 24.0f, game.position.y);
     } else if (hero.position.x > (game.themap.mapSize.width * game.themap.tileSize.width)/2 - 24.0f) {
-        hero.position = ccp((game.themap.mapSize.width * game.themap.tileSize.width)/2 - 24.0f, hero.position.y);
-        game.position = ccp((game.themap.mapSize.width * game.themap.tileSize.width)/2 - 1100.0f, game.position.y);
+        hero.position = ccp(mapWidth - 24.0f, hero.position.y);
+        game.position = ccp(-mapWidth + screenHeight/2 + 24.0f, game.position.y);
+    } else if (hero.position.y < 36.0f) {
+        hero.position = ccp(hero.position.x, 36.0f);
+        game.position = ccp(game.position.x, screenWidth/2 - 36.0f);
+    } else if (hero.position.y > (game.themap.mapSize.height * game.themap.tileSize.height)/2) {
+        hero.position = ccp(hero.position.x, mapWidth);
+        game.position = ccp(game.position.x, -mapHeight + screenWidth/2);
     }
     
 }
