@@ -95,10 +95,6 @@ static HelloWorldLayer* sharedGameLayer;
 }
 
 // on "dealloc" you need to release all your retained objects
-- (void) dealloc
-{
-	[super dealloc];
-}
 
 #pragma mark GameKit delegate
 

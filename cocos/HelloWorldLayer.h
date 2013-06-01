@@ -26,8 +26,8 @@
     CCTMXLayer *bgLayer ;
 }
 
-@property(nonatomic,retain) CCTMXTiledMap *themap;
-@property(nonatomic,retain) CCTMXLayer *bgLayer ;
+@property(nonatomic,strong) CCTMXTiledMap *themap;
+@property(nonatomic,strong) CCTMXLayer *bgLayer ;
 
 -(Hero*) defaultHero;
 
