@@ -20,6 +20,31 @@
 		[self addJoystick];
         
 		[self scheduleUpdate];
+        
+        HelloWorldLayer* game = [HelloWorldLayer sharedGameLayer];
+        
+        
+        Hero* hero = [game defaultHero];
+        
+        NSMutableArray *walkAnimFrames = [NSMutableArray array];
+        
+        [walkAnimFrames addObject:
+         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+         [NSString stringWithFormat:@"right_left_step.png"]]];
+        
+        [walkAnimFrames addObject:
+         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+          [NSString stringWithFormat:@"right_right_step.png"]]];
+        
+        CCAnimation *walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.3f];
+        
+        self.walkAction = [CCRepeatForever actionWithAction:
+                           [CCAnimate actionWithAnimation:walkAnim]];
+
+        if (joystick.velocity.x == 0.0f) {
+            [hero runAction:self.walkAction];
+        }
+        
 	}
 	return self;
 }

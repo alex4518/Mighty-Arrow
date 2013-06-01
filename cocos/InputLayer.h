@@ -18,4 +18,6 @@
 SneakyJoystick* joystick;
 }
 
+@property (nonatomic, strong) CCAction *walkAction;
+
 @end
