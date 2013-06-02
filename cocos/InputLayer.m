@@ -17,24 +17,12 @@
 {
 	if ((self = [super init]))
 	{
+        [self initAnimations];
+        
 		[self addJoystick];
         
 		[self scheduleUpdate];
         
-        NSMutableArray *walkAnimFrames = [NSMutableArray array];
-        
-        [walkAnimFrames addObject:
-         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-         [NSString stringWithFormat:@"right_left_step.png"]]];
-        
-        [walkAnimFrames addObject:
-         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"right_right_step.png"]]];
-        
-        CCAnimation *walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.3f];
-        
-        self.walkAction = [CCRepeatForever actionWithAction:
-                           [CCAnimate actionWithAnimation:walkAnim]];        
 	}
 	return self;
 }
@@ -60,7 +48,7 @@
     GameLayer* game = [GameLayer sharedGameLayer];
 
     Hero* hero = [game defaultHero];
-    
+        
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
@@ -88,14 +76,65 @@
         game.position = ccp(game.position.x, -mapHeight + screenWidth/2);
     }
     
-    if (joystick.velocity.x != 0.0f) {
+
+    if (joystick.velocity.x == 1.0f || joystick.velocity.x == -1.0f) {
+        
+        [hero stopAction:self.walkUpAction];
+        
         if (hero.numberOfRunningActions == 0) {
-            [hero runAction:self.walkAction];
+            [hero runAction:self.walkRightAction];
         }
-    } else {
+    }
+    else if (joystick.velocity.y == 1.0f){
+        
+        [hero stopAction:self.walkRightAction];
+
+        if (hero.numberOfRunningActions == 0) {
+            [hero runAction:self.walkUpAction];
+        }
+    }
+    else {
         [hero stopAllActions];
     }
     
 }
 
+-(void)initAnimations {
+
+    //move right animation
+    
+    NSMutableArray *walkRightAnimFrames = [NSMutableArray array];
+    
+    [walkRightAnimFrames addObject:
+     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+      [NSString stringWithFormat:@"right_left_step.png"]]];
+    
+    [walkRightAnimFrames addObject:
+     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+      [NSString stringWithFormat:@"right_right_step.png"]]];
+    
+    CCAnimation *walkRightAnim = [CCAnimation animationWithSpriteFrames:walkRightAnimFrames delay:0.3f];
+    
+    self.walkRightAction = [CCRepeatForever actionWithAction:
+                       [CCAnimate actionWithAnimation:walkRightAnim]];
+    
+    
+    //move up animation
+    
+    NSMutableArray *walkUpAnimFrames = [NSMutableArray array];
+    
+    [walkUpAnimFrames addObject:
+     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+      [NSString stringWithFormat:@"back_left_step.png"]]];
+    
+    [walkUpAnimFrames addObject:
+     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+      [NSString stringWithFormat:@"back_right_step.png"]]];
+    
+    CCAnimation *walkUpAnim = [CCAnimation animationWithSpriteFrames:walkUpAnimFrames delay:0.3f];
+    
+    self.walkUpAction = [CCRepeatForever actionWithAction:
+                            [CCAnimate actionWithAnimation:walkUpAnim]];
+    
+}
 @end
