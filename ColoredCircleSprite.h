@@ -1,22 +1,21 @@
 #import "cocos2d.h"
 
 @interface ColoredCircleSprite : CCNode <CCRGBAProtocol, CCBlendProtocol> {
-	float		radius_;
-	GLubyte		opacity_;
-	ccColor3B	color_;
 	
 	NSUInteger numberOfSegments;
     CGPoint *circleVertices_;
 	
-	ccBlendFunc	blendFunc_;
 }
 
-@property (nonatomic,readwrite) float radius;
-
+@property (nonatomic, readonly) GLubyte displayedOpacity;
+@property (nonatomic, getter = isCascadeOpacityEnabled) BOOL cascadeOpacityEnabled;
+@property (nonatomic, readonly) ccColor3B displayedColor;
+@property (nonatomic, getter = isCascadeColorEnabled) BOOL cascadeColorEnabled;
+@property (nonatomic, readwrite) float radius;
 /** Opacity: conforms to CCRGBAProtocol protocol */
-@property (nonatomic,readonly) GLubyte opacity;
+@property (nonatomic, readwrite) GLubyte opacity;
 /** Opacity: conforms to CCRGBAProtocol protocol */
-@property (nonatomic,readonly) ccColor3B color;
+@property (nonatomic, readwrite) ccColor3B color;
 /** BlendFunction. Conforms to CCBlendProtocol protocol */
 @property (nonatomic,readwrite) ccBlendFunc blendFunc;
 

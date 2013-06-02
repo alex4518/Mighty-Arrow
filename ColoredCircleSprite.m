@@ -9,14 +9,19 @@
 
 @implementation ColoredCircleSprite
 
-@synthesize radius=radius_;
-	// Opacity and RGB color protocol
-@synthesize opacity=opacity_, color=color_;
-@synthesize blendFunc=blendFunc_;
-
 + (id) circleWithColor: (ccColor4B)color radius:(GLfloat)r
 {
 	return [[self alloc] initWithColor:color radius:r];
+}
+
+- (void) updateDisplayedOpacity:(GLubyte)opacity
+{
+    
+}
+
+- (void) updateDisplayedColor:(ccColor3B)color
+{
+    
 }
 
 - (id) initWithColor:(ccColor4B)color radius:(GLfloat)r
@@ -24,10 +29,10 @@
 	if( (self=[self init]) ) {
 		self.radius	= r;
 		
-		color_.r = color.r;
-		color_.g = color.g;
-		color_.b = color.b;
-		opacity_ = color.a;
+		_color.r = color.r;
+		_color.g = color.g;
+		_color.b = color.b;
+		_opacity = color.a;
 	}
 	return self;
 }
@@ -35,23 +40,24 @@
 - (void) dealloc
 {
 	free(circleVertices_);
+    [super dealloc];
 }
 
 - (id) init
 {
 	if((self = [super init])){
-		radius_				= 10.0f;
+		_radius				= 10.0f;
 		numberOfSegments	= 36U;
 		
         //self.shaderProgram = [[CCShaderCache sharedShaderCache] programForKey:kCCShader_PositionColor];
         
 			// default blend function
-		blendFunc_ = (ccBlendFunc) { CC_BLEND_SRC, CC_BLEND_DST };
+		_blendFunc = (ccBlendFunc) { CC_BLEND_SRC, CC_BLEND_DST };
 		
-		color_.r =
-		color_.g =
-		color_.b = 0U;
-		opacity_ = 255U;
+		_color.r =
+		_color.g =
+		_color.b = 0U;
+		_opacity = 255U;
 		
 		circleVertices_ = (CGPoint*) malloc(sizeof(CGPoint)*(numberOfSegments));
 		if(!circleVertices_){
@@ -60,22 +66,22 @@
 		}
 		memset(circleVertices_, 0, sizeof(CGPoint)*(numberOfSegments));
 		
-		self.radius			= radius_;
+		self.radius			= _radius;
 	}
 	return self;
 }
 
 -(void) setRadius: (float) size
 {
-	radius_ = size;
+	_radius = size;
 	const float theta_inc	= 2.0f * 3.14159265359f/numberOfSegments;
 	float theta				= 0.0f;
 	
 	for(int i=0; i<numberOfSegments; i++)
 	{
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
-		float j = radius_ * cosf(theta) + _position.x;
-		float k = radius_ * sinf(theta) + _position.y;
+		float j = _radius * cosf(theta) + _position.x;
+		float k = _radius * sinf(theta) + _position.y;
 #elif defined(__MAC_OS_X_VERSION_MAX_ALLOWED)
 		float j = radius_ * cosf(theta) + position_.x;
 		float k = radius_ * sinf(theta) + position_.y;
@@ -96,12 +102,12 @@
 
 - (void) updateContentSize
 {
-	[super setContentSize:CGSizeMake(radius_*2, radius_*2)];
+	[super setContentSize:CGSizeMake(_radius*2, _radius*2)];
 }
 
 - (void)draw
 {		
-	ccDrawSolidPoly(circleVertices_, numberOfSegments, ccc4f(color_.r/255.0f, color_.g/255.0f, color_.b/255.0f, opacity_/255.0f));
+	ccDrawSolidPoly(circleVertices_, numberOfSegments, ccc4f(_color.r/255.0f, _color.g/255.0f, _color.b/255.0f, _opacity/255.0f));
 }
 
 #pragma mark Protocols
@@ -109,12 +115,12 @@
 
 -(void) setColor:(ccColor3B)color
 {
-	color_ = color;
+	_color = color;
 }
 
 -(void) setOpacity: (GLubyte) o
 {
-	opacity_ = o;
+	_opacity = o;
 	[self updateColor];
 }
 
@@ -123,13 +129,13 @@
 - (BOOL) containsPoint:(CGPoint)point
 {
 	float dSq = point.x * point.x + point.y * point.y;
-	float rSq = radius_ * radius_;
+	float rSq = _radius * _radius;
 	return (dSq <= rSq );
 }
 
 - (NSString*) description
 {
-	return [NSString stringWithFormat:@"<%@ = %8@ | Tag = %i | Color = %02X%02X%02X%02X | Radius = %1.2f>", [self class], self, _tag, color_.r, color_.g, color_.b, opacity_, radius_];
+	return [NSString stringWithFormat:@"<%@ = %8@ | Tag = %i | Color = %02X%02X%02X%02X | Radius = %1.2f>", [self class], self, _tag, _color.r, _color.g, _color.b, _opacity, _radius];
 }
 
 @end
