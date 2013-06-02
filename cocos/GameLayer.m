@@ -59,7 +59,7 @@ static GameLayer* sharedGameLayer;
     sharedGameLayer = self;
     
     CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
-    [frameCache addSpriteFramesWithFile:@"hero.plist"];
+    [frameCache addSpriteFramesWithFile:@"hero1.plist"];
 
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
@@ -90,7 +90,7 @@ static GameLayer* sharedGameLayer;
 -(Hero*) defaultHero
 {
 	CCNode* node = [self getChildByTag:1];
-	NSAssert([node isKindOfClass:[Hero class]], @"node is not a Ship!");
+	NSAssert([node isKindOfClass:[Hero class]], @"node is not a Hero!");
 	return (Hero*)node;
 }
 
