@@ -164,6 +164,8 @@
 		F4D7DC481745022D00521C59 /* right_left_step.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D7DC3C1745022D00521C59 /* right_left_step.png */; };
 		F4D7DC491745022D00521C59 /* right_right_step.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D7DC3D1745022D00521C59 /* right_right_step.png */; };
 		F4D7DC4A1745022D00521C59 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D7DC3E1745022D00521C59 /* right.png */; };
+		F4F7E0DD175BADA800CFE8AE /* hero_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = F4F7E0DB175BADA800CFE8AE /* hero_sword.png */; };
+		F4F7E0DE175BADA800CFE8AE /* hero_sword.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -477,6 +479,8 @@
 		F4D7DC3C1745022D00521C59 /* right_left_step.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_left_step.png; sourceTree = "<group>"; };
 		F4D7DC3D1745022D00521C59 /* right_right_step.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_right_step.png; sourceTree = "<group>"; };
 		F4D7DC3E1745022D00521C59 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
+		F4F7E0DB175BADA800CFE8AE /* hero_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero_sword.png; sourceTree = "<group>"; };
+		F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hero_sword.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -956,6 +960,8 @@
 		F4D7DC321745021000521C59 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F4F7E0DB175BADA800CFE8AE /* hero_sword.png */,
+				F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */,
 				F4C811AE175B945B00D1C287 /* hero1.png */,
 				F4C811AF175B945C00D1C287 /* hero1.plist */,
 				F481B7B9174D68C500A89166 /* map.tmx */,
@@ -1056,6 +1062,8 @@
 				F481B7BE174D691100A89166 /* game_events.png in Resources */,
 				F4C811B0175B945D00D1C287 /* hero1.png in Resources */,
 				F4C811B1175B945D00D1C287 /* hero1.plist in Resources */,
+				F4F7E0DD175BADA800CFE8AE /* hero_sword.png in Resources */,
+				F4F7E0DE175BADA800CFE8AE /* hero_sword.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

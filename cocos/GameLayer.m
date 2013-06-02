@@ -58,8 +58,10 @@ static GameLayer* sharedGameLayer;
     
     sharedGameLayer = self;
     
+
     CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
-    [frameCache addSpriteFramesWithFile:@"hero1.plist"];
+    [frameCache addSpriteFramesWithFile:@"hero_sword.plist"];
+
 
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value

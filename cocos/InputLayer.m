@@ -131,13 +131,18 @@
     
     [walkRightAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"right_left_step.png"]]];
+      [NSString stringWithFormat:@"right_left_step_sword.png"]]];
     
     [walkRightAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"right_right_step.png"]]];
+      [NSString stringWithFormat:@"right_sword.png"]]];
+
     
-    CCAnimation *walkRightAnim = [CCAnimation animationWithSpriteFrames:walkRightAnimFrames delay:0.3f];
+    [walkRightAnimFrames addObject:
+     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+      [NSString stringWithFormat:@"right_right_step_sword.png"]]];
+    
+    CCAnimation *walkRightAnim = [CCAnimation animationWithSpriteFrames:walkRightAnimFrames delay:0.2f];
     
     self.walkRightAction = [CCRepeatForever actionWithAction:
                        [CCAnimate actionWithAnimation:walkRightAnim]];
@@ -149,13 +154,17 @@
     
     [walkLeftAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"left_left_step.png"]]];
+      [NSString stringWithFormat:@"left_left_step_sword.png"]]];
     
     [walkLeftAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"left_right_step.png"]]];
+      [NSString stringWithFormat:@"left_sword.png"]]];
     
-    CCAnimation *walkLeftAnim = [CCAnimation animationWithSpriteFrames:walkLeftAnimFrames delay:0.3f];
+    [walkLeftAnimFrames addObject:
+     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+      [NSString stringWithFormat:@"left_right_step_sword.png"]]];
+    
+    CCAnimation *walkLeftAnim = [CCAnimation animationWithSpriteFrames:walkLeftAnimFrames delay:0.2f];
     
     self.walkLeftAction = [CCRepeatForever actionWithAction:
                          [CCAnimate actionWithAnimation:walkLeftAnim]];
@@ -182,22 +191,20 @@
     
     
     //move down animation
-    
+
     NSMutableArray *walkDownAnimFrames = [NSMutableArray array];
     
     [walkDownAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"front_left_step.png"]]];
+      [NSString stringWithFormat:@"front_left_step_sword.png"]]];
     
     [walkDownAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"front_right_step.png"]]];
+      [NSString stringWithFormat:@"front_right_step_sword.png"]]];
     
     CCAnimation *walkDownAnim = [CCAnimation animationWithSpriteFrames:walkDownAnimFrames delay:0.3f];
     
     self.walkDownAction = [CCRepeatForever actionWithAction:
                          [CCAnimate actionWithAnimation:walkDownAnim]];
-
-    
 }
 @end
