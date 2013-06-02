@@ -7,7 +7,7 @@
 //
 
 #import "CCLayer.h"
-#import "HelloWorldLayer.h"
+#import "GameLayer.h"
 #import "SneakyButton.h"
 #import "SneakyButtonSkinnedBase.h"
 #import "SneakyJoystick.h"

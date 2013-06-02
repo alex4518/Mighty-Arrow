@@ -1,5 +1,5 @@
 //
-//  HelloWorldLayer.h
+//  GameLayer.h
 //  cocos
 //
 //  Created by alex on 06/03/2013.
@@ -19,8 +19,8 @@
 
 
 
-// HelloWorldLayer
-@interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
+// GameLayer
+@interface GameLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
     CCTMXTiledMap *themap ;
     CCTMXLayer *bgLayer ;
@@ -31,11 +31,11 @@
 
 -(Hero*) defaultHero;
 
-+(HelloWorldLayer*) sharedGameLayer;
++(GameLayer*) sharedGameLayer;
 
 
 
-// returns a CCScene that contains the HelloWorldLayer as the only child
+// returns a CCScene that contains the GameLayer as the only child
 +(CCScene *) scene;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  HelloWorldLayer.m
+//  GameLayer.m
 //  cocos
 //
 //  Created by alex on 06/03/2013.
@@ -8,36 +8,36 @@
 
 
 // Import the interfaces
-#import "HelloWorldLayer.h"
+#import "GameLayer.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 #import "InputLayer.h"
 
 
-#pragma mark - HelloWorldLayer
+#pragma mark - GameLayer
 
-// HelloWorldLayer implementation
+// GameLayer implementation
 
-@implementation HelloWorldLayer
+@implementation GameLayer
 
 @synthesize bgLayer = _bgLayer,themap =_themap;
 
-static HelloWorldLayer* sharedGameLayer;
-+(HelloWorldLayer*) sharedGameLayer
+static GameLayer* sharedGameLayer;
++(GameLayer*) sharedGameLayer
 {
 	NSAssert(sharedGameLayer != nil, @"GameScene instance not yet initialized!");
 	return sharedGameLayer;
 }
 
-// Helper class method that creates a Scene with the HelloWorldLayer as the only child.
+// Helper class method that creates a Scene with the GameLayer as the only child.
 +(CCScene *) scene
 {
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
     
     // 'layer' is an autorelease object.
-	HelloWorldLayer *layer = [HelloWorldLayer node];
+	GameLayer *layer = [GameLayer node];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];

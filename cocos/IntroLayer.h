@@ -9,21 +9,17 @@
 
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
-#import "HelloWorldLayer.h"
+#import "GameLayer.h"
 
 #import "SneakyButton.h"
 #import "SneakyButtonSkinnedBase.h"
 #import "SneakyJoystick.h"
 #import "SneakyJoystickSkinnedBase.h"
 
-// HelloWorldLayer
+// GameLayer
 @interface IntroLayer : CCLayer
-{
-    SneakyButton* fireButton;
-    SneakyJoystick* joystick;
-}
 
-// returns a CCScene that contains the HelloWorldLayer as the only child
+// returns a CCScene that contains the GameLayer as the only child
 +(CCScene *) scene;
 
 @end

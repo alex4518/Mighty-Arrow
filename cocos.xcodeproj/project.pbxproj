@@ -148,7 +148,7 @@
 		F4BF02D416E7A6A600337261 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = F4BF02D316E7A6A600337261 /* vec4.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F4BF02D916E7A6A600337261 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BF02D816E7A6A600337261 /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F4BF02DC16E7A6A600337261 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BF02DB16E7A6A600337261 /* AppDelegate.m */; };
-		F4BF02DF16E7A6A600337261 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BF02DE16E7A6A600337261 /* HelloWorldLayer.m */; };
+		F4BF02DF16E7A6A600337261 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BF02DE16E7A6A600337261 /* GameLayer.m */; };
 		F4BF02E216E7A6A600337261 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BF02E116E7A6A600337261 /* IntroLayer.m */; };
 		F4D7DC3F1745022D00521C59 /* back_left_step.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D7DC331745022D00521C59 /* back_left_step.png */; };
 		F4D7DC401745022D00521C59 /* back_right_step.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D7DC341745022D00521C59 /* back_right_step.png */; };
@@ -457,8 +457,8 @@
 		F4BF02D816E7A6A600337261 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F4BF02DA16E7A6A600337261 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F4BF02DB16E7A6A600337261 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F4BF02DD16E7A6A600337261 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		F4BF02DE16E7A6A600337261 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		F4BF02DD16E7A6A600337261 /* GameLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
+		F4BF02DE16E7A6A600337261 /* GameLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		F4BF02E016E7A6A600337261 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		F4BF02E116E7A6A600337261 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		F4D7DC331745022D00521C59 /* back_left_step.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_left_step.png; sourceTree = "<group>"; };
@@ -551,8 +551,8 @@
 			children = (
 				F4BF02DA16E7A6A600337261 /* AppDelegate.h */,
 				F4BF02DB16E7A6A600337261 /* AppDelegate.m */,
-				F4BF02DD16E7A6A600337261 /* HelloWorldLayer.h */,
-				F4BF02DE16E7A6A600337261 /* HelloWorldLayer.m */,
+				F4BF02DD16E7A6A600337261 /* GameLayer.h */,
+				F4BF02DE16E7A6A600337261 /* GameLayer.m */,
 				F492924D174F90E200A69018 /* Hero.h */,
 				F492924E174F90E200A69018 /* Hero.m */,
 				F4929245174EA15E00A69018 /* InputLayer.h */,
@@ -1172,7 +1172,7 @@
 				F4BF02D416E7A6A600337261 /* vec4.c in Sources */,
 				F4BF02D916E7A6A600337261 /* main.m in Sources */,
 				F4BF02DC16E7A6A600337261 /* AppDelegate.m in Sources */,
-				F4BF02DF16E7A6A600337261 /* HelloWorldLayer.m in Sources */,
+				F4BF02DF16E7A6A600337261 /* GameLayer.m in Sources */,
 				F4BF02E216E7A6A600337261 /* IntroLayer.m in Sources */,
 				F4929247174EA15E00A69018 /* InputLayer.m in Sources */,
 				F492924F174F90E300A69018 /* Hero.m in Sources */,

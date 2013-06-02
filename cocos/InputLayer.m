@@ -9,7 +9,7 @@
 #import "InputLayer.h"
 #import "ColoredCircleSprite.h"
 #import "Hero.h"
-#import "HelloWorldLayer.h"
+#import "GameLayer.h"
 
 @implementation InputLayer
 
@@ -57,7 +57,7 @@
 
 -(void) update:(ccTime)delta
 {
-    HelloWorldLayer* game = [HelloWorldLayer sharedGameLayer];
+    GameLayer* game = [GameLayer sharedGameLayer];
 
     Hero* hero = [game defaultHero];
     

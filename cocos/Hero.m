@@ -7,7 +7,7 @@
 //
 
 #import "Hero.h"
-#import "HelloWorldLayer.h"
+#import "GameLayer.h"
 #import "InputLayer.h"
 
 
