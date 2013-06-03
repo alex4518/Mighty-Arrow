@@ -16,6 +16,7 @@
 @interface InputLayer : CCLayer{
 
 SneakyJoystick* joystick;
+SneakyButton* attackButton;
 }
 
 @property (nonatomic, strong) CCAction *walkRightAction;

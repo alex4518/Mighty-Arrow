@@ -21,6 +21,8 @@
         
 		[self addJoystick];
         
+        [self addAttackButton];
+        
 		[self scheduleUpdate];
         
 	}
@@ -36,11 +38,28 @@
     joystick.deadRadius = 10;
     joystick.isDPad = YES;
     joystick.numberOfDirections = 4;
-    SneakyJoystickSkinnedBase* skinStick=[[SneakyJoystickSkinnedBase alloc] init]; skinStick.joystick = joystick;
+    SneakyJoystickSkinnedBase* skinStick=[[SneakyJoystickSkinnedBase alloc] init];
+    skinStick.joystick = joystick;
     skinStick.backgroundSprite.color = ccYELLOW;
-    skinStick.backgroundSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 128) radius:30];;
-    skinStick.thumbSprite = [ColoredCircleSprite circleWithColor:ccc4(0, 0, 255, 200) radius:10];;
-    skinStick.position=CGPointMake(stickRadius * 1.5f, stickRadius * 1.5f); [self addChild:skinStick];
+    skinStick.backgroundSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 128) radius:30];
+    skinStick.thumbSprite = [ColoredCircleSprite circleWithColor:ccc4(0, 0, 255, 200) radius:10];
+    skinStick.position=CGPointMake(stickRadius * 1.5f, stickRadius * 1.5f);
+    [self addChild:skinStick];
+}
+
+-(void) addAttackButton
+{
+    SneakyButtonSkinnedBase *attackBut = [[SneakyButtonSkinnedBase alloc] init];
+    attackBut.position = ccp(500,45);
+    attackBut.defaultSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 128) radius:22];
+    attackBut.pressSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 255) radius:22];
+    attackBut.button = [[SneakyButton alloc] initWithRect:CGRectMake(0, 0, 64, 64)];
+    attackButton = attackBut.button;
+    attackButton.isToggleable = NO;
+    attackButton.isHoldable = NO;
+    [self addChild:attackBut];
+    
+    
 }
 
 -(void) update:(ccTime)delta
