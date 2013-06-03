@@ -24,7 +24,7 @@
 
 -(id) initWithHeroImage
 {
-	// Loading the Ship's sprite using a sprite frame name (eg the filename)
+	// Loading the Hero's sprite using a sprite frame name (eg the filename)
 	if ((self = [super initWithFile:@"right.png"]))
 	{
         [self scheduleUpdate];
