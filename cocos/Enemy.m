@@ -13,15 +13,13 @@
 
 -(id) initWithType:(EnemyTypes)enemyType
 {
-    type = enemyType;
     NSString* enemyFrameName;
     
-    _initialHitPoints = 1;
     
-    switch (type)
+    switch (enemyType)
     {
         case EnemyType1:
-           // enemyFrameName = @"monster-a.png";
+            enemyFrameName = @"enemy.png";
             _initialHitPoints = 1;
             break;
         case EnemyType2:
@@ -36,13 +34,14 @@
             [NSException exceptionWithName:@"Enemy Exception"
                                     reason:@"unhandled enemy type"
                                   userInfo:nil];
-            
-            self=[super initWithSpriteFrameName:enemyFrameName];
+    }
+            self = [super initWithSpriteFrameName:enemyFrameName];
             if (self)
             {
-                // Create the game logic components
+                [self scheduleUpdate];
+                
             }
-    }
+    
     
     return self;
 }

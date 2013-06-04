@@ -25,7 +25,7 @@
 -(id) initWithHeroImage
 {
 	// Loading the Hero's sprite using a sprite frame name (eg the filename)
-	if ((self = [super initWithFile:@"right.png"]))
+	if ((self = [super initWithSpriteFrameName:@"right_sword.png"]))
 	{
         [self scheduleUpdate];
         

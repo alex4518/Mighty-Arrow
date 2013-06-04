@@ -13,6 +13,7 @@
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 #import "InputLayer.h"
+#import "Enemy.h"
 
 
 #pragma mark - GameLayer
@@ -60,7 +61,7 @@ static GameLayer* sharedGameLayer;
     
 
     CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
-    [frameCache addSpriteFramesWithFile:@"hero_sword.plist"];
+    [frameCache addSpriteFramesWithFile:@"heroenemy.plist"];
 
 
 	// always call "super" init
@@ -82,6 +83,10 @@ static GameLayer* sharedGameLayer;
     
     [hero setPosition:ccp(screenHeight/2 , screenWidth/2)];
     [self addChild:hero];
+    
+    Enemy* enemy = [Enemy enemyWithType:EnemyType1];
+    [enemy setPosition:ccp(100,100)];
+     [self addChild:enemy];
    
  
     

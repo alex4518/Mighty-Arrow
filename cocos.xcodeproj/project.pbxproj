@@ -154,6 +154,8 @@
 		F4F7E0DE175BADA800CFE8AE /* hero_sword.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */; };
 		F4F7E0E4175E1CB000CFE8AE /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F7E0E3175E1CAF00CFE8AE /* Enemy.m */; };
 		F4F7E0E7175E1D9C00CFE8AE /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F7E0E6175E1D9000CFE8AE /* Hero.m */; };
+		F4F7E0F2175E789500CFE8AE /* heroenemy.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F7E0F0175E789300CFE8AE /* heroenemy.plist */; };
+		F4F7E0F3175E789500CFE8AE /* heroenemy.png in Resources */ = {isa = PBXBuildFile; fileRef = F4F7E0F1175E789400CFE8AE /* heroenemy.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -458,6 +460,8 @@
 		F4F7E0E3175E1CAF00CFE8AE /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
 		F4F7E0E5175E1D8B00CFE8AE /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
 		F4F7E0E6175E1D9000CFE8AE /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
+		F4F7E0F0175E789300CFE8AE /* heroenemy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = heroenemy.plist; sourceTree = "<group>"; };
+		F4F7E0F1175E789400CFE8AE /* heroenemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heroenemy.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -938,6 +942,8 @@
 		F4D7DC321745021000521C59 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F4F7E0F0175E789300CFE8AE /* heroenemy.plist */,
+				F4F7E0F1175E789400CFE8AE /* heroenemy.png */,
 				F4F7E0DB175BADA800CFE8AE /* hero_sword.png */,
 				F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */,
 				F4C811AE175B945B00D1C287 /* hero1.png */,
@@ -1017,6 +1023,8 @@
 				F4C811B1175B945D00D1C287 /* hero1.plist in Resources */,
 				F4F7E0DD175BADA800CFE8AE /* hero_sword.png in Resources */,
 				F4F7E0DE175BADA800CFE8AE /* hero_sword.plist in Resources */,
+				F4F7E0F2175E789500CFE8AE /* heroenemy.plist in Resources */,
+				F4F7E0F3175E789500CFE8AE /* heroenemy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
