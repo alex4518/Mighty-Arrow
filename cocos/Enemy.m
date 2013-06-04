@@ -16,21 +16,21 @@
     type = enemyType;
     NSString* enemyFrameName;
     
-    self.initialHitPoints = 1;
+    _initialHitPoints = 1;
     
     switch (type)
     {
         case EnemyType1:
            // enemyFrameName = @"monster-a.png";
-            self.initialHitPoints = 1;
+            _initialHitPoints = 1;
             break;
         case EnemyType2:
           //  enemyFrameName = @"monster-b.png";
-            self.initialHitPoints = 3;
+            _initialHitPoints = 3;
             break;
         case EnemyType3:
            // enemyFrameName = @"monster-c.png";
-            self.initialHitPoints = 15;
+            _initialHitPoints = 15;
             break;
         default:
             [NSException exceptionWithName:@"Enemy Exception"

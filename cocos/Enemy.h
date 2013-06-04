@@ -19,12 +19,12 @@ typedef enum
 } EnemyTypes;
 
 @interface Enemy : CCSprite {
-  
+
     EnemyTypes type;
 }
 
-@property (readwrite, nonatomic) int initialHitPoints;
-@property (readwrite, nonatomic) int hitPoints;
+@property (readonly, nonatomic) int initialHitPoints;
+@property (readonly, nonatomic) int hitPoints;
 
 +(id) enemyWithType:(EnemyTypes)enemyType;
 
