@@ -2,16 +2,17 @@
 //  Hero.h
 //  cocos
 //
-//  Created by alex on 24/05/2013.
-//  Copyright (c) 2013 alex. All rights reserved.
+//  Created by alex on 04/06/2013.
+//  Copyright 2013 alex. All rights reserved.
 //
 
-#import "CCSprite.h"
-#import "SneakyJoystick.h"
+#import <Foundation/Foundation.h>
+#import "cocos2d.h"
 
-@interface Hero : CCSprite
+@interface Hero : CCSprite {
+    
+}
 
 +(id) hero;
 
 @end
-
