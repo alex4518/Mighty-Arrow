@@ -18,6 +18,9 @@ typedef enum
     EnemyType_MAX,
 } EnemyTypes;
 
+id actionMove;
+id actionMoveDone;
+
 @interface Enemy : CCSprite {
 
     EnemyTypes type;
@@ -26,6 +29,9 @@ typedef enum
 @property (readonly, nonatomic) int initialHitPoints;
 @property (readonly, nonatomic) int hitPoints;
 
+
 +(id) enemyWithType:(EnemyTypes)enemyType;
+- (void) animateEnemy:(CCSprite*)enemy;
 
 @end
+

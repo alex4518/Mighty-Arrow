@@ -87,9 +87,7 @@ static GameLayer* sharedGameLayer;
     Enemy* enemy = [Enemy enemyWithType:EnemyType1];
     [enemy setPosition:ccp(100,100)];
      [self addChild:enemy];
-   
- 
-    
+
     return self;
 
 }
