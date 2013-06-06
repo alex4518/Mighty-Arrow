@@ -50,8 +50,10 @@
 
 -(void) addAttackButton
 {
+    CGSize winSize = [CCDirector sharedDirector].winSize;
+    
     SneakyButtonSkinnedBase *attackBut = [[SneakyButtonSkinnedBase alloc] init];
-    attackBut.position = ccp(500,45);
+    attackBut.position = ccp(winSize.width - 50.0f,50.0f );
     attackBut.defaultSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 128) radius:22];
     attackBut.pressSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 255) radius:22];
     attackBut.button = [[SneakyButton alloc] initWithRect:CGRectMake(0, 0, 64, 64)];

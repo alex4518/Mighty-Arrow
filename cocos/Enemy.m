@@ -84,9 +84,6 @@
     GameLayer* game = [GameLayer sharedGameLayer];
     
     Hero* hero = [game defaultHero];
-    
-    NSLog(@"x:%f",hero.position.x - self.position.x);
-    NSLog(@"y:%f",hero.position.y - self.position.y);
 
     
     if ((abs(hero.position.x - self.position.x) < 400.0f) &&( abs(hero.position.x - self.position.x) > 30.0f) && ((abs(hero.position.y - self.position.y) < 400.0f) && (abs(hero.position.y - self.position.y) > 30.0f))) {
