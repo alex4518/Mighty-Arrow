@@ -66,7 +66,7 @@ static GameLayer* sharedGameLayer;
         CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
         [frameCache addSpriteFramesWithFile:@"heroenemy.plist"];
 		
-        self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"map.tmx"];
+        self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"map1.tmx"];
         self.bgLayer = [_themap layerNamed:@"bg"];
         [self addChild:_themap z:-1];
         
