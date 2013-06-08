@@ -17,8 +17,8 @@
 
 @interface InputLayer : CCLayer <GameLayerProtocol> {
 
-SneakyJoystick* sJoystick;
-SneakyButton* attackButton;
+    SneakyButton* attackButton;
+    Hero* hero;
 }
 
 @property(nonatomic, strong) SneakyJoystick* sJoystick;

@@ -10,9 +10,7 @@
 #import "cocos2d.h"
 #import "SneakyJoystick.h"
 
-@interface Hero : CCSprite {
-    
-    SneakyJoystick *joystick;
+@interface Hero : CCSprite {    
 }
 
 +(id) hero;

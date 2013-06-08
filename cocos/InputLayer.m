@@ -20,6 +20,8 @@
 	{
         GameLayer* game = [GameLayer sharedGameLayer];
         
+        hero = [game defaultHero];
+        
         game.delegate = self;
         
         [self addJoystick];
@@ -35,14 +37,14 @@
 -(void) addJoystick
 {    
     float stickRadius=30;
-    sJoystick=[[SneakyJoystick alloc] initWithRect: CGRectMake(0, 0, stickRadius, stickRadius)];
-    sJoystick.autoCenter = YES;
-    sJoystick.hasDeadzone = YES;
-    sJoystick.deadRadius = 10;
-    sJoystick.isDPad = YES;
-    sJoystick.numberOfDirections = 4;
+    self.sJoystick=[[SneakyJoystick alloc] initWithRect: CGRectMake(0, 0, stickRadius, stickRadius)];
+    self.sJoystick.autoCenter = YES;
+    self.sJoystick.hasDeadzone = YES;
+    self.sJoystick.deadRadius = 10;
+    self.sJoystick.isDPad = YES;
+    self.sJoystick.numberOfDirections = 4;
     SneakyJoystickSkinnedBase* skinStick=[[SneakyJoystickSkinnedBase alloc] init];
-    skinStick.joystick = sJoystick;
+    skinStick.joystick = self.sJoystick;
     skinStick.backgroundSprite.color = ccYELLOW;
     skinStick.backgroundSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 128) radius:30];
     skinStick.thumbSprite = [ColoredCircleSprite circleWithColor:ccc4(0, 0, 255, 200) radius:10];
@@ -71,7 +73,7 @@
 {
     GameLayer* game = [GameLayer sharedGameLayer];
 
-    Hero* hero = [game defaultHero];
+    //Hero* hero = [game defaultHero];
         
     
     float mapWidth = (game.themap.mapSize.width * game.themap.tileSize.width)/2;
@@ -104,16 +106,11 @@
     }
 }
 
--(void) setJoystickToHero{
+-(void) setJoystickToHero {
     
-    
-    GameLayer* game = [GameLayer sharedGameLayer];
-        
-    Hero* hero = [game defaultHero];
-
     if (!(hero.joystick)){
     
-    [hero setJoystick:sJoystick];
+    [hero setJoystick:self.sJoystick];
     }
 }
 @end
