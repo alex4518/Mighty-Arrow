@@ -39,66 +39,90 @@
     
     GameLayer* game = [GameLayer sharedGameLayer];
     
-    Hero* hero = [game defaultHero];
     
-    [hero applyJoystick:self.joystick
+    [self applyJoystick:self.joystick
            forTimeDelta:delta];
+    
+    float mapWidth = (game.themap.mapSize.width * game.themap.tileSize.width)/2;
+    float mapHeight = (game.themap.mapSize.height * game.themap.tileSize.height)/2;
+    
+	
+    
+    CGSize winSize = [CCDirector sharedDirector].winSize;
+    
+    int x = MAX(self.position.x, winSize.width/2);
+    int y = MAX(self.position.y, winSize.height/2);
+    x = MIN(x, mapWidth - winSize.width / 2);
+    y = MIN(y, mapHeight - winSize.height/2);
+    CGPoint actualPosition = ccp(x, y);
+    
+    CGPoint centerOfView = ccp(winSize.width/2, winSize.height/2);
+    CGPoint viewPoint = ccpSub(centerOfView, actualPosition);
+    game.position = viewPoint;
+    
+    
+    // Make sure player doesn't walk out of the screen
+    if (self.position.x < 24.0f) {
+        self.position = ccp(24.0f, self.position.y);
+    } else if (self.position.x > (game.themap.mapSize.width * game.themap.tileSize.width)/2 - 24.0f) {
+        self.position = ccp(mapWidth - 24.0f, self.position.y);
+    } else if (self.position.y < 36.0f) {
+        self.position = ccp(self.position.x, 36.0f);
+    } else if (self.position.y > (game.themap.mapSize.height * game.themap.tileSize.height)/2) {
+        self.position = ccp(self.position.x, mapWidth);
+    }
 }
 
 
--(void)applyJoystick:(SneakyJoystick *)aJoystick forTimeDelta:(float)delta{
-    
-    GameLayer* game = [GameLayer sharedGameLayer];
-    
-    Hero* hero = [game defaultHero];
+-(void)applyJoystick:(SneakyJoystick *)aJoystick forTimeDelta:(float)delta {
     
     CGPoint velocity = ccpMult(aJoystick.velocity, 2000 * delta);
     
-    hero.position = CGPointMake(hero.position.x + velocity.x * delta, hero.position.y + velocity.y * delta);
+    self.position = CGPointMake(self.position.x + velocity.x * delta, self.position.y + velocity.y * delta);
 
     
     if (aJoystick.velocity.x == 1.0f) {
         
-        [hero stopAction:self.walkUpAction];
-        [hero stopAction:self.walkDownAction];
-        [hero stopAction:self.walkLeftAction];
+        [self stopAction:self.walkUpAction];
+        [self stopAction:self.walkDownAction];
+        [self stopAction:self.walkLeftAction];
         
-        if (hero.numberOfRunningActions == 0) {
-            [hero runAction:self.walkRightAction];
+        if (self.numberOfRunningActions == 0) {
+            [self runAction:self.walkRightAction];
         }
     }
     else if (aJoystick.velocity.x == -1.0f){
         
-        [hero stopAction:self.walkUpAction];
-        [hero stopAction:self.walkDownAction];
-        [hero stopAction:self.walkRightAction];
+        [self stopAction:self.walkUpAction];
+        [self stopAction:self.walkDownAction];
+        [self stopAction:self.walkRightAction];
         
-        if (hero.numberOfRunningActions == 0) {
-            [hero runAction:self.walkLeftAction];
+        if (self.numberOfRunningActions == 0) {
+            [self runAction:self.walkLeftAction];
         }
     }
     else if (aJoystick.velocity.y == 1.0f){
         
-        [hero stopAction:self.walkDownAction];
-        [hero stopAction:self.walkLeftAction];
-        [hero stopAction:self.walkRightAction];
+        [self stopAction:self.walkDownAction];
+        [self stopAction:self.walkLeftAction];
+        [self stopAction:self.walkRightAction];
         
-        if (hero.numberOfRunningActions == 0) {
-            [hero runAction:self.walkUpAction];
+        if (self.numberOfRunningActions == 0) {
+            [self runAction:self.walkUpAction];
         }
     }
     else if (aJoystick.velocity.y == -1.0f){
         
-        [hero stopAction:self.walkUpAction];
-        [hero stopAction:self.walkLeftAction];
-        [hero stopAction:self.walkRightAction];
+        [self stopAction:self.walkUpAction];
+        [self stopAction:self.walkLeftAction];
+        [self stopAction:self.walkRightAction];
         
-        if (hero.numberOfRunningActions == 0) {
-            [hero runAction:self.walkDownAction];
+        if (self.numberOfRunningActions == 0) {
+            [self runAction:self.walkDownAction];
         }
     }
     else {
-        [hero stopAllActions];
+        [self stopAllActions];
     }
     
 }

@@ -71,39 +71,10 @@
 
 -(void) update:(ccTime)delta
 {
-    GameLayer* game = [GameLayer sharedGameLayer];
 
-    //Hero* hero = [game defaultHero];
         
     
-    float mapWidth = (game.themap.mapSize.width * game.themap.tileSize.width)/2;
-    float mapHeight = (game.themap.mapSize.height * game.themap.tileSize.height)/2;
-        
-	
-    
-    CGSize winSize = [CCDirector sharedDirector].winSize;
-    
-    int x = MAX(hero.position.x, winSize.width/2);
-    int y = MAX(hero.position.y, winSize.height/2);
-    x = MIN(x, mapWidth - winSize.width / 2);
-    y = MIN(y, mapHeight - winSize.height/2);
-    CGPoint actualPosition = ccp(x, y);
-    
-    CGPoint centerOfView = ccp(winSize.width/2, winSize.height/2);
-    CGPoint viewPoint = ccpSub(centerOfView, actualPosition);
-    game.position = viewPoint;
 
-    
-    // Make sure player doesn't walk out of the screen
-    if (hero.position.x < 24.0f) {
-        hero.position = ccp(24.0f, hero.position.y);
-    } else if (hero.position.x > (game.themap.mapSize.width * game.themap.tileSize.width)/2 - 24.0f) {
-        hero.position = ccp(mapWidth - 24.0f, hero.position.y);
-    } else if (hero.position.y < 36.0f) {
-        hero.position = ccp(hero.position.x, 36.0f);
-    } else if (hero.position.y > (game.themap.mapSize.height * game.themap.tileSize.height)/2) {
-        hero.position = ccp(hero.position.x, mapWidth);
-    }
 }
 
 -(void) setJoystickToHero {
