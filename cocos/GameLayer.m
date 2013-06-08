@@ -56,17 +56,15 @@ static GameLayer* sharedGameLayer;
 // on "init" you need to initialize your instance
 -(id) init
 {
-    
-    sharedGameLayer = self;
-    
-
-    CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
-    [frameCache addSpriteFramesWithFile:@"heroenemy.plist"];
-
-
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) ) {
+        
+        sharedGameLayer = self;
+
+        
+        CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
+        [frameCache addSpriteFramesWithFile:@"heroenemy.plist"];
 		
         self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"map.tmx"];
         self.bgLayer = [_themap layerNamed:@"bg"];
@@ -80,7 +78,7 @@ static GameLayer* sharedGameLayer;
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
-    
+
     [hero setPosition:ccp(screenHeight/2 , screenWidth/2)];
     [self addChild:hero];
     
@@ -88,8 +86,16 @@ static GameLayer* sharedGameLayer;
     [enemy setPosition:ccp(100,100)];
      [self addChild:enemy];
 
+    [self scheduleUpdate];                                   
+
+    
     return self;
 
+}
+
+-(void) update:(ccTime)deltaTime {
+
+    [self.delegate setJoystickToHero];
 }
 
 -(Hero*) defaultHero

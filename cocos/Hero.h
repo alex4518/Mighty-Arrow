@@ -8,11 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "SneakyJoystick.h"
 
 @interface Hero : CCSprite {
     
+    SneakyJoystick *joystick;
 }
 
 +(id) hero;
+
+@property (nonatomic, strong) CCAction *walkRightAction;
+@property (nonatomic, strong) CCAction *walkLeftAction;
+@property (nonatomic, strong) CCAction *walkUpAction;
+@property (nonatomic, strong) CCAction *walkDownAction;
+
+@property (nonatomic,strong) SneakyJoystick* joystick;
 
 @end

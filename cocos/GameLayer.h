@@ -18,6 +18,12 @@
 #import "Hero.h"
 
 
+@protocol GameLayerProtocol <NSObject>
+
+-(void) setJoystickToHero;
+
+@end
+
 
 // GameLayer
 @interface GameLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
@@ -28,6 +34,8 @@
 
 @property(nonatomic,strong) CCTMXTiledMap *themap;
 @property(nonatomic,strong) CCTMXLayer *bgLayer ;
+
+@property(nonatomic,strong) id <GameLayerProtocol> delegate;
 
 -(Hero*) defaultHero;
 

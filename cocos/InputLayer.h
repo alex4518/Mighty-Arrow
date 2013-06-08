@@ -13,16 +13,15 @@
 #import "SneakyJoystick.h"
 #import "SneakyJoystickSkinnedBase.h"
 
-@interface InputLayer : CCLayer{
 
-SneakyJoystick* joystick;
+
+@interface InputLayer : CCLayer <GameLayerProtocol> {
+
+SneakyJoystick* sJoystick;
 SneakyButton* attackButton;
 }
 
-@property (nonatomic, strong) CCAction *walkRightAction;
-@property (nonatomic, strong) CCAction *walkLeftAction;
-@property (nonatomic, strong) CCAction *walkUpAction;
-@property (nonatomic, strong) CCAction *walkDownAction;
+@property(nonatomic, strong) SneakyJoystick* sJoystick;
 
 
 @end
