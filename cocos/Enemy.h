@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "ShortestPathStep.h"
 
 typedef enum
 {
@@ -18,20 +19,33 @@ typedef enum
     EnemyType_MAX,
 } EnemyTypes;
 
-id actionMove;
+id actionMoveX;
+id actionMoveY;
 id actionMoveDone;
 
 @interface Enemy : CCSprite {
-
+    
     EnemyTypes type;
 }
 
 @property (readonly, nonatomic) int initialHitPoints;
 @property (readonly, nonatomic) int hitPoints;
 
+@property (nonatomic, retain) NSMutableArray *spOpenSteps;
+@property (nonatomic, retain) NSMutableArray *spClosedSteps;
+@property (nonatomic, retain) NSMutableArray *shortestPath;
+
+
 
 +(id) enemyWithType:(EnemyTypes)enemyType;
-- (void) animateEnemy:(CCSprite*)enemy;
+- (void)moveTowardHero;
+- (void)insertInOpenSteps:(ShortestPathStep *)step;
+- (int)computeHScoreFromCoord:(CGPoint)fromCoord toCoord:(CGPoint)toCoord;
+- (int)costToMoveFromStep:(ShortestPathStep *)fromStep toAdjacentStep:(ShortestPathStep *)toStep;
+- (void)constructPathAndStartAnimationFromStep:(ShortestPathStep *)step;
+- (void)popStepAndAnimate;
+
+
 
 @end
 

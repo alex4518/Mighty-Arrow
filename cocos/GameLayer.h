@@ -46,4 +46,13 @@
 // returns a CCScene that contains the GameLayer as the only child
 +(CCScene *) scene;
 
+- (BOOL)isWallAtTileCoord:(CGPoint)tileCoord;
+
+
+- (CGPoint)tileCoordForPosition:(CGPoint)position;
+- (CGPoint)positionForTileCoord:(CGPoint)tileCoord;
+
+- (NSArray *)walkableAdjacentTilesCoordForTileCoord:(CGPoint)tileCoord;
+
+
 @end

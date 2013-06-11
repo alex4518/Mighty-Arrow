@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F4044BE51763B3C500E4779C /* map1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = F4044BE41763B3C500E4779C /* map1.tmx */; };
 		F4044BE71763B41200E4779C /* dg_grounds32.png in Resources */ = {isa = PBXBuildFile; fileRef = F4044BE61763B41200E4779C /* dg_grounds32.png */; };
+		F463290A176745AF006AED9E /* ShortestPathStep.m in Sources */ = {isa = PBXBuildFile; fileRef = F4632909176745AF006AED9E /* ShortestPathStep.m */; };
 		F481B7BE174D691100A89166 /* game_events.png in Resources */ = {isa = PBXBuildFile; fileRef = F481B7BC174D691100A89166 /* game_events.png */; };
 		F4929247174EA15E00A69018 /* InputLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4929246174EA15E00A69018 /* InputLayer.m */; };
 		F4929248174EA8A600A69018 /* ColoredCircleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = F481B7DB174E30FB00A89166 /* ColoredCircleSprite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -161,6 +162,8 @@
 /* Begin PBXFileReference section */
 		F4044BE41763B3C500E4779C /* map1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map1.tmx; sourceTree = "<group>"; };
 		F4044BE61763B41200E4779C /* dg_grounds32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dg_grounds32.png; sourceTree = "<group>"; };
+		F4632908176745AF006AED9E /* ShortestPathStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortestPathStep.h; path = cocos/ShortestPathStep.h; sourceTree = "<group>"; };
+		F4632909176745AF006AED9E /* ShortestPathStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortestPathStep.m; path = cocos/ShortestPathStep.m; sourceTree = "<group>"; };
 		F481B7BC174D691100A89166 /* game_events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_events.png; sourceTree = "<group>"; };
 		F481B7D6174E30CF00A89166 /* SneakyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
 		F481B7D7174E30CF00A89166 /* SneakyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SneakyButton.m; sourceTree = "<group>"; };
@@ -484,6 +487,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F463290C1767578C006AED9E /* A* Pathfinding */ = {
+			isa = PBXGroup;
+			children = (
+				F4632908176745AF006AED9E /* ShortestPathStep.h */,
+				F4632909176745AF006AED9E /* ShortestPathStep.m */,
+			);
+			name = "A* Pathfinding";
+			sourceTree = "<group>";
+		};
 		F481B7D5174E30AA00A89166 /* SneakyInput */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,6 +516,7 @@
 		F4BF012E16E7A69D00337261 = {
 			isa = PBXGroup;
 			children = (
+				F463290C1767578C006AED9E /* A* Pathfinding */,
 				F481B7D5174E30AA00A89166 /* SneakyInput */,
 				F4BF014C16E7A69E00337261 /* cocos */,
 				F4BF013916E7A69D00337261 /* Frameworks */,
@@ -1154,6 +1167,7 @@
 				F4929247174EA15E00A69018 /* InputLayer.m in Sources */,
 				F4F7E0E4175E1CB000CFE8AE /* Enemy.m in Sources */,
 				F4F7E0E7175E1D9C00CFE8AE /* Hero.m in Sources */,
+				F463290A176745AF006AED9E /* ShortestPathStep.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
