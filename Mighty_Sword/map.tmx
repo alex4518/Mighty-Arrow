@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="game_events" tilewidth="32" tileheight="32">
+  <image source="game_events.png" width="96" height="32"/>
+ </tileset>
+ <tileset firstgid="4" name="dg_grounds32" tilewidth="32" tileheight="32">
+  <image source="dg_grounds32.png" width="288" height="608"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt2kEKwyAQBdC5gJAjeaRus83JSyCCDKNVo50/MotPJQQ6j29SQnMS0Qmc40nLuQE4yVE7xx3ucIc7EKLpOBbEHWv3wszchg+LVUfexyyPtoN7rDuSZRfH6D5Dcrzpxh3rHT0WVEduafEgO3o8Fhy5ZwdHLe5wx5V97z+fGdyx9766E58Etg5sje7I5+Ue6TiqQ5pd6qi1GxSHtO7ZZ9rXR6mH1vm1HfmxksdaH4HkPno6WfV7VMpF5fvuyPzaDj4v/7R0fZQMkgnZ8XZ2BEek3/cni32kdaSxTrT7qHVhqY9Zcce4Y5fnwV0c6P87u8NetN8Rm5kvS1nt3Q==
+  </data>
+ </layer>
+</map>
