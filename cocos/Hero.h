@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "SneakyJoystick.h"
+#import "Enemy.h"
 
 @interface Hero : CCSprite {    
 }
@@ -22,4 +23,5 @@
 
 @property (nonatomic,strong) SneakyJoystick* joystick;
 
+- (CGRect) heroBoundingBox;
 @end

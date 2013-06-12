@@ -38,6 +38,7 @@ id actionMoveDone;
 
 
 +(id) enemyWithType:(EnemyTypes)enemyType;
+- (CGRect) enemyBoundingBox;
 - (void)moveTowardHero;
 - (void)insertInOpenSteps:(ShortestPathStep *)step;
 - (int)computeHScoreFromCoord:(CGPoint)fromCoord toCoord:(CGPoint)toCoord;

@@ -56,8 +56,13 @@
     return [[self alloc] initWithType:enemyType];
 }
 
+-(CGRect) enemyBoundingBox {
+    
+    CGRect absoluteBox = CGRectMake(self.position.x, self.position.y, [self boundingBox].size.width, [self boundingBox].size.height);
+    
+    return absoluteBox;
+}
 
-// a method to move the enemy 10 pixels toward the player
 - (void) moveTowardHero
 {
     GameLayer* game = [GameLayer sharedGameLayer];
@@ -248,9 +253,14 @@
     if (abs(hero.position.x - self.position.x) < 400.0f  && abs(hero.position.y - self.position.y) < 400.0f) {
         if (self.numberOfRunningActions == 0) {
             
+            
             [self moveTowardHero];
 
             }
+    }
+    
+    if (CGRectIntersectsRect(hero.heroBoundingBox, self.enemyBoundingBox)) {
+        NSLog(@"Collision detected");
     }
 }
 @end

@@ -35,6 +35,13 @@
 	return self;
 }
 
+-(CGRect) heroBoundingBox {
+   
+    CGRect absoluteBox = CGRectMake(self.position.x, self.position.y, [self boundingBox].size.width, [self boundingBox].size.height);
+    
+    return absoluteBox;
+}
+
 -(void) update:(ccTime)delta {
     
     GameLayer* game = [GameLayer sharedGameLayer];
@@ -149,7 +156,7 @@
     CCAnimation *walkRightAnim = [CCAnimation animationWithSpriteFrames:walkRightAnimFrames delay:0.2f];
     
     self.walkRightAction = [CCRepeatForever actionWithAction:
-                            [CCAnimate actionWithAnimation:walkRightAnim]];
+                                    [CCAnimate actionWithAnimation:walkRightAnim]];
     
     
     //move left animation

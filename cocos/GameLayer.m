@@ -95,6 +95,7 @@ static GameLayer* sharedGameLayer;
 
 -(void) update:(ccTime)deltaTime {
 
+
     [self.delegate setJoystickToHero];
     
 }
