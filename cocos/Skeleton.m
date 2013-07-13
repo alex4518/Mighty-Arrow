@@ -38,44 +38,11 @@
     
     CGPoint oldPos = [self position];
     CGPoint newPos = [hero position];
-    
-    
-    NSLog(@"old:%f",oldPos.x);
-    NSLog(@"new:%f",newPos.x);
-    
-    NSLog(@"abs:%d",abs(self.position.x - hero.position.x));
 
-    
     if (self.numberOfRunningActions == 0) {
-        
         [self moveTowardHero];
-    
-    
-        if (abs(self.position.x - hero.position.x > 30.0f)) {
-                
-
-        
-                [self runAction:self.walkRightAction];
-            
-
-        
-        }
-            
-       else if (abs(self.position.y - hero.position.y> 30))  {
-            
-                
-
-                [self stopAction:self.walkRightAction];
-                
-                [self runAction:self.walkUpAction];
-        }
-
-        
     }
-
 }
-
-
 
 -(void)initAnimations {
     
@@ -96,11 +63,7 @@
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
       [NSString stringWithFormat:@"skeleton-right-right-step.png"]]];
     
-    CCAnimation *walkRightAnim = [CCAnimation animationWithSpriteFrames:walkRightAnimFrames delay:0.2f];
-    
-    self.walkRightAction = [CCRepeatForever actionWithAction:
-                            [CCAnimate actionWithAnimation:walkRightAnim]];
-    
+    self.walkRightAnim = [CCAnimation animationWithSpriteFrames:walkRightAnimFrames delay:0.2f];
     
     //move left animation
     
@@ -118,13 +81,7 @@
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
       [NSString stringWithFormat:@"skeleton-left-right-step.png"]]];
     
-    CCAnimation *walkLeftAnim = [CCAnimation animationWithSpriteFrames:walkLeftAnimFrames delay:0.2f];
-    
-    self.walkLeftAction = [CCRepeatForever actionWithAction:
-                           [CCAnimate actionWithAnimation:walkLeftAnim]];
-    
-    
-    
+    self.walkLeftAnim = [CCAnimation animationWithSpriteFrames:walkLeftAnimFrames delay:0.2f];
     
     //move up animation
     
@@ -138,10 +95,7 @@
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
       [NSString stringWithFormat:@"skeleton-back-right-step.png"]]];
     
-    CCAnimation *walkUpAnim = [CCAnimation animationWithSpriteFrames:walkUpAnimFrames delay:0.3f];
-    
-    self.walkUpAction = [CCRepeatForever actionWithAction:
-                         [CCAnimate actionWithAnimation:walkUpAnim]];
+    self.walkUpAnim= [CCAnimation animationWithSpriteFrames:walkUpAnimFrames delay:0.3f];
     
     
     //move down animation
@@ -156,10 +110,8 @@
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
       [NSString stringWithFormat:@"skeleton-front-right-step.png"]]];
     
-    CCAnimation *walkDownAnim = [CCAnimation animationWithSpriteFrames:walkDownAnimFrames delay:0.3f];
+    self.walkDownAnim = [CCAnimation animationWithSpriteFrames:walkDownAnimFrames delay:0.3f];
     
-    self.walkDownAction = [CCRepeatForever actionWithAction:
-                           [CCAnimate actionWithAnimation:walkDownAnim]];
 }
 
 @end

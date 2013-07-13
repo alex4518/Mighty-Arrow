@@ -35,7 +35,10 @@ id actionMoveDone;
 @property (nonatomic, retain) NSMutableArray *spClosedSteps;
 @property (nonatomic, retain) NSMutableArray *shortestPath;
 
-
+@property (nonatomic, strong) CCAnimation *walkRightAnim;
+@property (nonatomic, strong) CCAnimation *walkLeftAnim;
+@property (nonatomic, strong) CCAnimation *walkUpAnim;
+@property (nonatomic, strong) CCAnimation *walkDownAnim;
 
 +(id) enemyWithType:(EnemyTypes)enemyType;
 - (CGRect) enemyBoundingBox;

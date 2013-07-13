@@ -16,10 +16,10 @@
 +(id) skeleton;
 
 
-@property (nonatomic, strong) CCAction *walkRightAction;
-@property (nonatomic, strong) CCAction *walkLeftAction;
-@property (nonatomic, strong) CCAction *walkUpAction;
-@property (nonatomic, strong) CCAction *walkDownAction;
+@property (nonatomic, strong) CCAnimation *walkRightAnim;
+@property (nonatomic, strong) CCAnimation *walkLeftAnim;
+@property (nonatomic, strong) CCAnimation *walkUpAnim;
+@property (nonatomic, strong) CCAnimation *walkDownAnim;
 
 
 
