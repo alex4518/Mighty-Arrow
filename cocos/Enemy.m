@@ -21,7 +21,7 @@
     switch (enemyType)
     {
         case EnemyType1:
-            enemyFrameName = @"enemy.png";
+            enemyFrameName = @"skeleton-right.png";
             _initialHitPoints = 1;
             break;
         case EnemyType2:
@@ -254,7 +254,7 @@
         if (self.numberOfRunningActions == 0) {
             
             
-            [self moveTowardHero];
+         //   [self moveTowardHero];
 
             }
     }

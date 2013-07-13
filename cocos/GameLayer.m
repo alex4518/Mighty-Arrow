@@ -14,6 +14,7 @@
 #import "AppDelegate.h"
 #import "InputLayer.h"
 #import "Enemy.h"
+#import "Skeleton.h"
 
 
 #pragma mark - GameLayer
@@ -82,9 +83,10 @@ static GameLayer* sharedGameLayer;
     [hero setPosition:ccp(screenHeight/2 , screenWidth/2)];
     [self addChild:hero];
     
-    Enemy* enemy = [Enemy enemyWithType:EnemyType1];
-    [enemy setPosition:ccp(100,100)];
-    [self addChild:enemy];
+    Skeleton* skel = [Skeleton skeleton];
+    [skel setPosition:ccp(100,100)];
+    //[self addChild:enemy];
+    [self addChild:skel];
 
     [self scheduleUpdate];                                   
 

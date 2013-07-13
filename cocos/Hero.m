@@ -126,8 +126,17 @@
         
         if (self.numberOfRunningActions == 0) {
             [self runAction:self.walkDownAction];
+
         }
     }
+    else if (self.attackButton.active == YES) {
+        [self stopAllActions];
+        
+        if (self.numberOfRunningActions == 0) {
+            [self runAction:self.frontAttackAction];
+        }
+    }
+        
     else {
         [self stopAllActions];
     }
@@ -217,7 +226,26 @@
     
     self.walkDownAction = [CCRepeatForever actionWithAction:
                            [CCAnimate actionWithAnimation:walkDownAnim]];
+
+
+
+    NSMutableArray *frontAttackAnimFrames = [NSMutableArray array];
+
+    [frontAttackAnimFrames addObject:
+     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+  [NSString stringWithFormat:@"front_sword.png"]]];
+    
+    [frontAttackAnimFrames addObject:
+     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+      [NSString stringWithFormat:@"front-attack2.png"]]];
+
+    [frontAttackAnimFrames addObject:
+     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+      [NSString stringWithFormat:@"front-attack3.png"]]];
+
+    CCAnimation *frontAttackAnim = [CCAnimation animationWithSpriteFrames:frontAttackAnimFrames delay:0.5f];
+
+    self.frontAttackAction = [CCAnimate actionWithAnimation:frontAttackAnim];
+
 }
-
-
 @end
