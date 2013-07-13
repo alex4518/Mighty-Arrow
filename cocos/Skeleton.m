@@ -32,13 +32,6 @@
 
 -(void) update:(ccTime)delta {
     
-    GameLayer* game = [GameLayer sharedGameLayer];
-    
-    Hero* hero = [game defaultHero];
-    
-    CGPoint oldPos = [self position];
-    CGPoint newPos = [hero position];
-
     if (self.numberOfRunningActions == 0) {
         [self moveTowardHero];
     }

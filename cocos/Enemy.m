@@ -237,13 +237,13 @@
 	id moveCallback = [CCCallFunc actionWithTarget:self selector:@selector(popStepAndAnimate)]; // set the method itself as the callback
     id animationAction;
     if ([game positionForTileCoord:s.position].x > self.position.x) {
-        animationAction = [CCAnimate actionWithAnimation:self.walkRightAnim restoreOriginalFrame:NO];
+        animationAction = [CCAnimate actionWithAnimation:self.walkRightAnim];
     } else if ([game positionForTileCoord:s.position].x < self.position.x) {
-        animationAction = [CCAnimate actionWithAnimation:self.walkLeftAnim restoreOriginalFrame:NO];
+        animationAction = [CCAnimate actionWithAnimation:self.walkLeftAnim];
     } else if ([game positionForTileCoord:s.position].y > self.position.y) {
-        animationAction = [CCAnimate actionWithAnimation:self.walkUpAnim restoreOriginalFrame:NO];
+        animationAction = [CCAnimate actionWithAnimation:self.walkUpAnim];
     } else {
-        animationAction = [CCAnimate actionWithAnimation:self.walkDownAnim restoreOriginalFrame:NO];
+        animationAction = [CCAnimate actionWithAnimation:self.walkDownAnim];
     }
     id spawnAction =[CCSpawn actions: animationAction, moveAction, nil];
 
