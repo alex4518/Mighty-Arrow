@@ -259,16 +259,6 @@
     GameLayer* game = [GameLayer sharedGameLayer];
     
     Hero* hero = [game defaultHero];
-
-    
-    if (abs(hero.position.x - self.position.x) < 400.0f  && abs(hero.position.y - self.position.y) < 400.0f) {
-        if (self.numberOfRunningActions == 0) {
-            
-            
-         //   [self moveTowardHero];
-
-            }
-    }
     
     if (CGRectIntersectsRect(hero.heroBoundingBox, self.enemyBoundingBox)) {
         NSLog(@"Collision detected");
