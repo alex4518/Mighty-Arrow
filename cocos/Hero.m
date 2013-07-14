@@ -94,6 +94,8 @@
         [self stopAction:self.walkDownAction];
         [self stopAction:self.walkLeftAction];
         
+        myDirection = DirectionRight;
+        
         if (self.numberOfRunningActions == 0) {
             [self runAction:self.walkRightAction];
         }
@@ -103,6 +105,9 @@
         [self stopAction:self.walkUpAction];
         [self stopAction:self.walkDownAction];
         [self stopAction:self.walkRightAction];
+        
+        myDirection = DirectionLeft;
+
         
         if (self.numberOfRunningActions == 0) {
             [self runAction:self.walkLeftAction];
@@ -114,6 +119,9 @@
         [self stopAction:self.walkLeftAction];
         [self stopAction:self.walkRightAction];
         
+        myDirection = DirectionUp;
+
+        
         if (self.numberOfRunningActions == 0) {
             [self runAction:self.walkUpAction];
         }
@@ -124,6 +132,9 @@
         [self stopAction:self.walkLeftAction];
         [self stopAction:self.walkRightAction];
         
+        myDirection = DirectionDown;
+
+        
         if (self.numberOfRunningActions == 0) {
             [self runAction:self.walkDownAction];
 
@@ -133,8 +144,14 @@
         [self stopAllActions];
         
         if (self.numberOfRunningActions == 0) {
-            
+            if (myDirection == DirectionRight) {
+                
             [self shootRight];
+            }
+            else if (myDirection == DirectionLeft) {
+                
+                [self shootLeft];
+            }
         }
     }
         
@@ -186,6 +203,49 @@
       nil]];
     
 }
+
+- (void)shootLeft {
+    
+    GameLayer* game = [GameLayer sharedGameLayer];
+    
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    
+    
+    // Choose one of the touches to work with
+    CGPoint location = ccp(0, self.position.y);
+    
+    // Set up initial location of projectile
+    CCSprite *projectile = [CCSprite spriteWithFile:@"arrow-right.png"];
+    projectile.position = self.position;
+    
+    // Determine offset of location to projectile
+    CGPoint offset = ccpSub(location, projectile.position);
+    
+    [game addChild:projectile];
+    
+    int realX = 0 + (projectile.contentSize.width/2);
+    float ratio = (float) offset.y / (float) offset.x;
+    int realY = (realX * ratio) + projectile.position.y;
+    CGPoint realDest = ccp(realX, realY);
+    
+    // Determine the length of how far you're shooting
+    int offRealX = realX - projectile.position.x;
+    int offRealY = realY - projectile.position.y;
+    float length = sqrtf((offRealX*offRealX)+(offRealY*offRealY));
+    float velocity = 480/1; // 480pixels/1sec
+    float realMoveDuration = length/velocity;
+    
+    // Move projectile to actual endpoint
+    [projectile runAction:
+     [CCSequence actions:
+      [CCMoveTo actionWithDuration:realMoveDuration position:realDest],
+      [CCCallBlockN actionWithBlock:^(CCNode *node) {
+         [node removeFromParentAndCleanup:YES];
+     }],
+      nil]];
+    
+}
+
 
 -(void)initAnimations {
     
@@ -271,25 +331,6 @@
     self.walkDownAction = [CCRepeatForever actionWithAction:
                            [CCAnimate actionWithAnimation:walkDownAnim]];
 
-
-
-    NSMutableArray *frontAttackAnimFrames = [NSMutableArray array];
-
-    [frontAttackAnimFrames addObject:
-     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-  [NSString stringWithFormat:@"front_sword.png"]]];
-    
-    [frontAttackAnimFrames addObject:
-     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"front-attack2.png"]]];
-
-    [frontAttackAnimFrames addObject:
-     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"front-attack3.png"]]];
-
-    CCAnimation *frontAttackAnim = [CCAnimation animationWithSpriteFrames:frontAttackAnimFrames delay:0.5f];
-
-    self.frontAttackAction = [CCAnimate actionWithAnimation:frontAttackAnim];
 
 }
 @end

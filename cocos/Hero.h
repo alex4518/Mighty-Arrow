@@ -12,7 +12,17 @@
 #import "SneakyButton.h"
 #import "Enemy.h"
 
-@interface Hero : CCSprite {    
+typedef enum
+{
+    DirectionRight = 0,
+    DirectionLeft,
+    DirectionUp,
+    DirectionDown,
+    
+} Direction;
+
+@interface Hero : CCSprite {
+    Direction myDirection;
 }
 
 +(id) hero;
@@ -26,6 +36,7 @@
 
 @property (nonatomic,strong) SneakyJoystick* joystick;
 @property (nonatomic,assign) SneakyButton *attackButton;
+
 
 
 - (CGRect) heroBoundingBox;
