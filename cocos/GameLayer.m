@@ -90,10 +90,7 @@ static GameLayer* sharedGameLayer;
     //[self addChild:enemy];
     [self addChild:skel];
 
-    [self scheduleUpdate];                                   
-
-    self.isTouchEnabled = YES;
-
+    [self scheduleUpdate];
     
     return self;
 
