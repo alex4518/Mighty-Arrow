@@ -141,102 +141,75 @@
         }
     }
     else if (self.attackButton.active == YES) {
+        
         [self stopAllActions];
         
         if (self.numberOfRunningActions == 0) {
-            if (myDirection == DirectionRight) {
-                
-            [self shootRight];
-            }
-            else if (myDirection == DirectionLeft) {
-                
-                [self shootLeft];
-            }
+            
+            [self shoot];
         }
     }
         
     else {
         [self stopAllActions];
+    }    
+}
+
+- (void)shoot {
+    
+    GameLayer* game = [GameLayer sharedGameLayer];
+    
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    
+    switch (myDirection) {
+        case DirectionRight:
+            realX = winSize.width;
+            realY = self.position.y;
+            
+            self.arrow = [CCSprite spriteWithFile:@"arrow-right.png"];
+            break;
+            
+        case DirectionLeft:
+            realX = 0;
+            realY = self.position.y;
+            
+            self.arrow = [CCSprite spriteWithFile:@"arrow-left.png"];
+            break;
+            
+        case DirectionUp:
+            realX = self.position.x;
+            realY = winSize.height;
+            
+            self.arrow = [CCSprite spriteWithFile:@"arrow-up.png"];
+            break;
+            
+        case DirectionDown:
+            realX = self.position.x;
+            realY = 0;
+            
+            self.arrow = [CCSprite spriteWithFile:@"arrow-down.png"];
+            break;
+            
+        default:
+            break;
     }
     
-}
-
-
-- (void)shootRight {
+    self.arrow.position = self.position;
     
-    GameLayer* game = [GameLayer sharedGameLayer];
-
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
-
+    [game addChild:self.arrow];
     
-    // Choose one of the touches to work with
-    CGPoint location = ccp(winSize.width, self.position.y);
-    
-    // Set up initial location of projectile
-    CCSprite *projectile = [CCSprite spriteWithFile:@"arrow-right.png"];
-    projectile.position = self.position;
-    
-    // Determine offset of location to projectile
-    CGPoint offset = ccpSub(location, projectile.position);
-    
-    [game addChild:projectile];
-    
-    int realX = winSize.width + (projectile.contentSize.width/2);
-    float ratio = (float) offset.y / (float) offset.x;
-    int realY = (realX * ratio) + projectile.position.y;
     CGPoint realDest = ccp(realX, realY);
     
     // Determine the length of how far you're shooting
-    int offRealX = realX - projectile.position.x;
-    int offRealY = realY - projectile.position.y;
+    int offRealX = realX - self.arrow.position.x;
+    int offRealY = realY - self.arrow.position.y;
     float length = sqrtf((offRealX*offRealX)+(offRealY*offRealY));
     float velocity = 480/1; // 480pixels/1sec
     float realMoveDuration = length/velocity;
     
-    // Move projectile to actual endpoint
-    [projectile runAction:
-     [CCSequence actions:
-      [CCMoveTo actionWithDuration:realMoveDuration position:realDest],
-      [CCCallBlockN actionWithBlock:^(CCNode *node) {
-         [node removeFromParentAndCleanup:YES];
-     }],
-      nil]];
-    
-}
-
-- (void)shootLeft {
-    
-    GameLayer* game = [GameLayer sharedGameLayer];
-    
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
-    
-    
-    // Choose one of the touches to work with
-    CGPoint location = ccp(0, self.position.y);
-    
-    // Set up initial location of projectile
-    CCSprite *projectile = [CCSprite spriteWithFile:@"arrow-right.png"];
-    projectile.position = self.position;
-    
-    // Determine offset of location to projectile
-    CGPoint offset = ccpSub(location, projectile.position);
-    
-    [game addChild:projectile];
-    
-    int realX = 0 + (projectile.contentSize.width/2);
-    float ratio = (float) offset.y / (float) offset.x;
-    int realY = (realX * ratio) + projectile.position.y;
-    CGPoint realDest = ccp(realX, realY);
-    
-    // Determine the length of how far you're shooting
-    int offRealX = realX - projectile.position.x;
-    int offRealY = realY - projectile.position.y;
-    float length = sqrtf((offRealX*offRealX)+(offRealY*offRealY));
-    float velocity = 480/1; // 480pixels/1sec
-    float realMoveDuration = length/velocity;
     
     // Move projectile to actual endpoint
-    [projectile runAction:
+    [self.arrow runAction:
      [CCSequence actions:
       [CCMoveTo actionWithDuration:realMoveDuration position:realDest],
       [CCCallBlockN actionWithBlock:^(CCNode *node) {

@@ -23,6 +23,8 @@ typedef enum
 
 @interface Hero : CCSprite {
     Direction myDirection;
+    int realX;
+    int realY;
 }
 
 +(id) hero;
@@ -36,6 +38,9 @@ typedef enum
 
 @property (nonatomic,strong) SneakyJoystick* joystick;
 @property (nonatomic,assign) SneakyButton *attackButton;
+
+@property (nonatomic,assign) CCSprite* arrow;
+
 
 
 
