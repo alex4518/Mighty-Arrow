@@ -133,13 +133,57 @@
         [self stopAllActions];
         
         if (self.numberOfRunningActions == 0) {
-            [self runAction:self.frontAttackAction];
+            
+            [self shootRight];
         }
     }
         
     else {
         [self stopAllActions];
     }
+    
+}
+
+
+- (void)shootRight {
+    
+    GameLayer* game = [GameLayer sharedGameLayer];
+
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+
+    
+    // Choose one of the touches to work with
+    CGPoint location = ccp(winSize.width, self.position.y);
+    
+    // Set up initial location of projectile
+    CCSprite *projectile = [CCSprite spriteWithFile:@"arrow-right.png"];
+    projectile.position = self.position;
+    
+    // Determine offset of location to projectile
+    CGPoint offset = ccpSub(location, projectile.position);
+    
+    [game addChild:projectile];
+    
+    int realX = winSize.width + (projectile.contentSize.width/2);
+    float ratio = (float) offset.y / (float) offset.x;
+    int realY = (realX * ratio) + projectile.position.y;
+    CGPoint realDest = ccp(realX, realY);
+    
+    // Determine the length of how far you're shooting
+    int offRealX = realX - projectile.position.x;
+    int offRealY = realY - projectile.position.y;
+    float length = sqrtf((offRealX*offRealX)+(offRealY*offRealY));
+    float velocity = 480/1; // 480pixels/1sec
+    float realMoveDuration = length/velocity;
+    
+    // Move projectile to actual endpoint
+    [projectile runAction:
+     [CCSequence actions:
+      [CCMoveTo actionWithDuration:realMoveDuration position:realDest],
+      [CCCallBlockN actionWithBlock:^(CCNode *node) {
+         [node removeFromParentAndCleanup:YES];
+     }],
+      nil]];
     
 }
 

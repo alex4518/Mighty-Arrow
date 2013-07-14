@@ -63,7 +63,7 @@
     attackBut.button = [[SneakyButton alloc] initWithRect:CGRectMake(0, 0, 64, 64)];
     attackButton = attackBut.button;
     attackButton.isToggleable = NO;
-    attackButton.isHoldable = YES;
+    attackButton.isHoldable = NO;
     [self addChild:attackBut];
     
     
@@ -82,7 +82,7 @@
     if (!(hero.joystick)){
     
     [hero setJoystick:self.sJoystick];
-        [hero setAttackButton:attackButton];
+    [hero setAttackButton:attackButton];
     }
 }
 

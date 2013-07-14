@@ -92,6 +92,8 @@ static GameLayer* sharedGameLayer;
 
     [self scheduleUpdate];                                   
 
+    self.isTouchEnabled = YES;
+
     
     return self;
 
