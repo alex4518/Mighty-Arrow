@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D2E66ED1792B19A0065D252 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E66EC1792B19A0065D252 /* HUDLayer.m */; };
 		F4044BE51763B3C500E4779C /* map1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = F4044BE41763B3C500E4779C /* map1.tmx */; };
 		F4044BE71763B41200E4779C /* dg_grounds32.png in Resources */ = {isa = PBXBuildFile; fileRef = F4044BE61763B41200E4779C /* dg_grounds32.png */; };
 		F463290A176745AF006AED9E /* ShortestPathStep.m in Sources */ = {isa = PBXBuildFile; fileRef = F4632909176745AF006AED9E /* ShortestPathStep.m */; };
@@ -173,6 +174,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D2E66EB1792B19A0065D252 /* HUDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLayer.h; sourceTree = "<group>"; };
+		1D2E66EC1792B19A0065D252 /* HUDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDLayer.m; sourceTree = "<group>"; };
 		F4044BE41763B3C500E4779C /* map1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map1.tmx; sourceTree = "<group>"; };
 		F4044BE61763B41200E4779C /* dg_grounds32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dg_grounds32.png; sourceTree = "<group>"; };
 		F4632908176745AF006AED9E /* ShortestPathStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortestPathStep.h; path = cocos/ShortestPathStep.h; sourceTree = "<group>"; };
@@ -579,6 +582,8 @@
 		F4BF014C16E7A69E00337261 /* Mighty_Sword */ = {
 			isa = PBXGroup;
 			children = (
+				1D2E66EB1792B19A0065D252 /* HUDLayer.h */,
+				1D2E66EC1792B19A0065D252 /* HUDLayer.m */,
 				F4BF02DA16E7A6A600337261 /* AppDelegate.h */,
 				F4BF02DB16E7A6A600337261 /* AppDelegate.m */,
 				F4F7E0E2175E1CAE00CFE8AE /* Enemy.h */,
@@ -1233,6 +1238,7 @@
 				F4F7E0E7175E1D9C00CFE8AE /* Hero.m in Sources */,
 				F463290A176745AF006AED9E /* ShortestPathStep.m in Sources */,
 				F4D062DC178C5DA300A80E55 /* Skeleton.m in Sources */,
+				1D2E66ED1792B19A0065D252 /* HUDLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

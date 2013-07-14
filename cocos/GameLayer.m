@@ -38,8 +38,12 @@ static GameLayer* sharedGameLayer;
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
     
+    HUDLayer *hud = [HUDLayer node];
+    
     // 'layer' is an autorelease object.
-	GameLayer *layer = [GameLayer node];
+	//GameLayer *layer = [GameLayer node];
+    
+    GameLayer *layer = [[GameLayer alloc] initWithHUD:hud];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -47,8 +51,7 @@ static GameLayer* sharedGameLayer;
     InputLayer* inputLayer=[InputLayer node];
     [scene addChild:inputLayer z:1];
     
-
-
+    [scene addChild:hud z:1];
 	
 	// return the scene
 	return scene;
@@ -70,7 +73,6 @@ static GameLayer* sharedGameLayer;
         self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"map1.tmx"];
         self.bgLayer = [_themap layerNamed:@"bg"];
         [self addChild:_themap z:-1];
-        
     }
     
     Hero* hero = [Hero hero];
@@ -95,10 +97,20 @@ static GameLayer* sharedGameLayer;
 
 }
 
+- (id)initWithHUD:(HUDLayer *)hud
+{
+    if ((self = [self init])) {
+        _hud = hud;
+        // Rest of method...
+    }
+    return self;
+}
+
 -(void) update:(ccTime)deltaTime {
 
 
     [self.delegate setJoystickToHero];
+    [_hud setStatusString:[NSString stringWithFormat:@"Level: %d", 3]];
     
 }
 
