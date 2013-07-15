@@ -41,8 +41,9 @@ typedef enum
 
 @property (nonatomic,assign) CCSprite* arrow;
 
+@property (readonly, nonatomic) int level;
 
-
+- (void) recieveXP:(int)xpPoints;
 
 - (CGRect) heroBoundingBox;
 - (CGRect) arrowBoundingBox;

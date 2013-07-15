@@ -11,6 +11,7 @@
 
 @implementation Skeleton
 
+int xpPoints = 101;
 
 +(id) skeleton
 {
@@ -48,11 +49,11 @@
         [self moveTowardHero];
     }
             
-     if (CGRectIntersectsRect(hero.arrowBoundingBox, self.skeletonBoundingBox)) {
-                NSLog(@"Collision detected");
-    
+    if (CGRectIntersectsRect(hero.arrowBoundingBox, self.skeletonBoundingBox)) {
+        NSLog(@"Collision detected");
         [game removeChild:hero.arrow cleanup:YES];
         [game removeChild:self cleanup:YES];
+        [hero recieveXP:xpPoints];
     }
     
 }

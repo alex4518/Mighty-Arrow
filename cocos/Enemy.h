@@ -40,6 +40,8 @@ id actionMoveDone;
 @property (nonatomic, strong) CCAnimation *walkUpAnim;
 @property (nonatomic, strong) CCAnimation *walkDownAnim;
 
+@property (readonly, nonatomic) int xpPoints;
+
 +(id) enemyWithType:(EnemyTypes)enemyType;
 - (CGRect) enemyBoundingBox;
 - (void)moveTowardHero;

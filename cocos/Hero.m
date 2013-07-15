@@ -17,6 +17,8 @@
 
 @implementation Hero
 
+int currentXP;
+
 +(id) hero
 {
 	return [[self alloc] initWithHeroImage];
@@ -24,15 +26,25 @@
 
 -(id) initWithHeroImage
 {
+    _level = 1;
+    currentXP = 0;
+    
 	// Loading the Hero's sprite using a sprite frame name (eg the filename)
 	if ((self = [super initWithSpriteFrameName:@"right_sword.png"]))
 	{        
         [self initAnimations];
-
         [self scheduleUpdate];
-        
 	}
 	return self;
+}
+
+-(void) recieveXP:(int)xpPoints {
+    if (currentXP + xpPoints < 100) {
+        currentXP += xpPoints;
+    } else {
+        currentXP += xpPoints - 100;
+        _level++;
+    }
 }
 
 -(CGRect) heroBoundingBox {

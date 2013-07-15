@@ -109,7 +109,7 @@ static GameLayer* sharedGameLayer;
 
 
     [self.delegate setJoystickToHero];
-    [_hud setStatusString:[NSString stringWithFormat:@"Level: %d", 3]];
+    [_hud setStatusString:[NSString stringWithFormat:@"Level: %d", [self defaultHero].level]];
     
 }
 

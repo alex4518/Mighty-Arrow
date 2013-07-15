@@ -17,7 +17,6 @@
 {
     NSString* enemyFrameName;
     
-    
     switch (enemyType)
     {
         case EnemyType1:
