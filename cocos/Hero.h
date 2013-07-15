@@ -45,4 +45,6 @@ typedef enum
 
 
 - (CGRect) heroBoundingBox;
+- (CGRect) arrowBoundingBox;
+
 @end

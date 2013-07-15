@@ -59,7 +59,7 @@
 -(CGRect) enemyBoundingBox {
     
     CGRect absoluteBox = CGRectMake(self.position.x, self.position.y, [self boundingBox].size.width, [self boundingBox].size.height);
-    
+        
     return absoluteBox;
 }
 
@@ -244,8 +244,7 @@
         animationAction = [CCAnimate actionWithAnimation:self.walkUpAnim];
     } else {
         animationAction = [CCAnimate actionWithAnimation:self.walkDownAnim];
-    }
-    id spawnAction =[CCSpawn actions: animationAction, moveAction, nil];
+    }    id spawnAction =[CCSpawn actions: animationAction, moveAction, nil];
 
 	// Remove the step
 	[self.shortestPath removeObjectAtIndex:0];
@@ -254,14 +253,5 @@
 	[self runAction:[CCSequence actions:spawnAction, moveCallback, nil]];
 }
 
--(void) update:(ccTime)delta{
-   
-    GameLayer* game = [GameLayer sharedGameLayer];
-    
-    Hero* hero = [game defaultHero];
-    
-    if (CGRectIntersectsRect(hero.heroBoundingBox, self.enemyBoundingBox)) {
-        NSLog(@"Collision detected");
-    }
-}
+
 @end

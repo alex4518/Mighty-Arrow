@@ -42,6 +42,11 @@
     return absoluteBox;
 }
 
+-(CGRect) arrowBoundingBox {
+    
+    return self.arrow.boundingBox;
+}
+
 -(void) update:(ccTime)delta {
     
     GameLayer* game = [GameLayer sharedGameLayer];
@@ -213,10 +218,10 @@
      [CCSequence actions:
       [CCMoveTo actionWithDuration:realMoveDuration position:realDest],
       [CCCallBlockN actionWithBlock:^(CCNode *node) {
+         
          [node removeFromParentAndCleanup:YES];
      }],
       nil]];
-    
 }
 
 
