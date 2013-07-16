@@ -87,7 +87,6 @@ static GameLayer* sharedGameLayer;
     
     Skeleton* skel = [Skeleton skeleton];
     [skel setPosition:ccp(100,100)];
-    //[self addChild:enemy];
     [self addChild:skel];
 
     [self scheduleUpdate];

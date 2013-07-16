@@ -269,12 +269,20 @@ int xpPoints = 101;
     if (CGRectIntersectsRect(hero.arrowBoundingBox, self.enemyBoundingBox)) {
         NSLog(@"Collision detected");
         
-        //[game removeChild:hero.arrow cleanup:YES];
         [hero.arrow removeFromParentAndCleanup:YES];
 
         [game removeChild:self cleanup:YES];
         [hero recieveXP:xpPoints];
     }
+        if (CGRectIntersectsRect(hero.heroBoundingBox, self.enemyBoundingBox)) {
+            hero.heroHealth = hero.heroHealth - 10.0f;
+            NSLog(@"health%i",hero.heroHealth);
+            
+            id actionMoveDone = [CCCallFuncN actionWithTarget:hero
+                                                     selector:@selector(getDamage)];
+            [self runAction:actionMoveDone];
+        }
+    
     
 }
 

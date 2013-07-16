@@ -11,7 +11,6 @@
 #import "SneakyJoystick.h"
 #import "SneakyButton.h"
 #import "Enemy.h"
-#import "Arrow.h"
 
 typedef enum
 {
@@ -35,7 +34,7 @@ typedef enum
 @property (nonatomic, strong) CCAction *walkUpAction;
 @property (nonatomic, strong) CCAction *walkDownAction;
 
-@property (nonatomic, strong) CCAction *frontAttackAction;
+@property (nonatomic, strong) CCAction* takeDamageAction;
 
 @property (nonatomic, strong) SneakyJoystick* joystick;
 @property (nonatomic, assign) SneakyButton *attackButton;
@@ -43,8 +42,11 @@ typedef enum
 @property (nonatomic, strong) CCSprite* arrow;
 
 @property (readonly, nonatomic) int level;
+@property (readwrite) int heroHealth;
+
 
 - (void) recieveXP:(int)xpPoints;
+- (void) getDamage;
 
 - (CGRect) heroBoundingBox;
 - (CGRect) arrowBoundingBox;

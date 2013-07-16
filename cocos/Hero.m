@@ -28,6 +28,7 @@ int currentXP;
 {
     _level = 1;
     currentXP = 0;
+    self.heroHealth = 100;
     
 	// Loading the Hero's sprite using a sprite frame name (eg the filename)
 	if ((self = [super initWithSpriteFrameName:@"right_sword.png"]))
@@ -236,6 +237,16 @@ int currentXP;
       nil]];
 }
 
+-(void) getDamage {
+    
+    if (self.numberOfRunningActions == 0) {
+    
+    CGPoint point = CGPointMake(30, 30);
+    CGPoint pos = ccpAdd(self.position, point);
+    self.takeDamageAction =[CCMoveBy actionWithDuration:0.2f position:pos];
+    [self runAction:self.takeDamageAction];
+    }
+}
 
 -(void)initAnimations {
     
