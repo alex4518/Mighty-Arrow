@@ -176,11 +176,10 @@ int currentXP;
     
     GameLayer* game = [GameLayer sharedGameLayer];
     
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
     
     switch (myDirection) {
         case DirectionRight:
-            realX = winSize.width;
+            realX = (game.themap.mapSize.width * game.themap.tileSize.width)/2;
             realY = self.position.y;
             
             self.arrow = [CCSprite spriteWithFile:@"arrow-right.png"];
@@ -195,7 +194,7 @@ int currentXP;
             
         case DirectionUp:
             realX = self.position.x;
-            realY = winSize.height;
+            realY = (game.themap.mapSize.height * game.themap.tileSize.height)/2;
             
             self.arrow = [CCSprite spriteWithFile:@"arrow-up.png"];
             break;
@@ -225,13 +224,14 @@ int currentXP;
     float realMoveDuration = length/velocity;
     
     
-    // Move projectile to actual endpoint
+    // Move arrow to actual endpoint
     [self.arrow runAction:
      [CCSequence actions:
       [CCMoveTo actionWithDuration:realMoveDuration position:realDest],
       [CCCallBlockN actionWithBlock:^(CCNode *node) {
-         
+   
          [node removeFromParentAndCleanup:YES];
+         
      }],
       nil]];
 }

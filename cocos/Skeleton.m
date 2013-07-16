@@ -11,7 +11,6 @@
 
 @implementation Skeleton
 
-int xpPoints = 101;
 
 +(id) skeleton
 {
@@ -36,26 +35,6 @@ int xpPoints = 101;
     CGRect absoluteBox = CGRectMake(self.position.x, self.position.y, [self boundingBox].size.width, [self boundingBox].size.height);
     
     return absoluteBox;
-}
-
--(void) update:(ccTime)delta {
-    
-    GameLayer* game = [GameLayer sharedGameLayer];
-    
-    Hero* hero = [game defaultHero];
-    
-    if (self.numberOfRunningActions == 0) {
-        
-        [self moveTowardHero];
-    }
-            
-    if (CGRectIntersectsRect(hero.arrowBoundingBox, self.skeletonBoundingBox)) {
-        NSLog(@"Collision detected");
-        [game removeChild:hero.arrow cleanup:YES];
-        [game removeChild:self cleanup:YES];
-        [hero recieveXP:xpPoints];
-    }
-    
 }
 
 -(void)initAnimations {

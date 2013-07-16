@@ -11,6 +11,9 @@
 #import "GameLayer.h"
 
 
+int xpPoints = 101;
+
+
 @implementation Enemy
 
 -(id) initWithType:(EnemyTypes)enemyType
@@ -250,6 +253,29 @@
     
 	// Play actions
 	[self runAction:[CCSequence actions:spawnAction, moveCallback, nil]];
+}
+
+-(void) update:(ccTime)delta {
+    
+    GameLayer* game = [GameLayer sharedGameLayer];
+    
+    Hero* hero = [game defaultHero];
+    
+    if (self.numberOfRunningActions == 0) {
+        
+        [self moveTowardHero];
+    }
+    
+    if (CGRectIntersectsRect(hero.arrowBoundingBox, self.enemyBoundingBox)) {
+        NSLog(@"Collision detected");
+        
+        //[game removeChild:hero.arrow cleanup:YES];
+        [hero.arrow removeFromParentAndCleanup:YES];
+
+        [game removeChild:self cleanup:YES];
+        [hero recieveXP:xpPoints];
+    }
+    
 }
 
 
