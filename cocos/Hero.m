@@ -64,14 +64,8 @@ int currentXP;
     
     GameLayer* game = [GameLayer sharedGameLayer];
     
-    
-    [self applyJoystick:self.joystick
-           forTimeDelta:delta];
-    
     float mapWidth = (game.themap.mapSize.width * game.themap.tileSize.width)/2;
     float mapHeight = (game.themap.mapSize.height * game.themap.tileSize.height)/2;
-    
-	
     
     CGSize winSize = [CCDirector sharedDirector].winSize;
     
@@ -96,6 +90,9 @@ int currentXP;
     } else if (self.position.y > (game.themap.mapSize.height * game.themap.tileSize.height)/2) {
         self.position = ccp(self.position.x, mapWidth);
     }
+    
+    [self applyJoystick:self.joystick
+           forTimeDelta:delta];
 }
 
 
@@ -235,17 +232,6 @@ int currentXP;
          
      }],
       nil]];
-}
-
--(void) getDamage {
-    
-    if (self.numberOfRunningActions == 0) {
-    
-    CGPoint point = CGPointMake(30, 30);
-    CGPoint pos = ccpAdd(self.position, point);
-    self.takeDamageAction =[CCMoveBy actionWithDuration:0.2f position:pos];
-    [self runAction:self.takeDamageAction];
-    }
 }
 
 -(void)initAnimations {

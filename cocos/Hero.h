@@ -34,8 +34,6 @@ typedef enum
 @property (nonatomic, strong) CCAction *walkUpAction;
 @property (nonatomic, strong) CCAction *walkDownAction;
 
-@property (nonatomic, strong) CCAction* takeDamageAction;
-
 @property (nonatomic, strong) SneakyJoystick* joystick;
 @property (nonatomic, assign) SneakyButton *attackButton;
 
@@ -46,7 +44,6 @@ typedef enum
 
 
 - (void) recieveXP:(int)xpPoints;
-- (void) getDamage;
 
 - (CGRect) heroBoundingBox;
 - (CGRect) arrowBoundingBox;

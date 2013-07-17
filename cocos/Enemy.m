@@ -246,7 +246,8 @@ int xpPoints = 101;
         animationAction = [CCAnimate actionWithAnimation:self.walkUpAnim];
     } else {
         animationAction = [CCAnimate actionWithAnimation:self.walkDownAnim];
-    }    id spawnAction =[CCSpawn actions: animationAction, moveAction, nil];
+    }
+    id spawnAction =[CCSpawn actions: animationAction, moveAction, nil];
 
 	// Remove the step
 	[self.shortestPath removeObjectAtIndex:0];
@@ -277,13 +278,8 @@ int xpPoints = 101;
         if (CGRectIntersectsRect(hero.heroBoundingBox, self.enemyBoundingBox)) {
             hero.heroHealth = hero.heroHealth - 10.0f;
             NSLog(@"health%i",hero.heroHealth);
-            
-            id actionMoveDone = [CCCallFuncN actionWithTarget:hero
-                                                     selector:@selector(getDamage)];
-            [self runAction:actionMoveDone];
+  
         }
-    
-    
 }
 
 
