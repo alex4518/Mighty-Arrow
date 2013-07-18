@@ -28,7 +28,7 @@ int currentXP;
 {
     _level = 1;
     currentXP = 0;
-    self.heroHealth = 100;
+    self.heroHealth = kHeroHealth;
     
 	// Loading the Hero's sprite using a sprite frame name (eg the filename)
 	if ((self = [super initWithSpriteFrameName:@"right_sword.png"]))
@@ -37,6 +37,11 @@ int currentXP;
         [self scheduleUpdate];
 	}
 	return self;
+}
+
+-(int) getDamage {
+    
+    return kHeroDamage;
 }
 
 -(void) recieveXP:(int)xpPoints {

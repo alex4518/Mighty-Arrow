@@ -9,6 +9,7 @@
 #import "Enemy.h"
 #import "Hero.h"
 #import "GameLayer.h"
+#import "GameOverLayer.h"
 
 
 int xpPoints = 101;
@@ -258,6 +259,9 @@ int xpPoints = 101;
 
 -(void) update:(ccTime)delta {
     
+    static int playerInvincibleCount = 15;
+    static BOOL playerHit;
+    
     GameLayer* game = [GameLayer sharedGameLayer];
     
     Hero* hero = [game defaultHero];
@@ -270,16 +274,39 @@ int xpPoints = 101;
     if (CGRectIntersectsRect(hero.arrowBoundingBox, self.enemyBoundingBox)) {
         NSLog(@"Collision detected");
         
+        self.health = self.health - hero.getDamage;
+        
         [hero.arrow removeFromParentAndCleanup:YES];
-
+        
+        if (self.health <= 0) {
+        
         [game removeChild:self cleanup:YES];
         [hero recieveXP:xpPoints];
+        }
     }
-        if (CGRectIntersectsRect(hero.heroBoundingBox, self.enemyBoundingBox)) {
-            hero.heroHealth = hero.heroHealth - 10.0f;
+        if (CGRectIntersectsRect(hero.heroBoundingBox, self.enemyBoundingBox) && playerInvincibleCount == 15) {
+            
+            playerHit = YES;
+            
+            hero.heroHealth = hero.heroHealth - self.getDamage;
             NSLog(@"health%i",hero.heroHealth);
   
         }
+    
+    if(playerHit) {
+        if(playerInvincibleCount > 0) {
+            playerInvincibleCount--;
+        } else {
+            playerHit = NO;
+            playerInvincibleCount = 15;
+        }
+    }
+    
+    if (hero.heroHealth <= 0) {
+    
+    CCScene *gameOverScene = [GameOverLayer scene];
+    [[CCDirector sharedDirector] replaceScene:gameOverScene];
+    }
 }
 
 

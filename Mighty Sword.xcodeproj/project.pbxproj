@@ -171,6 +171,7 @@
 		F4D063521792F04000A80E55 /* arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D0634E1792F04000A80E55 /* arrow-left.png */; };
 		F4D063531792F04000A80E55 /* arrow-right.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D0634F1792F04000A80E55 /* arrow-right.png */; };
 		F4D063541792F04000A80E55 /* arrow-up.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063501792F04000A80E55 /* arrow-up.png */; };
+		F4D0635C179805EE00A80E55 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D0635B179805EE00A80E55 /* GameOverLayer.m */; };
 		F4F7E0DD175BADA800CFE8AE /* hero_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = F4F7E0DB175BADA800CFE8AE /* hero_sword.png */; };
 		F4F7E0DE175BADA800CFE8AE /* hero_sword.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */; };
 		F4F7E0E4175E1CB000CFE8AE /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F7E0E3175E1CAF00CFE8AE /* Enemy.m */; };
@@ -498,6 +499,9 @@
 		F4D0634E1792F04000A80E55 /* arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-left.png"; sourceTree = "<group>"; };
 		F4D0634F1792F04000A80E55 /* arrow-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-right.png"; sourceTree = "<group>"; };
 		F4D063501792F04000A80E55 /* arrow-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-up.png"; sourceTree = "<group>"; };
+		F4D0635A179805EE00A80E55 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverLayer.h; sourceTree = "<group>"; };
+		F4D0635B179805EE00A80E55 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverLayer.m; sourceTree = "<group>"; };
+		F4D0635E17982B8100A80E55 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		F4F7E0DB175BADA800CFE8AE /* hero_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero_sword.png; sourceTree = "<group>"; };
 		F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hero_sword.plist; sourceTree = "<group>"; };
 		F4F7E0E2175E1CAE00CFE8AE /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
@@ -555,6 +559,8 @@
 		F4BF012E16E7A69D00337261 = {
 			isa = PBXGroup;
 			children = (
+				F4D0635D17982B6000A80E55 /* Constants */,
+				F4D06359179805BC00A80E55 /* GameOver */,
 				F463290C1767578C006AED9E /* A* Pathfinding */,
 				F481B7D5174E30AA00A89166 /* SneakyInput */,
 				F4BF014C16E7A69E00337261 /* Mighty_Sword */,
@@ -1016,6 +1022,23 @@
 			path = skeleton;
 			sourceTree = "<group>";
 		};
+		F4D06359179805BC00A80E55 /* GameOver */ = {
+			isa = PBXGroup;
+			children = (
+				F4D0635A179805EE00A80E55 /* GameOverLayer.h */,
+				F4D0635B179805EE00A80E55 /* GameOverLayer.m */,
+			);
+			name = GameOver;
+			sourceTree = "<group>";
+		};
+		F4D0635D17982B6000A80E55 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F4D0635E17982B8100A80E55 /* Constants.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		F4D7DC321745021000521C59 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1255,6 +1278,7 @@
 				F463290A176745AF006AED9E /* ShortestPathStep.m in Sources */,
 				F4D062DC178C5DA300A80E55 /* Skeleton.m in Sources */,
 				1D2E66ED1792B19A0065D252 /* HUDLayer.m in Sources */,
+				F4D0635C179805EE00A80E55 /* GameOverLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

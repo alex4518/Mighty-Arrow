@@ -41,6 +41,7 @@ id actionMoveDone;
 @property (nonatomic, strong) CCAnimation *walkUpAnim;
 @property (nonatomic, strong) CCAnimation *walkDownAnim;
 
+@property (nonatomic, readwrite) int health;
 @property (readonly, nonatomic) int xpPoints;
 
 +(id) enemyWithType:(EnemyTypes)enemyType;
@@ -51,6 +52,7 @@ id actionMoveDone;
 - (int)costToMoveFromStep:(ShortestPathStep *)fromStep toAdjacentStep:(ShortestPathStep *)toStep;
 - (void)constructPathAndStartAnimationFromStep:(ShortestPathStep *)step;
 - (void)popStepAndAnimate;
+- (int)getDamage;
 
 
 

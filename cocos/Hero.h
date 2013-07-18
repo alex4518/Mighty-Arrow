@@ -11,6 +11,7 @@
 #import "SneakyJoystick.h"
 #import "SneakyButton.h"
 #import "Enemy.h"
+#import "Constants.h"
 
 typedef enum
 {
@@ -42,7 +43,7 @@ typedef enum
 @property (readonly, nonatomic) int level;
 @property (readwrite) int heroHealth;
 
-
+- (int) getDamage;
 - (void) recieveXP:(int)xpPoints;
 
 - (CGRect) heroBoundingBox;

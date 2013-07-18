@@ -7,6 +7,7 @@
 //
 
 #import "Enemy.h"
+#import "Constants.h"
 
 @interface Skeleton : Enemy {
    

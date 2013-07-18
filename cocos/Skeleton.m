@@ -30,6 +30,11 @@
 	return self;
 }
 
+-(int) getDamage {
+    
+    return kSkeletonDamage;
+}
+
 -(CGRect) skeletonBoundingBox {
     
     CGRect absoluteBox = CGRectMake(self.position.x, self.position.y, [self boundingBox].size.width, [self boundingBox].size.height);
