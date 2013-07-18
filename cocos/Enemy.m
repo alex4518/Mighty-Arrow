@@ -66,6 +66,11 @@ int xpPoints = 101;
     return absoluteBox;
 }
 
+- (int) getDamage {
+    // method will be ovewritten for every enemy
+    return 0;
+}
+
 - (void) moveTowardHero
 {
     GameLayer* game = [GameLayer sharedGameLayer];
