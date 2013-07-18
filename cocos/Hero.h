@@ -41,7 +41,8 @@ typedef enum
 @property (nonatomic, strong) CCSprite* arrow;
 
 @property (readonly, nonatomic) int level;
-@property (readwrite) int heroHealth;
+@property (readwrite, nonatomic) int heroHealth;
+@property (readwrite, nonatomic) BOOL canShoot;
 
 - (int) getDamage;
 - (void) recieveXP:(int)xpPoints;

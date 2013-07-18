@@ -289,13 +289,21 @@ int xpPoints = 101;
         [hero recieveXP:xpPoints];
         }
     }
-        if (CGRectIntersectsRect(hero.heroBoundingBox, self.enemyBoundingBox) && playerInvincibleCount == 15) {
+    if (CGRectIntersectsRect(hero.heroBoundingBox, self.enemyBoundingBox)) {
+        
+        // Hero can't shoot while taking damage
+        hero.canShoot = NO;
+        
+            if (playerInvincibleCount == 15) {
             
             playerHit = YES;
             
             hero.heroHealth = hero.heroHealth - self.getDamage;
             NSLog(@"health%i",hero.heroHealth);
-  
+            }
+        }
+        else {
+            hero.canShoot = YES;
         }
     
     if(playerHit) {
@@ -312,6 +320,7 @@ int xpPoints = 101;
     CCScene *gameOverScene = [GameOverLayer scene];
     [[CCDirector sharedDirector] replaceScene:gameOverScene];
     }
+    
 }
 
 

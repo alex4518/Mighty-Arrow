@@ -29,6 +29,7 @@ int currentXP;
     _level = 1;
     currentXP = 0;
     self.heroHealth = kHeroHealth;
+    self.canShoot = YES;
     
 	// Loading the Hero's sprite using a sprite frame name (eg the filename)
 	if ((self = [super initWithSpriteFrameName:@"right_sword.png"]))
@@ -213,6 +214,9 @@ int currentXP;
             break;
     }
     
+    // While hero is not taking damage he can launch arrows
+    if (self.canShoot) {
+    
     self.arrow.position = self.position;
     
     [game addChild:self.arrow];
@@ -237,6 +241,7 @@ int currentXP;
          
      }],
       nil]];
+    }
 }
 
 -(void)initAnimations {
