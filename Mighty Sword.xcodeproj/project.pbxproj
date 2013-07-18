@@ -559,8 +559,6 @@
 		F4BF012E16E7A69D00337261 = {
 			isa = PBXGroup;
 			children = (
-				F4D0635D17982B6000A80E55 /* Constants */,
-				F4D06359179805BC00A80E55 /* GameOver */,
 				F463290C1767578C006AED9E /* A* Pathfinding */,
 				F481B7D5174E30AA00A89166 /* SneakyInput */,
 				F4BF014C16E7A69E00337261 /* Mighty_Sword */,
@@ -596,22 +594,13 @@
 		F4BF014C16E7A69E00337261 /* Mighty_Sword */ = {
 			isa = PBXGroup;
 			children = (
-				1D2E66EB1792B19A0065D252 /* HUDLayer.h */,
-				1D2E66EC1792B19A0065D252 /* HUDLayer.m */,
+				F4D063601798330D00A80E55 /* Layers */,
+				F4D063611798334600A80E55 /* Hero */,
+				F4D0635F179832E400A80E55 /* Enemies */,
+				F4D06359179805BC00A80E55 /* GameOver */,
+				F4D0635D17982B6000A80E55 /* Constants */,
 				F4BF02DA16E7A6A600337261 /* AppDelegate.h */,
 				F4BF02DB16E7A6A600337261 /* AppDelegate.m */,
-				F4F7E0E2175E1CAE00CFE8AE /* Enemy.h */,
-				F4F7E0E3175E1CAF00CFE8AE /* Enemy.m */,
-				F4D062DA178C5DA300A80E55 /* Skeleton.h */,
-				F4D062DB178C5DA300A80E55 /* Skeleton.m */,
-				F4F7E0E5175E1D8B00CFE8AE /* Hero.h */,
-				F4F7E0E6175E1D9000CFE8AE /* Hero.m */,
-				F4BF02DD16E7A6A600337261 /* GameLayer.h */,
-				F4BF02DE16E7A6A600337261 /* GameLayer.m */,
-				F4929245174EA15E00A69018 /* InputLayer.h */,
-				F4929246174EA15E00A69018 /* InputLayer.m */,
-				F4BF02E016E7A6A600337261 /* IntroLayer.h */,
-				F4BF02E116E7A6A600337261 /* IntroLayer.m */,
 				F4BF014D16E7A69E00337261 /* Resources */,
 				F4BF016516E7A69E00337261 /* libs */,
 				F4BF02D616E7A6A600337261 /* Supporting Files */,
@@ -623,10 +612,9 @@
 		F4BF014D16E7A69E00337261 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F4D0634D1792F04000A80E55 /* arrow-down.png */,
-				F4D0634E1792F04000A80E55 /* arrow-left.png */,
-				F4D0634F1792F04000A80E55 /* arrow-right.png */,
-				F4D063501792F04000A80E55 /* arrow-up.png */,
+				F4D06363179833A900A80E55 /* Hero */,
+				F4D062DD178D65C000A80E55 /* skeleton */,
+				F4D063621798336000A80E55 /* Arrow Sprites */,
 				F4D7DC321745021000521C59 /* images */,
 				F4BF015216E7A69E00337261 /* Default-568h@2x.png */,
 				F481B7BC174D691100A89166 /* game_events.png */,
@@ -1029,6 +1017,7 @@
 				F4D0635B179805EE00A80E55 /* GameOverLayer.m */,
 			);
 			name = GameOver;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		F4D0635D17982B6000A80E55 /* Constants */ = {
@@ -1037,6 +1026,60 @@
 				F4D0635E17982B8100A80E55 /* Constants.h */,
 			);
 			name = Constants;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		F4D0635F179832E400A80E55 /* Enemies */ = {
+			isa = PBXGroup;
+			children = (
+				F4F7E0E2175E1CAE00CFE8AE /* Enemy.h */,
+				F4F7E0E3175E1CAF00CFE8AE /* Enemy.m */,
+				F4D062DA178C5DA300A80E55 /* Skeleton.h */,
+				F4D062DB178C5DA300A80E55 /* Skeleton.m */,
+			);
+			name = Enemies;
+			sourceTree = "<group>";
+		};
+		F4D063601798330D00A80E55 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				F4BF02E016E7A6A600337261 /* IntroLayer.h */,
+				F4BF02E116E7A6A600337261 /* IntroLayer.m */,
+				F4929245174EA15E00A69018 /* InputLayer.h */,
+				F4929246174EA15E00A69018 /* InputLayer.m */,
+				1D2E66EB1792B19A0065D252 /* HUDLayer.h */,
+				1D2E66EC1792B19A0065D252 /* HUDLayer.m */,
+				F4BF02DD16E7A6A600337261 /* GameLayer.h */,
+				F4BF02DE16E7A6A600337261 /* GameLayer.m */,
+			);
+			name = Layers;
+			sourceTree = "<group>";
+		};
+		F4D063611798334600A80E55 /* Hero */ = {
+			isa = PBXGroup;
+			children = (
+				F4F7E0E5175E1D8B00CFE8AE /* Hero.h */,
+				F4F7E0E6175E1D9000CFE8AE /* Hero.m */,
+			);
+			name = Hero;
+			sourceTree = "<group>";
+		};
+		F4D063621798336000A80E55 /* Arrow Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				F4D0634D1792F04000A80E55 /* arrow-down.png */,
+				F4D0634E1792F04000A80E55 /* arrow-left.png */,
+				F4D0634F1792F04000A80E55 /* arrow-right.png */,
+				F4D063501792F04000A80E55 /* arrow-up.png */,
+			);
+			name = "Arrow Sprites";
+			sourceTree = "<group>";
+		};
+		F4D06363179833A900A80E55 /* Hero */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Hero;
 			sourceTree = "<group>";
 		};
 		F4D7DC321745021000521C59 /* images */ = {
@@ -1044,7 +1087,6 @@
 			children = (
 				F4D0633F1790476900A80E55 /* heroenemy.plist */,
 				F4D063401790476900A80E55 /* heroenemy.png */,
-				F4D062DD178D65C000A80E55 /* skeleton */,
 				F463291617678486006AED9E /* small_icon.png */,
 				F463291A17678892006AED9E /* Default@2x.png */,
 				F46329131767841F006AED9E /* default.png */,
