@@ -15,6 +15,7 @@
 #import "InputLayer.h"
 #import "Enemy.h"
 #import "Skeleton.h"
+#import "PauseScene.h"
 
 
 #pragma mark - GameLayer
@@ -52,9 +53,21 @@ static GameLayer* sharedGameLayer;
     [scene addChild:inputLayer z:1];
     
     [scene addChild:hud z:1];
+    
+    CCMenuItem *Pause = [CCMenuItemImage itemWithNormalImage:@"pause.png"
+                                               selectedImage: @"pause.png"
+                                                      target:sharedGameLayer
+                                                    selector:@selector(pause:)];
+    CCMenu *PauseButton = [CCMenu menuWithItems: Pause, nil];
+    PauseButton.position = ccp(30, 300);
+    [scene addChild:PauseButton z:1000];
 	
 	// return the scene
 	return scene;
+}
+
+-(void) pause: (id) sender{
+    [[CCDirector sharedDirector] pushScene:[PauseScene node]];
 }
 
 // on "init" you need to initialize your instance

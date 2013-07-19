@@ -36,8 +36,11 @@
          [CCSequence actions:
           [CCDelayTime actionWithDuration:3],
           [CCCallBlockN actionWithBlock:^(CCNode *node) {
-             [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
-         }],
+          [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];}],
+          [CCCallBlockN actionWithBlock:^(CCNode *node) {
+          [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
+                                                           transitionWithDuration:1
+                                                     scene:[MainMenuLayer scene]]];}],
           nil]];
     }
     return self;

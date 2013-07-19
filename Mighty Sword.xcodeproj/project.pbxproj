@@ -172,6 +172,19 @@
 		F4D063531792F04000A80E55 /* arrow-right.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D0634F1792F04000A80E55 /* arrow-right.png */; };
 		F4D063541792F04000A80E55 /* arrow-up.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063501792F04000A80E55 /* arrow-up.png */; };
 		F4D0635C179805EE00A80E55 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D0635B179805EE00A80E55 /* GameOverLayer.m */; };
+		F4D0636717994E3700A80E55 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D0636617994E3700A80E55 /* MainMenuLayer.m */; };
+		F4D063971799639300A80E55 /* about-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D0638D1799639300A80E55 /* about-selected.png */; };
+		F4D063981799639300A80E55 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D0638E1799639300A80E55 /* about.png */; };
+		F4D063991799639300A80E55 /* controls-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D0638F1799639300A80E55 /* controls-selected.png */; };
+		F4D0639A1799639300A80E55 /* controls.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063901799639300A80E55 /* controls.png */; };
+		F4D0639C1799639300A80E55 /* load-game-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063921799639300A80E55 /* load-game-selected.png */; };
+		F4D0639D1799639300A80E55 /* new-game-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063931799639300A80E55 /* new-game-selected.png */; };
+		F4D0639E1799639300A80E55 /* new-game.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063941799639300A80E55 /* new-game.png */; };
+		F4D0639F1799639300A80E55 /* settings-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063951799639300A80E55 /* settings-selected.png */; };
+		F4D063A01799639300A80E55 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063961799639300A80E55 /* settings.png */; };
+		F4D063A21799641400A80E55 /* load-game.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063A11799641400A80E55 /* load-game.png */; };
+		F4D063A5179985F200A80E55 /* PauseScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D063A4179985F200A80E55 /* PauseScene.m */; };
+		F4D063A8179987C200A80E55 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063A7179987C200A80E55 /* pause.png */; };
 		F4F7E0DD175BADA800CFE8AE /* hero_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = F4F7E0DB175BADA800CFE8AE /* hero_sword.png */; };
 		F4F7E0DE175BADA800CFE8AE /* hero_sword.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */; };
 		F4F7E0E4175E1CB000CFE8AE /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F7E0E3175E1CAF00CFE8AE /* Enemy.m */; };
@@ -502,6 +515,21 @@
 		F4D0635A179805EE00A80E55 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverLayer.h; sourceTree = "<group>"; };
 		F4D0635B179805EE00A80E55 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverLayer.m; sourceTree = "<group>"; };
 		F4D0635E17982B8100A80E55 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		F4D0636517994E3700A80E55 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
+		F4D0636617994E3700A80E55 /* MainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
+		F4D0638D1799639300A80E55 /* about-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about-selected.png"; sourceTree = "<group>"; };
+		F4D0638E1799639300A80E55 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		F4D0638F1799639300A80E55 /* controls-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "controls-selected.png"; sourceTree = "<group>"; };
+		F4D063901799639300A80E55 /* controls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controls.png; sourceTree = "<group>"; };
+		F4D063921799639300A80E55 /* load-game-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "load-game-selected.png"; sourceTree = "<group>"; };
+		F4D063931799639300A80E55 /* new-game-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-game-selected.png"; sourceTree = "<group>"; };
+		F4D063941799639300A80E55 /* new-game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-game.png"; sourceTree = "<group>"; };
+		F4D063951799639300A80E55 /* settings-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-selected.png"; sourceTree = "<group>"; };
+		F4D063961799639300A80E55 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		F4D063A11799641400A80E55 /* load-game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "load-game.png"; sourceTree = "<group>"; };
+		F4D063A3179985F100A80E55 /* PauseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseScene.h; sourceTree = "<group>"; };
+		F4D063A4179985F200A80E55 /* PauseScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseScene.m; sourceTree = "<group>"; };
+		F4D063A7179987C200A80E55 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		F4F7E0DB175BADA800CFE8AE /* hero_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero_sword.png; sourceTree = "<group>"; };
 		F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hero_sword.plist; sourceTree = "<group>"; };
 		F4F7E0E2175E1CAE00CFE8AE /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
@@ -594,6 +622,7 @@
 		F4BF014C16E7A69E00337261 /* Mighty_Sword */ = {
 			isa = PBXGroup;
 			children = (
+				F4D0636417994DFE00A80E55 /* Menu */,
 				F4D063601798330D00A80E55 /* Layers */,
 				F4D063611798334600A80E55 /* Hero */,
 				F4D0635F179832E400A80E55 /* Enemies */,
@@ -612,6 +641,8 @@
 		F4BF014D16E7A69E00337261 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F4D063A6179987AF00A80E55 /* pause */,
+				F4D063681799599000A80E55 /* menu */,
 				F4D06363179833A900A80E55 /* Hero */,
 				F4D062DD178D65C000A80E55 /* skeleton */,
 				F4D063621798336000A80E55 /* Arrow Sprites */,
@@ -1051,6 +1082,8 @@
 				1D2E66EC1792B19A0065D252 /* HUDLayer.m */,
 				F4BF02DD16E7A6A600337261 /* GameLayer.h */,
 				F4BF02DE16E7A6A600337261 /* GameLayer.m */,
+				F4D063A3179985F100A80E55 /* PauseScene.h */,
+				F4D063A4179985F200A80E55 /* PauseScene.m */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -1080,6 +1113,40 @@
 			children = (
 			);
 			name = Hero;
+			sourceTree = "<group>";
+		};
+		F4D0636417994DFE00A80E55 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				F4D0636517994E3700A80E55 /* MainMenuLayer.h */,
+				F4D0636617994E3700A80E55 /* MainMenuLayer.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		F4D063681799599000A80E55 /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				F4D0638D1799639300A80E55 /* about-selected.png */,
+				F4D0638E1799639300A80E55 /* about.png */,
+				F4D0638F1799639300A80E55 /* controls-selected.png */,
+				F4D063901799639300A80E55 /* controls.png */,
+				F4D063A11799641400A80E55 /* load-game.png */,
+				F4D063921799639300A80E55 /* load-game-selected.png */,
+				F4D063931799639300A80E55 /* new-game-selected.png */,
+				F4D063941799639300A80E55 /* new-game.png */,
+				F4D063951799639300A80E55 /* settings-selected.png */,
+				F4D063961799639300A80E55 /* settings.png */,
+			);
+			name = menu;
+			sourceTree = "<group>";
+		};
+		F4D063A6179987AF00A80E55 /* pause */ = {
+			isa = PBXGroup;
+			children = (
+				F4D063A7179987C200A80E55 /* pause.png */,
+			);
+			name = pause;
 			sourceTree = "<group>";
 		};
 		F4D7DC321745021000521C59 /* images */ = {
@@ -1188,6 +1255,17 @@
 				F4D063521792F04000A80E55 /* arrow-left.png in Resources */,
 				F4D063531792F04000A80E55 /* arrow-right.png in Resources */,
 				F4D063541792F04000A80E55 /* arrow-up.png in Resources */,
+				F4D063971799639300A80E55 /* about-selected.png in Resources */,
+				F4D063981799639300A80E55 /* about.png in Resources */,
+				F4D063991799639300A80E55 /* controls-selected.png in Resources */,
+				F4D0639A1799639300A80E55 /* controls.png in Resources */,
+				F4D0639C1799639300A80E55 /* load-game-selected.png in Resources */,
+				F4D0639D1799639300A80E55 /* new-game-selected.png in Resources */,
+				F4D0639E1799639300A80E55 /* new-game.png in Resources */,
+				F4D0639F1799639300A80E55 /* settings-selected.png in Resources */,
+				F4D063A01799639300A80E55 /* settings.png in Resources */,
+				F4D063A21799641400A80E55 /* load-game.png in Resources */,
+				F4D063A8179987C200A80E55 /* pause.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1321,6 +1399,8 @@
 				F4D062DC178C5DA300A80E55 /* Skeleton.m in Sources */,
 				1D2E66ED1792B19A0065D252 /* HUDLayer.m in Sources */,
 				F4D0635C179805EE00A80E55 /* GameOverLayer.m in Sources */,
+				F4D0636717994E3700A80E55 /* MainMenuLayer.m in Sources */,
+				F4D063A5179985F200A80E55 /* PauseScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
