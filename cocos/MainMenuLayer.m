@@ -8,6 +8,7 @@
 
 #import "MainMenuLayer.h"
 #import "GameLayer.h"
+#import "Level1.h"
 
 @implementation MainMenuLayer
 
@@ -69,7 +70,7 @@
 
 - (void) startGame: (id) sender
 {
-    [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
+    [[CCDirector sharedDirector] replaceScene:[Level1 scene]];
 }
 
 -(id) init

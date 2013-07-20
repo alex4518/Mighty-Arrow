@@ -68,15 +68,6 @@
     
     
 }
-
--(void) update:(ccTime)delta
-{
-
-        
-    
-
-}
-
 -(void) setJoystickToHero {
     
     if (!(hero.joystick)){

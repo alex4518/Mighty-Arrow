@@ -36,13 +36,9 @@ static GameLayer* sharedGameLayer;
 // Helper class method that creates a Scene with the GameLayer as the only child.
 +(CCScene *) scene
 {
-	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
     
     HUDLayer *hud = [HUDLayer node];
-    
-    // 'layer' is an autorelease object.
-	//GameLayer *layer = [GameLayer node];
     
     GameLayer *layer = [[GameLayer alloc] initWithHUD:hud];
 	
@@ -83,9 +79,6 @@ static GameLayer* sharedGameLayer;
         CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
         [frameCache addSpriteFramesWithFile:@"heroenemy.plist"];
 		
-        self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"map1.tmx"];
-        self.bgLayer = [_themap layerNamed:@"bg"];
-        [self addChild:_themap z:-1];
     }
     
     Hero* hero = [Hero hero];

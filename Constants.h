@@ -11,8 +11,11 @@
 
 #define kHeroHealth 100
 #define kSkeletonHealth 10
-#define kHeroDamage 10
+#define kHeroInitialDamage 10
 #define kSkeletonDamage 10
+#define kHeroInitialLevel 1
+#define kHeroInitialXp 0
+
 
 
 

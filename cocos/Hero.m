@@ -17,8 +17,6 @@
 
 @implementation Hero
 
-int currentXP;
-
 +(id) hero
 {
 	return [[self alloc] initWithHeroImage];
@@ -26,9 +24,10 @@ int currentXP;
 
 -(id) initWithHeroImage
 {
-    _level = 1;
-    currentXP = 0;
+    self.level = kHeroInitialLevel;
+    currentXP = kHeroInitialXp;
     self.heroHealth = kHeroHealth;
+    self.heroDamageFromLevelUp = 0;
     self.canShoot = YES;
     
 	// Loading the Hero's sprite using a sprite frame name (eg the filename)
@@ -42,7 +41,7 @@ int currentXP;
 
 -(int) getDamage {
     
-    return kHeroDamage;
+    return kHeroInitialDamage + self.heroDamageFromLevelUp;
 }
 
 -(void) recieveXP:(int)xpPoints {
@@ -51,6 +50,7 @@ int currentXP;
     } else {
         currentXP += xpPoints - 100;
         _level++;
+        self.heroDamageFromLevelUp = self.heroDamageFromLevelUp + 5;
     }
 }
 
