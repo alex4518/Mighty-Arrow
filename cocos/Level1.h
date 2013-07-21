@@ -12,7 +12,6 @@
 #import "InputLayer.h"
 
 @interface Level1 : GameLayer {
-    int count;
 }
 
 

@@ -40,21 +40,15 @@ static Level1* Level1Layer;
     NSAssert(objectGroup != nil, @"tile map has no objects object layer");
     
     NSDictionary *spawnPoint;
-    count =0;
+    
     for (spawnPoint in [objectGroup objects]) {
         if ([[spawnPoint valueForKey:@"Enemy"] intValue] == 1){
             int x = [spawnPoint[@"x"] integerValue]/2;
             int y = [spawnPoint[@"y"] integerValue]/2;
 
-            NSLog(@"x%i",x);
-            NSLog(@"y%i",y);
             Skeleton* skel = [Skeleton skeleton];
             [skel setPosition:ccp(x,y)];
             [self addChild:skel];
-
-
-            count++;
-            //NSLog(@"count%i",count);
         }
     }
     
