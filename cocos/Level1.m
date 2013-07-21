@@ -32,7 +32,6 @@ static Level1* Level1Layer;
 		
          self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"lev1.tmx"];
         self.backgroundLayer = [self.themap layerNamed:@"Background"];
-        // self.objectsLayer = [self.themap layerNamed:@"Objects"];
         [self addChild:self.themap z:-1];
     }
     
@@ -44,14 +43,18 @@ static Level1* Level1Layer;
     count =0;
     for (spawnPoint in [objectGroup objects]) {
         if ([[spawnPoint valueForKey:@"Enemy"] intValue] == 1){
-            int  x = [[spawnPoint valueForKey:@"x"] intValue];
-            int y = [[spawnPoint valueForKey:@"y"] intValue];
+            int x = [spawnPoint[@"x"] integerValue]/2;
+            int y = [spawnPoint[@"y"] integerValue]/2;
+
+            NSLog(@"x%i",x);
+            NSLog(@"y%i",y);
             Skeleton* skel = [Skeleton skeleton];
-            [self addChild:skel];
             [skel setPosition:ccp(x,y)];
+            [self addChild:skel];
+
 
             count++;
-            NSLog(@"count%i",count);
+            //NSLog(@"count%i",count);
         }
     }
     
