@@ -7,6 +7,7 @@
 //
 
 #import "Level1.h"
+#import "Skeleton.h"
 
 
 @implementation Level1
@@ -25,12 +26,37 @@ static Level1* Level1Layer;
 	if( (self=[super init]) ) {
         
         Level1Layer = self;
+        
+        CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
+        [frameCache addSpriteFramesWithFile:@"heroenemy.plist"];
 		
-         self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"map1.tmx"];
-         self.bgLayer = [self.themap layerNamed:@"bg"];
+         self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"lev1.tmx"];
+        self.backgroundLayer = [self.themap layerNamed:@"Background"];
+        // self.objectsLayer = [self.themap layerNamed:@"Objects"];
         [self addChild:self.themap z:-1];
     }
+    
+    
+    CCTMXObjectGroup *objectGroup = [self.themap objectGroupNamed:@"Objects"];
+    NSAssert(objectGroup != nil, @"tile map has no objects object layer");
+    
+    NSDictionary *spawnPoint;
+    count =0;
+    for (spawnPoint in [objectGroup objects]) {
+        if ([[spawnPoint valueForKey:@"Enemy"] intValue] == 1){
+            int  x = [[spawnPoint valueForKey:@"x"] intValue];
+            int y = [[spawnPoint valueForKey:@"y"] intValue];
+            Skeleton* skel = [Skeleton skeleton];
+            [self addChild:skel];
+            [skel setPosition:ccp(x,y)];
+
+            count++;
+            NSLog(@"count%i",count);
+        }
+    }
+    
     return self;
+
 }
 
 +(CCScene *) scene

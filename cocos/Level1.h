@@ -12,11 +12,12 @@
 #import "InputLayer.h"
 
 @interface Level1 : GameLayer {
-    
+    int count;
 }
 
 
 @property(nonatomic,strong) CCTMXTiledMap *themap;
-@property(nonatomic,strong) CCTMXLayer *bgLayer ;
+@property(nonatomic,strong) CCTMXLayer *backgroundLayer ;
+@property(nonatomic,strong) CCTMXLayer *objectsLayer ;
 
 @end

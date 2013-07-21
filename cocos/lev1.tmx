@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="dg_grounds32" tilewidth="32" tileheight="32">
+  <image source="dg_grounds32.png" trans="ff00ff" width="288" height="608"/>
+ </tileset>
+ <layer name="Background" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt2TEKgDAMBdDMQo/Uazl5eBcLJaRgTdX88IcMFpU+k9aIu4jswaJcMXvdFiya4+75dNBBBx105HCURUHHP3XhDTrooIMOOuigI4fjkPv9zlv9ER356qo5ajdejTEkhzX/KvOev+tKzxc1H/3z18cIDqumPGskSl15LRHrCs1hGRDzoR2I68PamzyWCPnQ80bKhzasen98FcfA4clFBMdoPSCtD2uvReuvRv0tmmP1fel47sjyfZ7FEfE/Jx3Ykc2RIU4exMSR
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="heroSpawnPoint" x="77" y="1428">
+   <properties>
+    <property name="Hero" value="1"/>
+   </properties>
+  </object>
+  <object name="enemySPawnPoint1" x="665" y="1364">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="enemySpawnPoint2" x="657" y="946">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="enemySpawnPoint3" x="1036" y="1512">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="enemySpawnPoint4" x="1418" y="1276">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="enemySpawnPoint5" x="1367" y="664">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="enemySpawnPoint6" x="206" y="639">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="enemySpawnPoint7" x="397" y="294">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="enemySpawnPoint8" x="888" y="179">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="enemySpawnPoint9" x="964" y="709">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="enemySpawnPoint10" x="1239" y="1091">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object name="enemySpawnPoint11" x="1500" y="106">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+  <object x="1652" y="600"/>
+  <object x="1782" y="939"/>
+  <object x="1703" y="276"/>
+ </objectgroup>
+</map>

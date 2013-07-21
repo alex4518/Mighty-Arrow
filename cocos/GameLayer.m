@@ -90,10 +90,6 @@ static GameLayer* sharedGameLayer;
 
     [hero setPosition:ccp(screenHeight/2 , screenWidth/2)];
     [self addChild:hero];
-    
-    Skeleton* skel = [Skeleton skeleton];
-    [skel setPosition:ccp(100,100)];
-    [self addChild:skel];
 
     [self scheduleUpdate];
     

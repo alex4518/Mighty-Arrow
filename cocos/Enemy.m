@@ -66,6 +66,20 @@ int xpPoints = 101;
     return absoluteBox;
 }
 
+-(CGRect)eyesightBoundingBox {
+
+    CGRect enemySightBoundingBox;
+    CGRect enemyBoundingBox = [self enemyBoundingBox];
+
+        enemySightBoundingBox = CGRectMake(enemyBoundingBox.origin.x - 300.0f,
+                                           enemyBoundingBox.origin.y - 300.0f,
+                                           
+                                           enemyBoundingBox.origin.x + 300.0f,
+                                           enemyBoundingBox.origin.y + 300.0f);
+    return enemySightBoundingBox;
+    
+}
+
 - (int) getDamage {
     // method will be ovewritten for every enemy
     return 0;
@@ -271,10 +285,21 @@ int xpPoints = 101;
     
     Hero* hero = [game defaultHero];
     
-    if (self.numberOfRunningActions == 0) {
         
-        [self moveTowardHero];
+    if (CGRectIntersectsRect(hero.heroBoundingBox, self.eyesightBoundingBox)) {
+
+        if (self.numberOfRunningActions == 0) {
+
+        
+            [self moveTowardHero];
+        }
+            
     }
+    else{
+        
+        [self stopAllActions];
+    }
+    
     
     if (CGRectIntersectsRect(hero.arrowBoundingBox, self.enemyBoundingBox)) {
         NSLog(@"Collision detected");
@@ -294,17 +319,17 @@ int xpPoints = 101;
         // Hero can't shoot while taking damage
         hero.canShoot = NO;
         
-            if (playerInvincibleCount == 15) {
+        if (playerInvincibleCount == 15) {
             
-            playerHit = YES;
+        playerHit = YES;
             
-            hero.heroHealth = hero.heroHealth - self.getDamage;
-            NSLog(@"health%i",hero.heroHealth);
-            }
+        hero.heroHealth = hero.heroHealth - self.getDamage;
+        NSLog(@"health%i",hero.heroHealth);
         }
-        else {
-            hero.canShoot = YES;
-        }
+    }
+    else {
+        hero.canShoot = YES;
+    }
     
     if(playerHit) {
         if(playerInvincibleCount > 0) {
