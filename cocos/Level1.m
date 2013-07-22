@@ -36,9 +36,6 @@ static Level1* Level1Layer;
         [self addChild:self.themap z:-1];
     }
     
-    GameLayer* game = [GameLayer sharedGameLayer];
-    
-    Hero* hero = [game defaultHero];
     
     
     CCTMXObjectGroup *objectGroup = [self.themap objectGroupNamed:@"Objects"];
@@ -86,12 +83,6 @@ static Level1* Level1Layer;
             
              self.exitRect = CGRectMake([spawnPoint[@"x"] floatValue]/2, [spawnPoint[@"y"] floatValue]/2,
                                          [spawnPoint[@"x"] floatValue]/2 + [spawnPoint[@"width"] floatValue]/2,+ [spawnPoint[@"y"] floatValue]/2 + [spawnPoint[@"height"] floatValue]/2);
-          
-            NSLog(@"x%f", [spawnPoint[@"x"] floatValue]/2);
-            NSLog(@"x+%f",[spawnPoint[@"x"] floatValue]/2 + [spawnPoint[@"width"] floatValue]/2);
-
-            
-                
         }
     }
 
