@@ -19,4 +19,9 @@
 @property(nonatomic,strong) CCTMXLayer *backgroundLayer ;
 @property(nonatomic,strong) CCTMXLayer *objectsLayer ;
 
+@property(nonatomic,readwrite) CGRect exitRect ;
+
++(Level1*) Level1Layer;
+
+
 @end

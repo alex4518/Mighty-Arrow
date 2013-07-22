@@ -9,6 +9,8 @@
 #import "Hero.h"
 #import "GameLayer.h"
 #import "InputLayer.h"
+#import "Level1.h"
+#import "MainMenuLayer.h"
 
 
 @interface Hero (PrivateMethods)
@@ -97,6 +99,15 @@
         self.position = ccp(self.position.x, mapWidth);
     }
     
+    Level1 *layer = [Level1 Level1Layer];
+    CGRect exit = [layer exitRect];
+    
+    if (CGRectIntersectsRect(self.boundingBox, exit )) {
+        
+        [[CCDirector sharedDirector] replaceScene:[MainMenuLayer scene]];
+        
+    }
+    
     [self applyJoystick:self.joystick
            forTimeDelta:delta];
 }
@@ -165,7 +176,7 @@
         
         [self stopAllActions];
         
-        if (self.numberOfRunningActions == 0) {
+        if (self.numberOfRunningActions == 1) {
             
             [self shoot];
         }
