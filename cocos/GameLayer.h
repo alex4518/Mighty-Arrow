@@ -17,6 +17,8 @@
 #import "SneakyButtonSkinnedBase.h"
 #import "SneakyJoystickSkinnedBase.h"
 #import "Hero.h"
+#import "SmallPotion.h"
+#import "LargePotion.h"
 
 
 @protocol GameLayerProtocol <NSObject>

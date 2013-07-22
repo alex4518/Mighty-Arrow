@@ -185,7 +185,11 @@
 		F4D063A5179985F200A80E55 /* PauseScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D063A4179985F200A80E55 /* PauseScene.m */; };
 		F4D063A8179987C200A80E55 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063A7179987C200A80E55 /* pause.png */; };
 		F4D063AC179AA41500A80E55 /* Level1.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D063AB179AA41500A80E55 /* Level1.m */; };
-		F4D063B6179C078E00A80E55 /* lev1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = F4D063B5179C078E00A80E55 /* lev1.tmx */; };
+		F4D063B8179C362500A80E55 /* lev1_.tmx in Resources */ = {isa = PBXBuildFile; fileRef = F4D063B7179C362500A80E55 /* lev1_.tmx */; };
+		F4D063BF179D324400A80E55 /* SmallPotion.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D063BE179D324400A80E55 /* SmallPotion.m */; };
+		F4D063C2179D32B800A80E55 /* large-potion.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063C1179D32B800A80E55 /* large-potion.png */; };
+		F4D063C4179D32C800A80E55 /* small-potion.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063C3179D32C800A80E55 /* small-potion.png */; };
+		F4D063C7179D32F000A80E55 /* LargePotion.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D063C6179D32F000A80E55 /* LargePotion.m */; };
 		F4F7E0DD175BADA800CFE8AE /* hero_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = F4F7E0DB175BADA800CFE8AE /* hero_sword.png */; };
 		F4F7E0DE175BADA800CFE8AE /* hero_sword.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */; };
 		F4F7E0E4175E1CB000CFE8AE /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F7E0E3175E1CAF00CFE8AE /* Enemy.m */; };
@@ -532,7 +536,13 @@
 		F4D063A7179987C200A80E55 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		F4D063AA179AA41500A80E55 /* Level1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1.h; sourceTree = "<group>"; };
 		F4D063AB179AA41500A80E55 /* Level1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level1.m; sourceTree = "<group>"; };
-		F4D063B5179C078E00A80E55 /* lev1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lev1.tmx; sourceTree = "<group>"; };
+		F4D063B7179C362500A80E55 /* lev1_.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lev1_.tmx; sourceTree = "<group>"; };
+		F4D063BD179D324400A80E55 /* SmallPotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallPotion.h; sourceTree = "<group>"; };
+		F4D063BE179D324400A80E55 /* SmallPotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallPotion.m; sourceTree = "<group>"; };
+		F4D063C1179D32B800A80E55 /* large-potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "large-potion.png"; sourceTree = "<group>"; };
+		F4D063C3179D32C800A80E55 /* small-potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-potion.png"; sourceTree = "<group>"; };
+		F4D063C5179D32F000A80E55 /* LargePotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargePotion.h; sourceTree = "<group>"; };
+		F4D063C6179D32F000A80E55 /* LargePotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargePotion.m; sourceTree = "<group>"; };
 		F4F7E0DB175BADA800CFE8AE /* hero_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero_sword.png; sourceTree = "<group>"; };
 		F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hero_sword.plist; sourceTree = "<group>"; };
 		F4F7E0E2175E1CAE00CFE8AE /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
@@ -625,6 +635,7 @@
 		F4BF014C16E7A69E00337261 /* Mighty_Sword */ = {
 			isa = PBXGroup;
 			children = (
+				F4D063B9179D315C00A80E55 /* Pickups */,
 				F4D0636417994DFE00A80E55 /* Menu */,
 				F4D063A9179AA3D500A80E55 /* Levels */,
 				F4D063601798330D00A80E55 /* Layers */,
@@ -645,7 +656,8 @@
 		F4BF014D16E7A69E00337261 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F4D063B5179C078E00A80E55 /* lev1.tmx */,
+				F4D063B7179C362500A80E55 /* lev1_.tmx */,
+				F4D063C0179D32A200A80E55 /* Potions */,
 				F4D063A6179987AF00A80E55 /* pause */,
 				F4D063681799599000A80E55 /* menu */,
 				F4D06363179833A900A80E55 /* Hero */,
@@ -1163,6 +1175,26 @@
 			name = Levels;
 			sourceTree = "<group>";
 		};
+		F4D063B9179D315C00A80E55 /* Pickups */ = {
+			isa = PBXGroup;
+			children = (
+				F4D063BD179D324400A80E55 /* SmallPotion.h */,
+				F4D063BE179D324400A80E55 /* SmallPotion.m */,
+				F4D063C5179D32F000A80E55 /* LargePotion.h */,
+				F4D063C6179D32F000A80E55 /* LargePotion.m */,
+			);
+			name = Pickups;
+			sourceTree = "<group>";
+		};
+		F4D063C0179D32A200A80E55 /* Potions */ = {
+			isa = PBXGroup;
+			children = (
+				F4D063C3179D32C800A80E55 /* small-potion.png */,
+				F4D063C1179D32B800A80E55 /* large-potion.png */,
+			);
+			name = Potions;
+			sourceTree = "<group>";
+		};
 		F4D7DC321745021000521C59 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1278,7 +1310,9 @@
 				F4D063A01799639300A80E55 /* settings.png in Resources */,
 				F4D063A21799641400A80E55 /* load-game.png in Resources */,
 				F4D063A8179987C200A80E55 /* pause.png in Resources */,
-				F4D063B6179C078E00A80E55 /* lev1.tmx in Resources */,
+				F4D063B8179C362500A80E55 /* lev1_.tmx in Resources */,
+				F4D063C2179D32B800A80E55 /* large-potion.png in Resources */,
+				F4D063C4179D32C800A80E55 /* small-potion.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1415,6 +1449,8 @@
 				F4D0636717994E3700A80E55 /* MainMenuLayer.m in Sources */,
 				F4D063A5179985F200A80E55 /* PauseScene.m in Sources */,
 				F4D063AC179AA41500A80E55 /* Level1.m in Sources */,
+				F4D063BF179D324400A80E55 /* SmallPotion.m in Sources */,
+				F4D063C7179D32F000A80E55 /* LargePotion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

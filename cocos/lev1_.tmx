@@ -3,6 +3,9 @@
  <tileset firstgid="1" name="dg_grounds32" tilewidth="32" tileheight="32">
   <image source="dg_grounds32.png" trans="ff00ff" width="288" height="608"/>
  </tileset>
+ <tileset firstgid="172" name="potions" tilewidth="32" tileheight="32">
+  <image source="potions.png" trans="ff00ff" width="64" height="32"/>
+ </tileset>
  <layer name="Background" width="50" height="50">
   <data encoding="base64" compression="zlib">
    eJzt2TEKgDAMBdDMQo/Uazl5eBcLJaRgTdX88IcMFpU+k9aIu4jswaJcMXvdFiya4+75dNBBBx105HCURUHHP3XhDTrooIMOOuigI4fjkPv9zlv9ER356qo5ajdejTEkhzX/KvOev+tKzxc1H/3z18cIDqumPGskSl15LRHrCs1hGRDzoR2I68PamzyWCPnQ80bKhzasen98FcfA4clFBMdoPSCtD2uvReuvRv0tmmP1fel47sjyfZ7FEfE/Jx3Ykc2RIU4exMSR
@@ -34,7 +37,7 @@
     <property name="Enemy" value="1"/>
    </properties>
   </object>
-  <object name="enemySpawnPoint5" x="1367" y="664">
+  <object name="enemySpawnPoint5" x="1367" y="664" width="9" height="3">
    <properties>
     <property name="Enemy" value="1"/>
    </properties>
@@ -72,5 +75,15 @@
   <object x="1652" y="600"/>
   <object x="1782" y="939"/>
   <object x="1703" y="276"/>
+  <object name="smallPotion" x="491" y="1281">
+   <properties>
+    <property name="SmallPotions" value="1"/>
+   </properties>
+  </object>
+  <object name="largepotion" x="528" y="1467">
+   <properties>
+    <property name="LargePotions" value="1"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

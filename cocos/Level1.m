@@ -30,7 +30,7 @@ static Level1* Level1Layer;
         CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
         [frameCache addSpriteFramesWithFile:@"heroenemy.plist"];
 		
-         self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"lev1.tmx"];
+         self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"lev1_.tmx"];
         self.backgroundLayer = [self.themap layerNamed:@"Background"];
         [self addChild:self.themap z:-1];
     }
@@ -41,7 +41,7 @@ static Level1* Level1Layer;
     
     NSDictionary *spawnPoint;
     
-    for (spawnPoint in [objectGroup objects]) {
+   /* for (spawnPoint in [objectGroup objects]) {
         if ([[spawnPoint valueForKey:@"Enemy"] intValue] == 1){
             int x = [spawnPoint[@"x"] integerValue]/2;
             int y = [spawnPoint[@"y"] integerValue]/2;
@@ -49,6 +49,28 @@ static Level1* Level1Layer;
             Skeleton* skel = [Skeleton skeleton];
             [skel setPosition:ccp(x,y)];
             [self addChild:skel];
+        }
+    }
+    */
+    for (spawnPoint in [objectGroup objects]) {
+        if ([[spawnPoint valueForKey:@"SmallPotions"] intValue] == 1){
+            int x = [spawnPoint[@"x"] integerValue]/2;
+            int y = [spawnPoint[@"y"] integerValue]/2;
+            
+            SmallPotion* small = [SmallPotion smallPotion];
+            [small setPosition:ccp(x,y)];
+            [self addChild:small];
+        }
+    }
+    
+    for (spawnPoint in [objectGroup objects]) {
+        if ([[spawnPoint valueForKey:@"LargePotions"] intValue] == 1){
+            int x = [spawnPoint[@"x"] integerValue]/2;
+            int y = [spawnPoint[@"y"] integerValue]/2;
+            
+            LargePotion* large = [LargePotion largePotion];
+            [large setPosition:ccp(x,y)];
+            [self addChild:large];
         }
     }
     
