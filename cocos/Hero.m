@@ -12,6 +12,8 @@
 #import "Level1.h"
 #import "Level2.h"
 #import "MainMenuLayer.h"
+#import "SimpleAudioEngine.h"
+
 
 
 @interface Hero (PrivateMethods)
@@ -231,8 +233,11 @@
     if (self.canShoot) {
     
     self.arrow.position = self.position;
-    
+        
     [game addChild:self.arrow];
+        
+    currentPlayedEffect = [[SimpleAudioEngine sharedEngine] playEffect:@"Warfare Arrow.mp3"];
+
     
     CGPoint realDest = ccp(realX, realY);
     

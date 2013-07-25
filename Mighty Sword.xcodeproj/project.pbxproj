@@ -194,6 +194,8 @@
 		F4D0640117A1431D00A80E55 /* lev34.tmx in Resources */ = {isa = PBXBuildFile; fileRef = F4D0640017A1431C00A80E55 /* lev34.tmx */; };
 		F4D0640517A15C1A00A80E55 /* lev_21.tmx in Resources */ = {isa = PBXBuildFile; fileRef = F4D0640417A15C1900A80E55 /* lev_21.tmx */; };
 		F4D0640817A15C4F00A80E55 /* Level2.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D0640717A15C4F00A80E55 /* Level2.m */; };
+		F4D0640A17A170E800A80E55 /* Warfare Arrow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4D0640917A170E700A80E55 /* Warfare Arrow.mp3 */; };
+		F4D0640C17A171BA00A80E55 /* Shoot arrow from bow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4D0640B17A171B900A80E55 /* Shoot arrow from bow.mp3 */; };
 		F4F7E0DD175BADA800CFE8AE /* hero_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = F4F7E0DB175BADA800CFE8AE /* hero_sword.png */; };
 		F4F7E0DE175BADA800CFE8AE /* hero_sword.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */; };
 		F4F7E0E4175E1CB000CFE8AE /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F7E0E3175E1CAF00CFE8AE /* Enemy.m */; };
@@ -552,6 +554,8 @@
 		F4D0640417A15C1900A80E55 /* lev_21.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lev_21.tmx; sourceTree = "<group>"; };
 		F4D0640617A15C4E00A80E55 /* Level2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level2.h; sourceTree = "<group>"; };
 		F4D0640717A15C4F00A80E55 /* Level2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level2.m; sourceTree = "<group>"; };
+		F4D0640917A170E700A80E55 /* Warfare Arrow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Warfare Arrow.mp3"; sourceTree = "<group>"; };
+		F4D0640B17A171B900A80E55 /* Shoot arrow from bow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Shoot arrow from bow.mp3"; sourceTree = "<group>"; };
 		F4F7E0DB175BADA800CFE8AE /* hero_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero_sword.png; sourceTree = "<group>"; };
 		F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hero_sword.plist; sourceTree = "<group>"; };
 		F4F7E0E2175E1CAE00CFE8AE /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
@@ -664,6 +668,8 @@
 		F4BF014D16E7A69E00337261 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F4D0640B17A171B900A80E55 /* Shoot arrow from bow.mp3 */,
+				F4D0640917A170E700A80E55 /* Warfare Arrow.mp3 */,
 				F4D0640417A15C1900A80E55 /* lev_21.tmx */,
 				F4D0640017A1431C00A80E55 /* lev34.tmx */,
 				F4D063D6179EBA1000A80E55 /* tilebs.png */,
@@ -1330,6 +1336,8 @@
 				F4D063D7179EBA1100A80E55 /* tilebs.png in Resources */,
 				F4D0640117A1431D00A80E55 /* lev34.tmx in Resources */,
 				F4D0640517A15C1A00A80E55 /* lev_21.tmx in Resources */,
+				F4D0640A17A170E800A80E55 /* Warfare Arrow.mp3 in Resources */,
+				F4D0640C17A171BA00A80E55 /* Shoot arrow from bow.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

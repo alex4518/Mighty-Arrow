@@ -12,6 +12,8 @@
 #import "SneakyButton.h"
 #import "Enemy.h"
 #import "Constants.h"
+#import <OpenAL/al.h>
+
 
 typedef enum
 {
@@ -27,6 +29,8 @@ typedef enum
     int realX;
     int realY;
     int currentXP;
+    ALuint currentPlayedEffect;
+
 }
 
 +(id) hero;
