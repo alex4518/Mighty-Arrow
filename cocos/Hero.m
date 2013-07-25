@@ -10,6 +10,7 @@
 #import "GameLayer.h"
 #import "InputLayer.h"
 #import "Level1.h"
+#import "Level2.h"
 #import "MainMenuLayer.h"
 
 
@@ -95,8 +96,8 @@
         self.position = ccp(mapWidth - 24.0f, self.position.y);
     } else if (self.position.y < 36.0f) {
         self.position = ccp(self.position.x, 36.0f);
-    } else if (self.position.y > (game.themap.mapSize.height * game.themap.tileSize.height)/2) {
-        self.position = ccp(self.position.x, mapWidth);
+    } else if (self.position.y > (game.themap.mapSize.height * game.themap.tileSize.height)/2 - 24.0f) {
+        self.position = ccp(self.position.x, mapWidth - 24.0f);
     }
     
     Level1 *layer = [Level1 Level1Layer];
@@ -104,9 +105,10 @@
     
     if (CGRectIntersectsRect(self.boundingBox, exit )) {
         
-        [[CCDirector sharedDirector] replaceScene:[MainMenuLayer scene]];
+        [[CCDirector sharedDirector] replaceScene:[Level2 scene]];
         
     }
+    
     
     [self applyJoystick:self.joystick
            forTimeDelta:delta];
@@ -176,7 +178,7 @@
         
         [self stopAllActions];
         
-        if (self.numberOfRunningActions == 1) {
+        if (self.numberOfRunningActions == 0) {
             
             [self shoot];
         }

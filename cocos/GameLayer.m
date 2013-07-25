@@ -90,7 +90,7 @@ static GameLayer* sharedGameLayer;
 
     [hero setPosition:ccp(screenHeight/2 , screenWidth/2)];
     [self addChild:hero];
-
+ 
     [self scheduleUpdate];
     
     return self;

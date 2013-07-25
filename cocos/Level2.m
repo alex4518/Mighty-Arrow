@@ -1,23 +1,23 @@
 //
-//  Level1.m
+//  Level2.m
 //  Mighty Sword
 //
-//  Created by alex on 20/07/2013.
-//  Copyright 2013 alex. All rights reserved.
+//  Created by alex on 25/07/2013.
+//  Copyright (c) 2013 alex. All rights reserved.
 //
 
-#import "Level1.h"
+#import "Level2.h"
 #import "Skeleton.h"
 #import "MainMenuLayer.h"
 
 
-@implementation Level1
+@implementation Level2
 
-static Level1* Level1Layer;
-+(Level1*) Level1Layer
+static Level2* Level2Layer;
++(Level2*) Level2Layer
 {
-	NSAssert(Level1Layer != nil, @"GameScene instance not yet initialized!");
-	return Level1Layer;
+	NSAssert(Level2Layer != nil, @"GameScene instance not yet initialized!");
+	return Level2Layer;
 }
 
 -(id) init
@@ -26,9 +26,9 @@ static Level1* Level1Layer;
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) ) {
         
-        Level1Layer = self;
+        Level2Layer = self;
         
-        self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"lev34.tmx"];
+        self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"lev_21.tmx"];
         self.bgLayer = [self.themap layerNamed:@"Background"];
         [self addChild:self.themap z:-1];
     }
@@ -44,7 +44,7 @@ static Level1* Level1Layer;
         if ([[spawnPoint valueForKey:@"Enemy"] intValue] == 1){
             int x = [spawnPoint[@"x"] integerValue]/2;
             int y = [spawnPoint[@"y"] integerValue]/2;
-
+            
             Skeleton* skel = [Skeleton skeleton];
             [skel setPosition:ccp(x,y)];
             [self addChild:skel];
@@ -73,19 +73,19 @@ static Level1* Level1Layer;
         }
     }
     
-
-  
+    
+    
     for (spawnPoint in [objectGroup objects]) {
         if ([[spawnPoint valueForKey:@"exits"] intValue] == 1){
             
-             self.exitRect = CGRectMake([spawnPoint[@"x"] floatValue]/2, [spawnPoint[@"y"] floatValue]/2,
-                                         [spawnPoint[@"x"] floatValue]/2 + [spawnPoint[@"width"] floatValue]/2,+ [spawnPoint[@"y"] floatValue]/2 + [spawnPoint[@"height"] floatValue]/2);
+            self.exitRect = CGRectMake([spawnPoint[@"x"] floatValue]/2, [spawnPoint[@"y"] floatValue]/2,
+                                       [spawnPoint[@"x"] floatValue]/2 + [spawnPoint[@"width"] floatValue]/2,+ [spawnPoint[@"y"] floatValue]/2 + [spawnPoint[@"height"] floatValue]/2);
         }
     }
-
+    
     
     return self;
-
+    
 }
 
 +(CCScene *) scene
@@ -95,7 +95,7 @@ static Level1* Level1Layer;
     
     HUDLayer *hud = [HUDLayer node];
     
-    Level1 *layer = [[Level1 alloc] initWithHUD:hud];
+    Level2 *layer = [[Level2 alloc] initWithHUD:hud];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -107,7 +107,7 @@ static Level1* Level1Layer;
     
     CCMenuItem *Pause = [CCMenuItemImage itemWithNormalImage:@"pause.png"
                                                selectedImage: @"pause.png"
-                                                      target:Level1Layer
+                                                      target:Level2Layer
                                                     selector:@selector(pause:)];
     CCMenu *PauseButton = [CCMenu menuWithItems: Pause, nil];
     PauseButton.position = ccp(30, 300);

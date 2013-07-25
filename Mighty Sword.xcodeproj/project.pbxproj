@@ -189,7 +189,11 @@
 		F4D063C2179D32B800A80E55 /* large-potion.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063C1179D32B800A80E55 /* large-potion.png */; };
 		F4D063C4179D32C800A80E55 /* small-potion.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063C3179D32C800A80E55 /* small-potion.png */; };
 		F4D063C7179D32F000A80E55 /* LargePotion.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D063C6179D32F000A80E55 /* LargePotion.m */; };
-		F4D063CD179D927C00A80E55 /* lev13.tmx in Resources */ = {isa = PBXBuildFile; fileRef = F4D063CC179D927C00A80E55 /* lev13.tmx */; };
+		F4D063D5179EB9FD00A80E55 /* BiGZZ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4D063D4179EB9FC00A80E55 /* BiGZZ.jpg */; };
+		F4D063D7179EBA1100A80E55 /* tilebs.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D063D6179EBA1000A80E55 /* tilebs.png */; };
+		F4D0640117A1431D00A80E55 /* lev34.tmx in Resources */ = {isa = PBXBuildFile; fileRef = F4D0640017A1431C00A80E55 /* lev34.tmx */; };
+		F4D0640517A15C1A00A80E55 /* lev_21.tmx in Resources */ = {isa = PBXBuildFile; fileRef = F4D0640417A15C1900A80E55 /* lev_21.tmx */; };
+		F4D0640817A15C4F00A80E55 /* Level2.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D0640717A15C4F00A80E55 /* Level2.m */; };
 		F4F7E0DD175BADA800CFE8AE /* hero_sword.png in Resources */ = {isa = PBXBuildFile; fileRef = F4F7E0DB175BADA800CFE8AE /* hero_sword.png */; };
 		F4F7E0DE175BADA800CFE8AE /* hero_sword.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */; };
 		F4F7E0E4175E1CB000CFE8AE /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F7E0E3175E1CAF00CFE8AE /* Enemy.m */; };
@@ -542,7 +546,12 @@
 		F4D063C3179D32C800A80E55 /* small-potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-potion.png"; sourceTree = "<group>"; };
 		F4D063C5179D32F000A80E55 /* LargePotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargePotion.h; sourceTree = "<group>"; };
 		F4D063C6179D32F000A80E55 /* LargePotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargePotion.m; sourceTree = "<group>"; };
-		F4D063CC179D927C00A80E55 /* lev13.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lev13.tmx; sourceTree = "<group>"; };
+		F4D063D4179EB9FC00A80E55 /* BiGZZ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BiGZZ.jpg; sourceTree = "<group>"; };
+		F4D063D6179EBA1000A80E55 /* tilebs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tilebs.png; sourceTree = "<group>"; };
+		F4D0640017A1431C00A80E55 /* lev34.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lev34.tmx; sourceTree = "<group>"; };
+		F4D0640417A15C1900A80E55 /* lev_21.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lev_21.tmx; sourceTree = "<group>"; };
+		F4D0640617A15C4E00A80E55 /* Level2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level2.h; sourceTree = "<group>"; };
+		F4D0640717A15C4F00A80E55 /* Level2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level2.m; sourceTree = "<group>"; };
 		F4F7E0DB175BADA800CFE8AE /* hero_sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero_sword.png; sourceTree = "<group>"; };
 		F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hero_sword.plist; sourceTree = "<group>"; };
 		F4F7E0E2175E1CAE00CFE8AE /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
@@ -640,7 +649,6 @@
 				F4D063A9179AA3D500A80E55 /* Levels */,
 				F4D063601798330D00A80E55 /* Layers */,
 				F4D063611798334600A80E55 /* Hero */,
-				F4D0635F179832E400A80E55 /* Enemies */,
 				F4D06359179805BC00A80E55 /* GameOver */,
 				F4D0635D17982B6000A80E55 /* Constants */,
 				F4BF02DA16E7A6A600337261 /* AppDelegate.h */,
@@ -656,7 +664,10 @@
 		F4BF014D16E7A69E00337261 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F4D063CC179D927C00A80E55 /* lev13.tmx */,
+				F4D0640417A15C1900A80E55 /* lev_21.tmx */,
+				F4D0640017A1431C00A80E55 /* lev34.tmx */,
+				F4D063D6179EBA1000A80E55 /* tilebs.png */,
+				F4D063D4179EB9FC00A80E55 /* BiGZZ.jpg */,
 				F4D063C0179D32A200A80E55 /* Potions */,
 				F4D063A6179987AF00A80E55 /* pause */,
 				F4D063681799599000A80E55 /* menu */,
@@ -1099,6 +1110,7 @@
 				1D2E66EC1792B19A0065D252 /* HUDLayer.m */,
 				F4BF02DD16E7A6A600337261 /* GameLayer.h */,
 				F4BF02DE16E7A6A600337261 /* GameLayer.m */,
+				F4D0635F179832E400A80E55 /* Enemies */,
 				F4D063A3179985F100A80E55 /* PauseScene.h */,
 				F4D063A4179985F200A80E55 /* PauseScene.m */,
 			);
@@ -1171,6 +1183,8 @@
 			children = (
 				F4D063AA179AA41500A80E55 /* Level1.h */,
 				F4D063AB179AA41500A80E55 /* Level1.m */,
+				F4D0640617A15C4E00A80E55 /* Level2.h */,
+				F4D0640717A15C4F00A80E55 /* Level2.m */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -1312,7 +1326,10 @@
 				F4D063A8179987C200A80E55 /* pause.png in Resources */,
 				F4D063C2179D32B800A80E55 /* large-potion.png in Resources */,
 				F4D063C4179D32C800A80E55 /* small-potion.png in Resources */,
-				F4D063CD179D927C00A80E55 /* lev13.tmx in Resources */,
+				F4D063D5179EB9FD00A80E55 /* BiGZZ.jpg in Resources */,
+				F4D063D7179EBA1100A80E55 /* tilebs.png in Resources */,
+				F4D0640117A1431D00A80E55 /* lev34.tmx in Resources */,
+				F4D0640517A15C1A00A80E55 /* lev_21.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1451,6 +1468,7 @@
 				F4D063AC179AA41500A80E55 /* Level1.m in Sources */,
 				F4D063BF179D324400A80E55 /* SmallPotion.m in Sources */,
 				F4D063C7179D32F000A80E55 /* LargePotion.m in Sources */,
+				F4D0640817A15C4F00A80E55 /* Level2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

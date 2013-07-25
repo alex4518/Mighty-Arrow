@@ -51,6 +51,8 @@ int xpPoints = 101;
     self.spClosedSteps = nil;
     self.shortestPath = nil;
 
+
+
     return self;
 }
 
@@ -90,6 +92,7 @@ int xpPoints = 101;
     GameLayer* game = [GameLayer sharedGameLayer];
 
     Hero* hero = [game defaultHero];
+    
     
     CGPoint fromTileCoord = [game tileCoordForPosition:self.position];
     CGPoint toTileCoord = [game tileCoordForPosition:hero.position];
@@ -256,7 +259,6 @@ int xpPoints = 101;
     
 	// Prepare the action and the callback
 	id moveAction = [CCMoveTo actionWithDuration:0.5 position:[game positionForTileCoord:s.position]];
-	id moveCallback = [CCCallFunc actionWithTarget:self selector:@selector(popStepAndAnimate)]; // set the method itself as the callback
     id animationAction;
     if ([game positionForTileCoord:s.position].x > self.position.x) {
         animationAction = [CCAnimate actionWithAnimation:self.walkRightAnim];
@@ -272,8 +274,8 @@ int xpPoints = 101;
 	// Remove the step
 	[self.shortestPath removeObjectAtIndex:0];
     
-	// Play actions
-	[self runAction:[CCSequence actions:spawnAction, moveCallback, nil]];
+	// Play action
+    [self runAction:spawnAction];
 }
 
 -(void) update:(ccTime)delta {
@@ -345,8 +347,7 @@ int xpPoints = 101;
     CCScene *gameOverScene = [GameOverLayer scene];
     [[CCDirector sharedDirector] replaceScene:gameOverScene];
     }
-    
+    NSLog(@"y:%f",self.position.y);
 }
-
 
 @end
