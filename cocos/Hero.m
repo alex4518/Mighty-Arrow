@@ -110,7 +110,7 @@
         [[CCDirector sharedDirector] replaceScene:[Level2 scene]];
         
     }
-    
+    //NSLog(@"x:%f",self.position.x);
     
     [self applyJoystick:self.joystick
            forTimeDelta:delta];

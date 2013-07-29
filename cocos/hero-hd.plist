@@ -44,7 +44,7 @@
 			<key>spriteTrimmed</key>
 			<false/>
 			<key>textureRect</key>
-			<string>{{63, 0}, {61, 88}}</string>
+			<string>{{126, 0}, {61, 88}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -66,7 +66,7 @@
 			<key>spriteTrimmed</key>
 			<false/>
 			<key>textureRect</key>
-			<string>{{126, 0}, {61, 88}}</string>
+			<string>{{0, 0}, {61, 88}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -88,7 +88,7 @@
 			<key>spriteTrimmed</key>
 			<false/>
 			<key>textureRect</key>
-			<string>{{308, 0}, {52, 88}}</string>
+			<string>{{54, 90}, {52, 88}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -132,7 +132,7 @@
 			<key>spriteTrimmed</key>
 			<false/>
 			<key>textureRect</key>
-			<string>{{0, 0}, {61, 88}}</string>
+			<string>{{63, 0}, {61, 88}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -176,7 +176,7 @@
 			<key>spriteTrimmed</key>
 			<false/>
 			<key>textureRect</key>
-			<string>{{362, 0}, {52, 88}}</string>
+			<string>{{308, 0}, {52, 88}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -242,7 +242,7 @@
 			<key>spriteTrimmed</key>
 			<false/>
 			<key>textureRect</key>
-			<string>{{0, 90}, {52, 88}}</string>
+			<string>{{362, 0}, {52, 88}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -264,7 +264,7 @@
 			<key>spriteTrimmed</key>
 			<false/>
 			<key>textureRect</key>
-			<string>{{54, 90}, {52, 88}}</string>
+			<string>{{0, 90}, {52, 88}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -279,17 +279,17 @@
 		<key>size</key>
 		<string>{512, 512}</string>
 		<key>name</key>
-		<string>Untitled</string>
+		<string>Untitled 2</string>
 		<key>target</key>
 		<dict>
 			<key>name</key>
 			<string>default</string>
 			<key>textureFileName</key>
-			<string>hero1</string>
+			<string>hero-hd</string>
 			<key>textureFileExtension</key>
 			<string>.png</string>
 			<key>coordinatesFileName</key>
-			<string>hero1</string>
+			<string>hero-hd</string>
 			<key>coordinatesFileExtension</key>
 			<string>.plist</string>
 			<key>premultipliedAlpha</key>

@@ -347,6 +347,8 @@ int xpPoints = 101;
     CCScene *gameOverScene = [GameOverLayer scene];
     [[CCDirector sharedDirector] replaceScene:gameOverScene];
     }
+    NSLog(@"x:%f",self.position.x);
+
     NSLog(@"y:%f",self.position.y);
 }
 

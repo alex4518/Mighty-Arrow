@@ -28,7 +28,7 @@ static Level1* Level1Layer;
         
         Level1Layer = self;
         
-        self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"lev34.tmx"];
+        self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"lev301.tmx"];
         self.bgLayer = [self.themap layerNamed:@"Background"];
         [self addChild:self.themap z:-1];
     }

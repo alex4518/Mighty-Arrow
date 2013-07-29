@@ -122,13 +122,13 @@ static GameLayer* sharedGameLayer;
 }
 
 - (CGPoint)tileCoordForPosition:(CGPoint)position {
-    int x = position.x / _themap.tileSize.width;
-    int y = ((_themap.mapSize.height * _themap.tileSize.height) - position.y) / _themap.tileSize.height;
+    int x = position.x*2 / _themap.tileSize.width;
+    int y = ((_themap.mapSize.height * _themap.tileSize.height) - position.y*2) / _themap.tileSize.height;
     return ccp(x, y);
 }
 
 - (CGPoint)positionForTileCoord:(CGPoint)tileCoord {
-    int x = (tileCoord.x * _themap.tileSize.width) + _themap.tileSize.width/2;
+    int x = ((tileCoord.x) * _themap.tileSize.width) + _themap.tileSize.width/2;
     int y = (_themap.mapSize.height * _themap.tileSize.height) - (tileCoord.y * _themap.tileSize.height) - _themap.tileSize.height/2;
     return ccp(x, y);
 }

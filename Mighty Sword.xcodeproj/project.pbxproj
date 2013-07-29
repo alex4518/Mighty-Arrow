@@ -13,6 +13,7 @@
 		F46329151767841F006AED9E /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = F46329131767841F006AED9E /* default.png */; };
 		F463291717678486006AED9E /* small_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F463291617678486006AED9E /* small_icon.png */; };
 		F463291B17678892006AED9E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F463291A17678892006AED9E /* Default@2x.png */; };
+		F466680C17A6C5ED0036AF71 /* lev301.tmx in Resources */ = {isa = PBXBuildFile; fileRef = F466680B17A6C5ED0036AF71 /* lev301.tmx */; };
 		F481B7BE174D691100A89166 /* game_events.png in Resources */ = {isa = PBXBuildFile; fileRef = F481B7BC174D691100A89166 /* game_events.png */; };
 		F4929247174EA15E00A69018 /* InputLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4929246174EA15E00A69018 /* InputLayer.m */; };
 		F4929248174EA8A600A69018 /* ColoredCircleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = F481B7DB174E30FB00A89166 /* ColoredCircleSprite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -149,8 +150,6 @@
 		F4BF02DC16E7A6A600337261 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BF02DB16E7A6A600337261 /* AppDelegate.m */; };
 		F4BF02DF16E7A6A600337261 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BF02DE16E7A6A600337261 /* GameLayer.m */; };
 		F4BF02E216E7A6A600337261 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BF02E116E7A6A600337261 /* IntroLayer.m */; };
-		F4C811B0175B945D00D1C287 /* hero1.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C811AE175B945B00D1C287 /* hero1.png */; };
-		F4C811B1175B945D00D1C287 /* hero1.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C811AF175B945C00D1C287 /* hero1.plist */; };
 		F4D062DC178C5DA300A80E55 /* Skeleton.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D062DB178C5DA300A80E55 /* Skeleton.m */; };
 		F4D062EA178D65C000A80E55 /* skeleton-back-left-step.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D062DE178D65C000A80E55 /* skeleton-back-left-step.png */; };
 		F4D062EB178D65C000A80E55 /* skeleton-back-right-step.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D062DF178D65C000A80E55 /* skeleton-back-right-step.png */; };
@@ -211,6 +210,7 @@
 		F46329131767841F006AED9E /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		F463291617678486006AED9E /* small_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = small_icon.png; path = ../small_icon.png; sourceTree = "<group>"; };
 		F463291A17678892006AED9E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		F466680B17A6C5ED0036AF71 /* lev301.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lev301.tmx; sourceTree = "<group>"; };
 		F481B7BC174D691100A89166 /* game_events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_events.png; sourceTree = "<group>"; };
 		F481B7D6174E30CF00A89166 /* SneakyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
 		F481B7D7174E30CF00A89166 /* SneakyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SneakyButton.m; sourceTree = "<group>"; };
@@ -500,8 +500,6 @@
 		F4BF02DE16E7A6A600337261 /* GameLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		F4BF02E016E7A6A600337261 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		F4BF02E116E7A6A600337261 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
-		F4C811AE175B945B00D1C287 /* hero1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero1.png; sourceTree = "<group>"; };
-		F4C811AF175B945C00D1C287 /* hero1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hero1.plist; sourceTree = "<group>"; };
 		F4D062DA178C5DA300A80E55 /* Skeleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skeleton.h; sourceTree = "<group>"; };
 		F4D062DB178C5DA300A80E55 /* Skeleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skeleton.m; sourceTree = "<group>"; };
 		F4D062DE178D65C000A80E55 /* skeleton-back-left-step.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skeleton-back-left-step.png"; sourceTree = "<group>"; };
@@ -668,6 +666,7 @@
 		F4BF014D16E7A69E00337261 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F466680B17A6C5ED0036AF71 /* lev301.tmx */,
 				F4D0640B17A171B900A80E55 /* Shoot arrow from bow.mp3 */,
 				F4D0640917A170E700A80E55 /* Warfare Arrow.mp3 */,
 				F4D0640417A15C1900A80E55 /* lev_21.tmx */,
@@ -1225,8 +1224,6 @@
 				F46329131767841F006AED9E /* default.png */,
 				F4F7E0DB175BADA800CFE8AE /* hero_sword.png */,
 				F4F7E0DC175BADA800CFE8AE /* hero_sword.plist */,
-				F4C811AE175B945B00D1C287 /* hero1.png */,
-				F4C811AF175B945C00D1C287 /* hero1.plist */,
 				F4044BE61763B41200E4779C /* dg_grounds32.png */,
 			);
 			name = images;
@@ -1293,8 +1290,6 @@
 				F4BF016416E7A69E00337261 /* iTunesArtwork in Resources */,
 				F4BF02BA16E7A6A500337261 /* ChangeLog in Resources */,
 				F481B7BE174D691100A89166 /* game_events.png in Resources */,
-				F4C811B0175B945D00D1C287 /* hero1.png in Resources */,
-				F4C811B1175B945D00D1C287 /* hero1.plist in Resources */,
 				F4F7E0DD175BADA800CFE8AE /* hero_sword.png in Resources */,
 				F4F7E0DE175BADA800CFE8AE /* hero_sword.plist in Resources */,
 				F4044BE71763B41200E4779C /* dg_grounds32.png in Resources */,
@@ -1338,6 +1333,7 @@
 				F4D0640517A15C1A00A80E55 /* lev_21.tmx in Resources */,
 				F4D0640A17A170E800A80E55 /* Warfare Arrow.mp3 in Resources */,
 				F4D0640C17A171BA00A80E55 /* Shoot arrow from bow.mp3 in Resources */,
+				F466680C17A6C5ED0036AF71 /* lev301.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
