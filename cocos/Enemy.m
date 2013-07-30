@@ -259,6 +259,7 @@ int xpPoints = 101;
     
 	// Prepare the action and the callback
 	id moveAction = [CCMoveTo actionWithDuration:0.5 position:[game positionForTileCoord:s.position]];
+    id moveCallback = [CCCallFunc actionWithTarget:self selector:@selector(popStepAndAnimate)];
     id animationAction;
     if ([game positionForTileCoord:s.position].x > self.position.x) {
         animationAction = [CCAnimate actionWithAnimation:self.walkRightAnim];
@@ -275,7 +276,9 @@ int xpPoints = 101;
 	[self.shortestPath removeObjectAtIndex:0];
     
 	// Play action
-    [self runAction:spawnAction];
+   // [self runAction:spawnAction];
+    [self runAction:[CCSequence actions:spawnAction, moveCallback, nil]];
+
 }
 
 -(void) update:(ccTime)delta {
@@ -304,7 +307,6 @@ int xpPoints = 101;
     
     
     if (CGRectIntersectsRect(hero.arrowBoundingBox, self.enemyBoundingBox)) {
-        NSLog(@"Collision detected");
         
         self.health = self.health - hero.getDamage;
         
@@ -347,9 +349,6 @@ int xpPoints = 101;
     CCScene *gameOverScene = [GameOverLayer scene];
     [[CCDirector sharedDirector] replaceScene:gameOverScene];
     }
-    NSLog(@"x:%f",self.position.x);
-
-    NSLog(@"y:%f",self.position.y);
 }
 
 @end

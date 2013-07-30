@@ -31,13 +31,13 @@
 // GameLayer
 @interface GameLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
-    CCTMXTiledMap *themap ;
-    CCTMXLayer *bgLayer ;
     HUDLayer * _hud;
 }
 
 @property(nonatomic,strong) CCTMXTiledMap *themap;
 @property(nonatomic,strong) CCTMXLayer *bgLayer ;
+@property(nonatomic,strong) CCTMXLayer *metaLayer ;
+
 
 @property(nonatomic,strong) id <GameLayerProtocol> delegate;
 
@@ -50,7 +50,7 @@
 // returns a CCScene that contains the GameLayer as the only child
 +(CCScene *) scene;
 
-- (BOOL)isWallAtTileCoord:(CGPoint)tileCoord;
+- (BOOL)isBlockedAtTileCoord:(CGPoint)tileCoord;
 
 
 - (CGPoint)tileCoordForPosition:(CGPoint)position;

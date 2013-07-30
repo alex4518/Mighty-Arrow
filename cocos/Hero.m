@@ -102,6 +102,8 @@
         self.position = ccp(self.position.x, mapWidth - 24.0f);
     }
     
+
+    
     Level1 *layer = [Level1 Level1Layer];
     CGRect exit = [layer exitRect];
     
@@ -110,7 +112,6 @@
         [[CCDirector sharedDirector] replaceScene:[Level2 scene]];
         
     }
-    //NSLog(@"x:%f",self.position.x);
     
     [self applyJoystick:self.joystick
            forTimeDelta:delta];
@@ -119,7 +120,24 @@
 
 -(void)applyJoystick:(SneakyJoystick *)aJoystick forTimeDelta:(float)delta {
     
+    GameLayer* game = [GameLayer sharedGameLayer];
+
+    
     CGPoint velocity = ccpMult(aJoystick.velocity, 2000 * delta);
+    
+    CGPoint position = CGPointMake(self.position.x + velocity.x * delta, self.position.y + velocity.y * delta);
+    CGPoint tileCoord = [game tileCoordForPosition:position];
+    int tileGid = [game.metaLayer tileGIDAt:tileCoord];
+    if (tileGid) {
+        NSDictionary *properties = [game.themap propertiesForGID:tileGid];
+        if (properties) {
+            NSString *collision = properties[@"Blocked"];
+            if (collision && [collision isEqualToString:@"1"]) {
+                
+                return;
+            }
+        }
+    }
     
     self.position = CGPointMake(self.position.x + velocity.x * delta, self.position.y + velocity.y * delta);
 

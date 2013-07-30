@@ -24,7 +24,6 @@
 
 @implementation GameLayer
 
-@synthesize bgLayer = _bgLayer,themap =_themap;
 
 static GameLayer* sharedGameLayer;
 +(GameLayer*) sharedGameLayer
@@ -151,8 +150,8 @@ static GameLayer* sharedGameLayer;
     return [properties objectForKey:prop] != nil;
 }
 
--(BOOL)isWallAtTileCoord:(CGPoint)tileCoord {
-    return [self isProp:@"Wall" atTileCoord:tileCoord forLayer:_bgLayer];
+-(BOOL)isBlockedAtTileCoord:(CGPoint)tileCoord {
+    return [self isProp:@"Blocked" atTileCoord:tileCoord forLayer:_metaLayer];
 }
 
 - (NSArray *)walkableAdjacentTilesCoordForTileCoord:(CGPoint)tileCoord
@@ -161,32 +160,31 @@ static GameLayer* sharedGameLayer;
     
 	// Top
 	CGPoint p = CGPointMake(tileCoord.x, tileCoord.y - 1);
-	if ([self isValidTileCoord:p] && ![self isWallAtTileCoord:p]) {
+	if ([self isValidTileCoord:p]  && ![self isBlockedAtTileCoord:p]) {
 		[tmp addObject:[NSValue valueWithCGPoint:p]];
 	}
     
 	// Left
 	p = CGPointMake(tileCoord.x - 1, tileCoord.y);
-	if ([self isValidTileCoord:p] && ![self isWallAtTileCoord:p]) {
+	if ([self isValidTileCoord:p]  && ![self isBlockedAtTileCoord:p]) {
 		[tmp addObject:[NSValue valueWithCGPoint:p]];
 	}
     
 	// Bottom
 	p = CGPointMake(tileCoord.x, tileCoord.y + 1);
-	if ([self isValidTileCoord:p] && ![self isWallAtTileCoord:p]) {
+	if ([self isValidTileCoord:p]  && ![self isBlockedAtTileCoord:p]) {
 		[tmp addObject:[NSValue valueWithCGPoint:p]];
 	}
     
 	// Right
 	p = CGPointMake(tileCoord.x + 1, tileCoord.y);
-	if ([self isValidTileCoord:p] && ![self isWallAtTileCoord:p]) {
+	if ([self isValidTileCoord:p] && ![self isBlockedAtTileCoord:p]) {
 		[tmp addObject:[NSValue valueWithCGPoint:p]];
 	}
     
 	return [NSArray arrayWithArray:tmp];
 }
 
-// on "dealloc" you need to release all your retained objects
 
 #pragma mark GameKit delegate
 
