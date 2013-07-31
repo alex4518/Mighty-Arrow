@@ -239,7 +239,7 @@ int xpPoints = 101;
     
 	// Prepare the action and the callback
 	id moveAction = [CCMoveTo actionWithDuration:0.5 position:[game positionForTileCoord:s.position]];
-    id moveCallback = [CCCallFunc actionWithTarget:self selector:@selector(popStepAndAnimate)];
+    //id moveCallback = [CCCallFunc actionWithTarget:self selector:@selector(popStepAndAnimate)];
     id animationAction;
     if ([game positionForTileCoord:s.position].x > self.position.x) {
         animationAction = [CCAnimate actionWithAnimation:self.walkRightAnim];
@@ -257,7 +257,8 @@ int xpPoints = 101;
     
 	// Play action
    // [self runAction:spawnAction];
-    [self runAction:[CCSequence actions:spawnAction, moveCallback, nil]];
+   // [self runAction:[CCSequence actions:spawnAction, moveCallback, nil]];
+    [self runAction:spawnAction];
 
 }
 

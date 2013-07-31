@@ -7,8 +7,11 @@
 //
 
 #import "Level2.h"
+#import "Level3.h"
 #import "Skeleton.h"
-#import "MainMenuLayer.h"
+#import "Spider.h"
+#import "SmallPotion.h"
+#import "LargePotion.h"
 
 
 @implementation Level2
@@ -28,8 +31,11 @@ static Level2* Level2Layer;
         
         Level2Layer = self;
         
-        self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"lev_21.tmx"];
+        self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"lev_25.tmx"];
         self.bgLayer = [self.themap layerNamed:@"Background"];
+        self.metaLayer = [self.themap layerNamed:@"Meta"];
+        self.metaLayer.visible = NO;
+        
         [self addChild:self.themap z:-1];
     }
     
@@ -41,7 +47,7 @@ static Level2* Level2Layer;
     NSDictionary *spawnPoint;
     
     for (spawnPoint in [objectGroup objects]) {
-        if ([[spawnPoint valueForKey:@"Enemy"] intValue] == 1){
+        if ([[spawnPoint valueForKey:@"Skeleton"] intValue] == 1){
             int x = [spawnPoint[@"x"] integerValue]/2;
             int y = [spawnPoint[@"y"] integerValue]/2;
             
@@ -50,6 +56,18 @@ static Level2* Level2Layer;
             [self addChild:skel];
         }
     }
+    
+    for (spawnPoint in [objectGroup objects]) {
+        if ([[spawnPoint valueForKey:@"Spider"] intValue] == 1){
+            int x = [spawnPoint[@"x"] integerValue]/2;
+            int y = [spawnPoint[@"y"] integerValue]/2;
+            
+            Spider* spider = [Spider spider];
+            [spider setPosition:ccp(x,y)];
+            [self addChild:spider];
+        }
+    }
+    
     
     for (spawnPoint in [objectGroup objects]) {
         if ([[spawnPoint valueForKey:@"SmallPotions"] intValue] == 1){
@@ -87,6 +105,23 @@ static Level2* Level2Layer;
     return self;
     
 }
+
+- (void) update:(ccTime)delta {
+    
+    [self.delegate setJoystickToHero];
+    [_hud setStatusString:[NSString stringWithFormat:@"Level: %d", [self defaultHero].level]];
+    
+    GameLayer* game = [GameLayer sharedGameLayer];
+    
+    Hero* hero = [game defaultHero];
+    
+    if (CGRectIntersectsRect(hero.boundingBox, self.exitRect )) {
+        
+        [[CCDirector sharedDirector] replaceScene: [Level3 scene]];
+        
+    }
+}
+
 
 +(CCScene *) scene
 {

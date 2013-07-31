@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="dg_grounds32" tilewidth="32" tileheight="32">
+  <image source="dg_grounds32.png" width="288" height="608"/>
+  <tile id="31">
+   <properties>
+    <property name="Wall" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="172" name="tilebs" tilewidth="32" tileheight="32">
+  <image source="tilebs.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="428" name="game_events" tilewidth="32" tileheight="32">
+  <image source="game_events.png" width="96" height="32"/>
+  <tile id="1">
+   <properties>
+    <property name="Blocked" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztmcENwyAMRbNApI7ABBmDtTpDTqxbVWouyICNvx0T9fClSiHBz98mlLy3bdt/ei+ufXH9OWKp5jgVz9LcK31GPU7iByJOLz9W1QxHYmgVDs311Tmo/kL13IiDmueKsxj5McNGcbTi0/qBEhVfhP5IDHlxlM71lr+l8zxpXiQcyHmR/haAH6khBAc3bxI/tOtjb+1IgzlqDlR/jOKSapRvjR8zcY7uORu/LTk89RQOLSeKA7FH4qwDCA5kX8/60YvBo6489msR+iMxNMoPiuPOurvTD2ptoHLBzQ/ivCQTY3JnjKcfozzU1w+hotbVN7YXU4eBPwiOPMHh7Qf3XR2dI0pdjfp11bqquXocVA5adWbBIdl/av0oID+0+wFkfzzh/XGp9x7PjTGeHFrf0fvIXp9r5rLa71rsE72YUOftlvm18lLqB4oP/c0UXVd3fdONcM6AuDfK/3PP97l0LqsaQ563R9PTOJ6gD0NEB/E=
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="enemy1" x="852" y="1324" width="16" height="16">
+   <properties>
+    <property name="Lizard" value="1"/>
+   </properties>
+  </object>
+  <object name="enemy2" x="230" y="833" width="16" height="16">
+   <properties>
+    <property name="Lizard" value="1"/>
+   </properties>
+  </object>
+  <object name="enemy3" x="1255" y="739" width="16" height="16">
+   <properties>
+    <property name="lizard" value="1"/>
+   </properties>
+  </object>
+  <object name="enemy4" x="539" y="358" width="16" height="16">
+   <properties>
+    <property name="Lizard" value="1"/>
+   </properties>
+  </object>
+  <object name="enemy5" x="221" y="70" width="16" height="16">
+   <properties>
+    <property name="Lizard" value="1"/>
+   </properties>
+  </object>
+  <object name="enemy6" x="1418" y="1015" width="16" height="16">
+   <properties>
+    <property name="Lizard" value="1"/>
+   </properties>
+  </object>
+  <object name="smallPotion" x="1264" y="427" width="16" height="16">
+   <properties>
+    <property name="SmallPotions" value="1"/>
+   </properties>
+  </object>
+  <object name="largePotion" x="624" y="273" width="16" height="16">
+   <properties>
+    <property name="LargePotions" value="1"/>
+   </properties>
+  </object>
+  <object name="exit" x="58" y="18" width="16" height="16">
+   <properties>
+    <property name="exits" value="1"/>
+   </properties>
+  </object>
+  <object x="-618" y="242"/>
+ </objectgroup>
+ <layer name="Meta" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztmFsOAyEIRaf7X0v32PRjkmZiRB4XrpaTzI8ZeSgCel1N06zwftXM1cqotrOJ57sv0rcDkp2n+zEaz/J5pltjr1cnQk51XLH4OfpfkzeQfvyOreqV4lOabwWltyqOn2vvrR/e/YrQFTFfm/+Y/NLIyu4JNfbM8kKELRWc4odEZe8SKYP1XFt1V8cXe78WhfVehvBvlzWLZvVOlbnmo5qG7CU0aM/eSozv8A6hsY3VF61dFT4g3ikZ9+IGHVcZvlfElVdfRG1FxKoXSy7NqncWTqkfN7M6ztB/I99LouVlv0tUys3Qves9lrlPyZKDgt0+D4z5A6WP+TyemIub/+MDSpp/Gw==
+  </data>
+ </layer>
+</map>

@@ -1,27 +1,25 @@
 //
-//  Level1.m
+//  Level4.m
 //  Mighty Sword
 //
-//  Created by alex on 20/07/2013.
-//  Copyright 2013 alex. All rights reserved.
+//  Created by alex on 31/07/2013.
+//  Copyright (c) 2013 alex. All rights reserved.
 //
 
-#import "Level1.h"
-#import "Level2.h"
-#import "Skeleton.h"
-#import "Spider.h"
-#import "Lizard.h"
+#import "Level4.h"
 #import "SmallPotion.h"
 #import "LargePotion.h"
+#import "Spider.h"
+#import "Skeleton.h"
+#import "Boss.h"
 
-@implementation Level1
+@implementation Level4
 
-static Level1* Level1Layer;
-+(Level1*) Level1Layer
+static Level4* Level4Layer;
++(Level4*) Level4Layer
 {
-	NSAssert(Level1Layer != nil, @"GameScene instance not yet initialized!");
-	
-    return Level1Layer;
+	NSAssert(Level4Layer != nil, @"GameScene instance not yet initialized!");
+	return Level4Layer;
 }
 
 -(id) init
@@ -30,17 +28,16 @@ static Level1* Level1Layer;
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) ) {
         
-        Level1Layer = self;
+        Level4Layer = self;
         
-        self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"lev309.tmx"];
+        self.themap = [CCTMXTiledMap tiledMapWithTMXFile:@"lev_41.tmx"];
         self.bgLayer = [self.themap layerNamed:@"Background"];
         self.metaLayer = [self.themap layerNamed:@"Meta"];
         self.metaLayer.visible = NO;
         
         [self addChild:self.themap z:-1];
-        
     }
-
+    
     
     
     CCTMXObjectGroup *objectGroup = [self.themap objectGroupNamed:@"Objects"];
@@ -49,13 +46,13 @@ static Level1* Level1Layer;
     NSDictionary *spawnPoint;
     
     for (spawnPoint in [objectGroup objects]) {
-        if ([[spawnPoint valueForKey:@"Skeleton"] intValue] == 1){
+        if ([[spawnPoint valueForKey:@"Boss"] intValue] == 1){
             int x = [spawnPoint[@"x"] integerValue]/2;
             int y = [spawnPoint[@"y"] integerValue]/2;
-
-            Skeleton* skel = [Skeleton skeleton];
-            [skel setPosition:ccp(x,y)];
-            [self addChild:skel];            
+            
+            Boss* boss = [Boss boss];
+            [boss setPosition:ccp(x,y)];
+            [self addChild:boss];
         }
     }
     
@@ -92,35 +89,25 @@ static Level1* Level1Layer;
         }
     }
     
-
-  
+    
+    
     for (spawnPoint in [objectGroup objects]) {
         if ([[spawnPoint valueForKey:@"exits"] intValue] == 1){
             
-             self.exitRect = CGRectMake([spawnPoint[@"x"] floatValue]/2, [spawnPoint[@"y"] floatValue]/2,
-                                         [spawnPoint[@"x"] floatValue]/2 + [spawnPoint[@"width"] floatValue]/2,+ [spawnPoint[@"y"] floatValue]/2 + [spawnPoint[@"height"] floatValue]/2);
+            self.exitRect = CGRectMake([spawnPoint[@"x"] floatValue]/2, [spawnPoint[@"y"] floatValue]/2,
+                                       [spawnPoint[@"x"] floatValue]/2 + [spawnPoint[@"width"] floatValue]/2,+ [spawnPoint[@"y"] floatValue]/2 + [spawnPoint[@"height"] floatValue]/2);
         }
     }
-
+    
     
     return self;
-
+    
 }
 
 - (void) update:(ccTime)delta {
     
     [self.delegate setJoystickToHero];
     [_hud setStatusString:[NSString stringWithFormat:@"Level: %d", [self defaultHero].level]];
-    
-    GameLayer* game = [GameLayer sharedGameLayer];
-    
-    Hero* hero = [game defaultHero];
-    
-    if (CGRectIntersectsRect(hero.boundingBox, self.exitRect )) {
-        
-        [[CCDirector sharedDirector] replaceScene: [Level2 scene]];
-        
-    }
 }
 
 +(CCScene *) scene
@@ -130,7 +117,7 @@ static Level1* Level1Layer;
     
     HUDLayer *hud = [HUDLayer node];
     
-    Level1 *layer = [[Level1 alloc] initWithHUD:hud];
+    Level4 *layer = [[Level4 alloc] initWithHUD:hud];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -142,7 +129,7 @@ static Level1* Level1Layer;
     
     CCMenuItem *Pause = [CCMenuItemImage itemWithNormalImage:@"pause.png"
                                                selectedImage: @"pause.png"
-                                                      target:Level1Layer
+                                                      target:Level4Layer
                                                     selector:@selector(pause:)];
     CCMenu *PauseButton = [CCMenu menuWithItems: Pause, nil];
     PauseButton.position = ccp(30, 300);
@@ -151,6 +138,7 @@ static Level1* Level1Layer;
 	// return the scene
 	return scene;
 }
+
 
 
 @end

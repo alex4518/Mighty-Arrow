@@ -81,11 +81,7 @@ static GameLayer* sharedGameLayer;
     Hero* hero = [Hero hero];
     hero.tag = 1;
 
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height;
-
-    [hero setPosition:ccp(screenHeight/2 , screenWidth/2)];
+    [hero setPosition:ccp(100 , 100)];
     [self addChild:hero];
  
     [self scheduleUpdate];
@@ -101,14 +97,6 @@ static GameLayer* sharedGameLayer;
         // Rest of method...
     }
     return self;
-}
-
--(void) update:(ccTime)deltaTime {
-
-
-    [self.delegate setJoystickToHero];
-    [_hud setStatusString:[NSString stringWithFormat:@"Level: %d", [self defaultHero].level]];
-    
 }
 
 -(Hero*) defaultHero

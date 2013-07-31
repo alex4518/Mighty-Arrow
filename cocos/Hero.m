@@ -11,10 +11,12 @@
 #import "InputLayer.h"
 #import "Level1.h"
 #import "Level2.h"
+#import "Level3.h"
+#import "Level4.h"
 #import "MainMenuLayer.h"
 #import "SimpleAudioEngine.h"
 
-//
+
 
 @interface Hero (PrivateMethods)
 -(id) initWithHeroImage;
@@ -100,17 +102,6 @@
         self.position = ccp(self.position.x, 36.0f);
     } else if (self.position.y > (game.themap.mapSize.height * game.themap.tileSize.height)/2 - 24.0f) {
         self.position = ccp(self.position.x, mapWidth - 24.0f);
-    }
-    
-
-    
-    Level1 *layer = [Level1 Level1Layer];
-    CGRect exit = [layer exitRect];
-    
-    if (CGRectIntersectsRect(self.boundingBox, exit )) {
-        
-        [[CCDirector sharedDirector] replaceScene:[Level2 scene]];
-        
     }
     
     [self applyJoystick:self.joystick
@@ -219,28 +210,28 @@
             realX = (game.themap.mapSize.width * game.themap.tileSize.width)/2;
             realY = self.position.y;
             
-            self.arrow = [CCSprite spriteWithSpriteFrameName:@"arrow-right.png"];
+            self.arrow = [CCSprite spriteWithFile:@"arrow-right.png"];
             break;
             
         case DirectionLeft:
             realX = 0;
             realY = self.position.y;
             
-            self.arrow = [CCSprite spriteWithSpriteFrameName:@"arrow-left.png"];
+            self.arrow = [CCSprite spriteWithFile:@"arrow-left.png"];
             break;
             
         case DirectionUp:
             realX = self.position.x;
             realY = (game.themap.mapSize.height * game.themap.tileSize.height)/2;
             
-            self.arrow = [CCSprite spriteWithSpriteFrameName:@"arrow-up.png"];
+            self.arrow = [CCSprite spriteWithFile:@"arrow-up.png"];
             break;
             
         case DirectionDown:
             realX = self.position.x;
             realY = 0;
             
-            self.arrow = [CCSprite spriteWithSpriteFrameName:@"arrow-down.png"];
+            self.arrow = [CCSprite spriteWithFile:@"arrow-down.png"];
             break;
             
         default:
