@@ -1,17 +1,16 @@
 //
-//  Skeleton.m
+//  Spider.m
 //  Mighty Sword
 //
-//  Created by alex on 09/07/2013.
+//  Created by alex on 31/07/2013.
 //  Copyright (c) 2013 alex. All rights reserved.
 //
 
-#import "Skeleton.h"
+#import "Spider.h"
 
-@implementation Skeleton
+@implementation Spider
 
-
-+(id) skeleton
++(id) spider
 {
 	return [[self alloc] initWithEnemyImage];
 }
@@ -19,7 +18,7 @@
 -(id) initWithEnemyImage
 {
 	// Loading the Hero's sprite using a sprite frame name (eg the filename)
-	if ((self = [super initWithSpriteFrameName:@"skeleton-right.png"]))
+	if ((self = [super initWithSpriteFrameName:@"spider-right.png"]))
 	{
         [self initAnimations];
         
@@ -31,7 +30,7 @@
 
 -(int) getDamage {
     
-    return kSkeletonDamage;
+    return kSpiderDamage;
 }
 
 -(void)initAnimations {
@@ -42,16 +41,16 @@
     
     [walkRightAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"skeleton-right-left-step.png"]]];
-   
+      [NSString stringWithFormat:@"spider-right-left-step.png"]]];
+    
     [walkRightAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"skeleton-right.png"]]];
+      [NSString stringWithFormat:@"spider-right.png"]]];
     
     
     [walkRightAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"skeleton-right-right-step.png"]]];
+      [NSString stringWithFormat:@"spider-right-right-step.png"]]];
     
     self.walkRightAnim = [CCAnimation animationWithSpriteFrames:walkRightAnimFrames delay:0.1f];
     
@@ -61,15 +60,15 @@
     
     [walkLeftAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"skeleton-left-left-step.png"]]];
+      [NSString stringWithFormat:@"spider-left-left-step.png"]]];
     
     [walkLeftAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"skeleton-left.png"]]];
+      [NSString stringWithFormat:@"spider-left.png"]]];
     
     [walkLeftAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"skeleton-left-right-step.png"]]];
+      [NSString stringWithFormat:@"spider-left-right-step.png"]]];
     
     self.walkLeftAnim = [CCAnimation animationWithSpriteFrames:walkLeftAnimFrames delay:0.1f];
     
@@ -79,11 +78,11 @@
     
     [walkUpAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"skeleton-back-left-step.png"]]];
+      [NSString stringWithFormat:@"spider-back-left-step.png"]]];
     
     [walkUpAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"skeleton-back-right-step.png"]]];
+      [NSString stringWithFormat:@"spider-back-right-step.png"]]];
     
     self.walkUpAnim= [CCAnimation animationWithSpriteFrames:walkUpAnimFrames delay:0.2f];
     
@@ -94,14 +93,15 @@
     
     [walkDownAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"skeleton-front-left-step.png"]]];
+      [NSString stringWithFormat:@"spider-front-left-step.png"]]];
     
     [walkDownAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"skeleton-front-right-step.png"]]];
+      [NSString stringWithFormat:@"spider-front-right-step.png"]]];
     
     self.walkDownAnim = [CCAnimation animationWithSpriteFrames:walkDownAnimFrames delay:0.2f];
     
 }
+
 
 @end

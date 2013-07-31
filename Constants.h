@@ -10,14 +10,21 @@
 #define Mighty_Sword_Header_h
 
 #define kHeroHealth 100
-#define kSkeletonHealth 10
 #define kHeroInitialDamage 10
-#define kSkeletonDamage 10
 #define kHeroInitialLevel 1
 #define kHeroInitialXp 0
 
+#define kSkeletonHealth 10
+#define kSkeletonDamage 10
 
+#define kSpiderHealth 10
+#define kSpiderDamage 15
 
+#define kLizardHealth 10
+#define kLizardDamage 20
+
+#define kBossHealth 60
+#define kBossDamage 30
 
 
 

@@ -11,23 +11,15 @@
 #import "ShortestPathStep.h"
 #import "Hero.h"
 
-typedef enum
-{
-    EnemyType1 = 0,
-    EnemyType2,
-    EnemyType3,
-    
-    EnemyType_MAX,
-} EnemyTypes;
+
 
 id actionMoveX;
 id actionMoveY;
 id actionMoveDone;
 
-@interface Enemy : CCSprite {
+@interface Enemy : CCSprite 
     
-    EnemyTypes type;
-}
+
 
 @property (readonly, nonatomic) int initialHitPoints;
 @property (readonly, nonatomic) int hitPoints;
@@ -44,9 +36,9 @@ id actionMoveDone;
 @property (nonatomic, readwrite) int health;
 @property (readonly, nonatomic) int xpPoints;
 
-+(id) enemyWithType:(EnemyTypes)enemyType;
 - (CGRect) enemyBoundingBox;
 - (CGRect)eyesightBoundingBox;
+- (void)initAnimations;
 - (void)moveTowardHero;
 - (void)insertInOpenSteps:(ShortestPathStep *)step;
 - (int)computeHScoreFromCoord:(CGPoint)fromCoord toCoord:(CGPoint)toCoord;
@@ -54,6 +46,7 @@ id actionMoveDone;
 - (void)constructPathAndStartAnimationFromStep:(ShortestPathStep *)step;
 - (void)popStepAndAnimate;
 - (int)getDamage;
+
 
 
 

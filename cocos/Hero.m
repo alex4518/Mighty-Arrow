@@ -14,7 +14,7 @@
 #import "MainMenuLayer.h"
 #import "SimpleAudioEngine.h"
 
-
+//
 
 @interface Hero (PrivateMethods)
 -(id) initWithHeroImage;
@@ -36,7 +36,7 @@
     self.canShoot = YES;
     
 	// Loading the Hero's sprite using a sprite frame name (eg the filename)
-	if ((self = [super initWithSpriteFrameName:@"right_sword.png"]))
+	if ((self = [super initWithSpriteFrameName:@"right.png"]))
 	{        
         [self initAnimations];
         [self scheduleUpdate];
@@ -219,28 +219,28 @@
             realX = (game.themap.mapSize.width * game.themap.tileSize.width)/2;
             realY = self.position.y;
             
-            self.arrow = [CCSprite spriteWithFile:@"arrow-right.png"];
+            self.arrow = [CCSprite spriteWithSpriteFrameName:@"arrow-right.png"];
             break;
             
         case DirectionLeft:
             realX = 0;
             realY = self.position.y;
             
-            self.arrow = [CCSprite spriteWithFile:@"arrow-left.png"];
+            self.arrow = [CCSprite spriteWithSpriteFrameName:@"arrow-left.png"];
             break;
             
         case DirectionUp:
             realX = self.position.x;
             realY = (game.themap.mapSize.height * game.themap.tileSize.height)/2;
             
-            self.arrow = [CCSprite spriteWithFile:@"arrow-up.png"];
+            self.arrow = [CCSprite spriteWithSpriteFrameName:@"arrow-up.png"];
             break;
             
         case DirectionDown:
             realX = self.position.x;
             realY = 0;
             
-            self.arrow = [CCSprite spriteWithFile:@"arrow-down.png"];
+            self.arrow = [CCSprite spriteWithSpriteFrameName:@"arrow-down.png"];
             break;
             
         default:
@@ -288,16 +288,16 @@
     
     [walkRightAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"right_left_step_sword.png"]]];
+      [NSString stringWithFormat:@"right_left_step.png"]]];
     
     [walkRightAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"right_sword.png"]]];
+      [NSString stringWithFormat:@"right.png"]]];
     
     
     [walkRightAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"right_right_step_sword.png"]]];
+      [NSString stringWithFormat:@"right_right_step.png"]]];
     
     CCAnimation *walkRightAnim = [CCAnimation animationWithSpriteFrames:walkRightAnimFrames delay:0.2f];
     
@@ -311,15 +311,15 @@
     
     [walkLeftAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"left_left_step_sword.png"]]];
+      [NSString stringWithFormat:@"left_left_step.png"]]];
     
     [walkLeftAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"left_sword.png"]]];
+      [NSString stringWithFormat:@"left.png"]]];
     
     [walkLeftAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"left_right_step_sword.png"]]];
+      [NSString stringWithFormat:@"left_right_step.png"]]];
     
     CCAnimation *walkLeftAnim = [CCAnimation animationWithSpriteFrames:walkLeftAnimFrames delay:0.2f];
     
@@ -353,11 +353,11 @@
     
     [walkDownAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"front_left_step_sword.png"]]];
+      [NSString stringWithFormat:@"front_left_step.png"]]];
     
     [walkDownAnimFrames addObject:
      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-      [NSString stringWithFormat:@"front_right_step_sword.png"]]];
+      [NSString stringWithFormat:@"front_right_step.png"]]];
     
     CCAnimation *walkDownAnim = [CCAnimation animationWithSpriteFrames:walkDownAnimFrames delay:0.3f];
     

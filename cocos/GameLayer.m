@@ -13,8 +13,6 @@
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 #import "InputLayer.h"
-#import "Enemy.h"
-#import "Skeleton.h"
 #import "PauseScene.h"
 
 
@@ -76,7 +74,7 @@ static GameLayer* sharedGameLayer;
 
         
         CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
-        [frameCache addSpriteFramesWithFile:@"heroenemy.plist"];
+        [frameCache addSpriteFramesWithFile:@"chars.plist"];
 		
     }
     

@@ -10,6 +10,8 @@
 #import "Hero.h"
 #import "GameLayer.h"
 #import "GameOverLayer.h"
+#import "Constants.h"
+
 
 
 int xpPoints = 101;
@@ -17,35 +19,13 @@ int xpPoints = 101;
 
 @implementation Enemy
 
--(id) initWithType:(EnemyTypes)enemyType
-{
-    NSString* enemyFrameName;
-    
-    switch (enemyType)
-    {
-        case EnemyType1:
-            enemyFrameName = @"skeleton-right.png";
-            _initialHitPoints = 1;
-            break;
-        case EnemyType2:
-          //  enemyFrameName = @"monster-b.png";
-            _initialHitPoints = 3;
-            break;
-        case EnemyType3:
-           // enemyFrameName = @"monster-c.png";
-            _initialHitPoints = 15;
-            break;
-        default:
-            [NSException exceptionWithName:@"Enemy Exception"
-                                    reason:@"unhandled enemy type"
-                                  userInfo:nil];
-    }
-            self = [super initWithSpriteFrameName:enemyFrameName];
-            if (self)
-            {
-                [self scheduleUpdate];
+-(id) init {
+
+    if( (self=[super init])) {
+        
+        [self scheduleUpdate];
                 
-            }
+        }
     
     self.spOpenSteps = nil;
     self.spClosedSteps = nil;
@@ -56,10 +36,10 @@ int xpPoints = 101;
     return self;
 }
 
-+(id) enemyWithType:(EnemyTypes)enemyType
-{
-    return [[self alloc] initWithType:enemyType];
+- (void)initAnimations {
+    //method will be overwritten
 }
+
 
 -(CGRect) enemyBoundingBox {
     

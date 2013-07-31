@@ -6,25 +6,13 @@
 //  Copyright (c) 2013 alex. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "Enemy.h"
-#import "Constants.h"
 
-@interface Skeleton : Enemy {
+@interface Skeleton : Enemy 
    
-    CGPoint velocity;
-}
-
 +(id) skeleton;
 
-
-@property (nonatomic, strong) CCAnimation *walkRightAnim;
-@property (nonatomic, strong) CCAnimation *walkLeftAnim;
-@property (nonatomic, strong) CCAnimation *walkUpAnim;
-@property (nonatomic, strong) CCAnimation *walkDownAnim;
-
-
-
--(void)initAnimations;
 
 
 @end

@@ -7,8 +7,11 @@
 //
 
 #import "Level1.h"
-#import "Skeleton.h"
 #import "MainMenuLayer.h"
+#import "Skeleton.h"
+#import "Spider.h"
+#import "Lizard.h"
+#import "Boss.h"
 
 
 @implementation Level1
@@ -50,7 +53,7 @@ static Level1* Level1Layer;
 
             Skeleton* skel = [Skeleton skeleton];
             [skel setPosition:ccp(x,y)];
-            [self addChild:skel];
+            [self addChild:skel];            
         }
     }
     
