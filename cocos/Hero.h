@@ -29,8 +29,6 @@ typedef enum
     int realX;
     int realY;
     int currentXP;
-    ALuint currentPlayedEffect;
-
 }
 
 +(id) hero;

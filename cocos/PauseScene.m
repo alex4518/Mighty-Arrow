@@ -8,6 +8,7 @@
 
 #import "PauseScene.h"
 #import "MainMenuLayer.h"
+#import "SimpleAudioEngine.h"
 
 
 @implementation PauseScene
@@ -25,13 +26,14 @@
 -(id)init{
     if( (self=[super init] )) {
         
+        
         CGSize winSize = [CCDirector sharedDirector].winSize;
 
         
         CCLabelTTF *label = [CCLabelTTF labelWithString:@"Paused"
                                                fontName:@"Courier New"
                                                fontSize:30];
-        label.position = ccp(winSize.width/2,190);
+        label.position = ccp(winSize.width/2,210);
         [self addChild: label];
         [CCMenuItemFont setFontName:@"Courier New"];
         [CCMenuItemFont setFontSize:20];
@@ -42,7 +44,18 @@
         CCMenuItem *Quit = [CCMenuItemFont itemWithString:@"Quit Game"
                                                    target:self selector:@selector(GoToMainMenu:)];
         
-        CCMenu *menu= [CCMenu menuWithItems: Resume, Quit, nil];
+        CCMenuItem *sound;
+        
+        if ([CDAudioManager sharedManager].mute == FALSE) {
+            
+            sound = [CCMenuItemFont itemWithString:@"Sound Off" target:self selector:@selector(soundToggle:)];
+        }
+        else {
+            sound = [CCMenuItemFont itemWithString:@"Sound On"target:self selector:@selector(soundToggle:)];
+        }
+
+        
+        CCMenu *menu= [CCMenu menuWithItems: Resume, Quit, sound, nil];
         menu.position = ccp(winSize.width/2, 131.67f);
         [menu alignItemsVerticallyWithPadding:12.5f];
         
@@ -50,6 +63,18 @@
         
     }
     return self;
+}
+
+- (void) soundToggle : (id) sender {
+    if ([CDAudioManager sharedManager].mute == TRUE) {
+        
+        [CDAudioManager sharedManager].mute = FALSE;
+    }
+    else {
+        [CDAudioManager sharedManager].mute = TRUE;
+    }
+    
+    [[CCDirector sharedDirector] replaceScene:[PauseScene node]];
 }
 
 -(void) resume: (id) sender {

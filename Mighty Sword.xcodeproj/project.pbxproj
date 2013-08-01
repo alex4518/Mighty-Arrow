@@ -20,6 +20,7 @@
 		F40B05C717A96C6500CF4CFC /* lev_25.tmx in Resources */ = {isa = PBXBuildFile; fileRef = F40B05C617A96C6400CF4CFC /* lev_25.tmx */; };
 		F40B05C917A9781300CF4CFC /* lev_33.tmx in Resources */ = {isa = PBXBuildFile; fileRef = F40B05C817A9781300CF4CFC /* lev_33.tmx */; };
 		F40B05CB17A97CA100CF4CFC /* lev_41.tmx in Resources */ = {isa = PBXBuildFile; fileRef = F40B05CA17A97CA000CF4CFC /* lev_41.tmx */; };
+		F40B05CE17AA693400CF4CFC /* SoundMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F40B05CD17AA693400CF4CFC /* SoundMenu.m */; };
 		F463290A176745AF006AED9E /* ShortestPathStep.m in Sources */ = {isa = PBXBuildFile; fileRef = F4632909176745AF006AED9E /* ShortestPathStep.m */; };
 		F46329151767841F006AED9E /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = F46329131767841F006AED9E /* default.png */; };
 		F463291717678486006AED9E /* small_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F463291617678486006AED9E /* small_icon.png */; };
@@ -225,6 +226,8 @@
 		F40B05C617A96C6400CF4CFC /* lev_25.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lev_25.tmx; sourceTree = "<group>"; };
 		F40B05C817A9781300CF4CFC /* lev_33.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lev_33.tmx; sourceTree = "<group>"; };
 		F40B05CA17A97CA000CF4CFC /* lev_41.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lev_41.tmx; sourceTree = "<group>"; };
+		F40B05CC17AA693400CF4CFC /* SoundMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundMenu.h; sourceTree = "<group>"; };
+		F40B05CD17AA693400CF4CFC /* SoundMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundMenu.m; sourceTree = "<group>"; };
 		F4632908176745AF006AED9E /* ShortestPathStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortestPathStep.h; path = cocos/ShortestPathStep.h; sourceTree = "<group>"; };
 		F4632909176745AF006AED9E /* ShortestPathStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortestPathStep.m; path = cocos/ShortestPathStep.m; sourceTree = "<group>"; };
 		F46329131767841F006AED9E /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
@@ -1174,6 +1177,8 @@
 			children = (
 				F4D0636517994E3700A80E55 /* MainMenuLayer.h */,
 				F4D0636617994E3700A80E55 /* MainMenuLayer.m */,
+				F40B05CC17AA693400CF4CFC /* SoundMenu.h */,
+				F40B05CD17AA693400CF4CFC /* SoundMenu.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -1499,6 +1504,7 @@
 				F40B05AF17A9238700CF4CFC /* Boss.m in Sources */,
 				F40B05BA17A94F2400CF4CFC /* Level3.m in Sources */,
 				F40B05BF17A956A200CF4CFC /* Level4.m in Sources */,
+				F40B05CE17AA693400CF4CFC /* SoundMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

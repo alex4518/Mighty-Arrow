@@ -42,6 +42,7 @@
 	{        
         [self initAnimations];
         [self scheduleUpdate];
+
 	}
 	return self;
 }
@@ -245,9 +246,7 @@
         
     [game addChild:self.arrow];
         
-    currentPlayedEffect = [[SimpleAudioEngine sharedEngine] playEffect:@"Warfare Arrow.mp3"];
-
-    
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Warfare Arrow.mp3"];
     CGPoint realDest = ccp(realX, realY);
     
     // Determine the length of how far you're shooting
