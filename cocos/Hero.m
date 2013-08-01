@@ -20,6 +20,7 @@
 
 @interface Hero (PrivateMethods)
 -(id) initWithHeroImage;
+
 @end
 
 @implementation Hero
@@ -36,6 +37,7 @@
     self.heroHealth = kHeroHealth;
     self.heroDamageFromLevelUp = 0;
     self.canShoot = YES;
+    
     
 	// Loading the Hero's sprite using a sprite frame name (eg the filename)
 	if ((self = [super initWithSpriteFrameName:@"right.png"]))
@@ -112,6 +114,7 @@
 
 -(void)applyJoystick:(SneakyJoystick *)aJoystick forTimeDelta:(float)delta {
     
+    
     GameLayer* game = [GameLayer sharedGameLayer];
 
     
@@ -125,7 +128,9 @@
         if (properties) {
             NSString *collision = properties[@"Blocked"];
             if (collision && [collision isEqualToString:@"1"]) {
-                
+        
+                [[SimpleAudioEngine sharedEngine]playEffect:@"hitWall.wav"];
+
                 return;
             }
         }

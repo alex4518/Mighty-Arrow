@@ -14,6 +14,7 @@
 #import "AppDelegate.h"
 #import "InputLayer.h"
 #import "PauseScene.h"
+#import "SimpleAudioEngine.h"
 
 
 #pragma mark - GameLayer
@@ -85,6 +86,8 @@ static GameLayer* sharedGameLayer;
     [self addChild:hero];
  
     [self scheduleUpdate];
+    
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
     
     return self;
 

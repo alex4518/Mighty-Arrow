@@ -10,6 +10,7 @@
 #import "GameLayer.h"
 #import "Level1.h"
 #import "SoundMenu.h"
+#import "SimpleAudioEngine.h"
 
 @implementation MainMenuLayer
 
@@ -71,6 +72,8 @@
     
     menu.position = ccp(winSize.width/2 + 150, 120);
     [menu alignItemsVerticallyWithPadding:5];
+    
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Celestial_Aeon_Project_-_Suspicion.mp3"];
     
     return scene;
 }
