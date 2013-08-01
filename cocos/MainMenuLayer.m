@@ -23,12 +23,18 @@
     
     [scene addChild: layer];
     
-    CCLabelTTF *title = [CCLabelTTF labelWithString:@"Game Title" fontName:@"Courier" fontSize:64];
+    CCLabelTTF *title = [CCLabelTTF labelWithString:@"Mighty Arrow" fontName:@"Courier" fontSize:64];
     title.position =  ccp(winSize.width/2, 260);
     [scene addChild: title];
     
     CCLayer *menuLayer = [[CCLayer alloc] init];
     [scene addChild:menuLayer];
+    
+    CCSprite* menuImage = [CCSprite spriteWithFile:@"menu-image.png"];
+    
+    menuImage.position = ccp(winSize.width/4 + 50,120);
+    [scene addChild:menuImage];
+    
     
     CCMenuItemImage *newGameButton = [CCMenuItemImage
                                     itemWithNormalImage:@"new-game.png"
