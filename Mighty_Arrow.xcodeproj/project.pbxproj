@@ -632,7 +632,7 @@
 			children = (
 				F463290C1767578C006AED9E /* A* Pathfinding */,
 				F481B7D5174E30AA00A89166 /* SneakyInput */,
-				F4BF014C16E7A69E00337261 /* Mighty_Sword */,
+				F4BF014C16E7A69E00337261 /* Mighty_Arrow */,
 				F4BF013916E7A69D00337261 /* Frameworks */,
 				F4BF013816E7A69D00337261 /* Products */,
 			);
@@ -662,7 +662,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F4BF014C16E7A69E00337261 /* Mighty_Sword */ = {
+		F4BF014C16E7A69E00337261 /* Mighty_Arrow */ = {
 			isa = PBXGroup;
 			children = (
 				F4D063B9179D315C00A80E55 /* Pickups */,
@@ -678,7 +678,7 @@
 				F4BF016516E7A69E00337261 /* libs */,
 				F4BF02D616E7A6A600337261 /* Supporting Files */,
 			);
-			name = Mighty_Sword;
+			name = Mighty_Arrow;
 			path = cocos;
 			sourceTree = "<group>";
 		};
@@ -1263,9 +1263,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F4BF013616E7A69D00337261 /* Mighty Sword */ = {
+		F4BF013616E7A69D00337261 /* Mighty_Arrow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4BF02E516E7A6A600337261 /* Build configuration list for PBXNativeTarget "Mighty Sword" */;
+			buildConfigurationList = F4BF02E516E7A6A600337261 /* Build configuration list for PBXNativeTarget "Mighty_Arrow" */;
 			buildPhases = (
 				F4BF013316E7A69D00337261 /* Sources */,
 				F4BF013416E7A69D00337261 /* Frameworks */,
@@ -1275,7 +1275,7 @@
 			);
 			dependencies = (
 			);
-			name = "Mighty Sword";
+			name = Mighty_Arrow;
 			productName = cocos;
 			productReference = F4BF013716E7A69D00337261 /* Mighty Sword.app */;
 			productType = "com.apple.product-type.application";
@@ -1289,7 +1289,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = alex;
 			};
-			buildConfigurationList = F4BF013216E7A69D00337261 /* Build configuration list for PBXProject "Mighty Sword" */;
+			buildConfigurationList = F4BF013216E7A69D00337261 /* Build configuration list for PBXProject "Mighty_Arrow" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1301,7 +1301,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F4BF013616E7A69D00337261 /* Mighty Sword */,
+				F4BF013616E7A69D00337261 /* Mighty_Arrow */,
 			);
 		};
 /* End PBXProject section */
@@ -1602,7 +1602,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F4BF013216E7A69D00337261 /* Build configuration list for PBXProject "Mighty Sword" */ = {
+		F4BF013216E7A69D00337261 /* Build configuration list for PBXProject "Mighty_Arrow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4BF02E316E7A6A600337261 /* Debug */,
@@ -1611,7 +1611,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4BF02E516E7A6A600337261 /* Build configuration list for PBXNativeTarget "Mighty Sword" */ = {
+		F4BF02E516E7A6A600337261 /* Build configuration list for PBXNativeTarget "Mighty_Arrow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4BF02E616E7A6A600337261 /* Debug */,
