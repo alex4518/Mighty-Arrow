@@ -6,7 +6,6 @@
 //  Copyright 2010 Hanson Interactive. All rights reserved.
 //
 
-#import "cocos2d.h"
 
 @class SneakyJoystick;
 

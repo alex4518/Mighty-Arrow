@@ -6,8 +6,6 @@
 //  Copyright 2013 alex. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "cocos2d.h"
 #import "SneakyJoystick.h"
 #import "SneakyButton.h"
 #import "Enemy.h"

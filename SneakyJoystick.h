@@ -11,7 +11,6 @@
 //  Email: SneakyJoystick@Sneakyness.com 
 //  IRC: #cocos2d-iphone irc.freenode.net
 
-#import "cocos2d.h"
 
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
 @interface SneakyJoystick : CCNode <CCTouchOneByOneDelegate> {

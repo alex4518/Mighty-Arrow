@@ -6,7 +6,6 @@
 //  Copyright 2010 Sneakyness, llc.. All rights reserved.
 //
 
-#import "cocos2d.h"
 
 @class SneakyButton;
 

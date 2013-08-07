@@ -1,4 +1,3 @@
-#import "cocos2d.h"
 
 @interface ColoredCircleSprite : CCNode <CCRGBAProtocol, CCBlendProtocol> {
 	
