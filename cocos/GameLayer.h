@@ -27,7 +27,7 @@
 
 
 // GameLayer
-@interface GameLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
+@interface GameLayer : CCLayer 
 {
     HUDLayer * _hud;
 }

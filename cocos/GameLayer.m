@@ -43,19 +43,6 @@ static GameLayer* sharedGameLayer;
 	// add layer as a child to scene
 	[scene addChild: layer];
     
-    InputLayer* inputLayer=[InputLayer node];
-    [scene addChild:inputLayer z:1];
-    
-    [scene addChild:hud z:1];
-    
-    CCMenuItem *Pause = [CCMenuItemImage itemWithNormalImage:@"pause.png"
-                                               selectedImage: @"pause.png"
-                                                      target:sharedGameLayer
-                                                    selector:@selector(pause:)];
-    CCMenu *PauseButton = [CCMenu menuWithItems: Pause, nil];
-    PauseButton.position = ccp(30, 300);
-    [scene addChild:PauseButton z:1000];
-	
 	// return the scene
 	return scene;
 }
@@ -172,20 +159,5 @@ static GameLayer* sharedGameLayer;
 	}
     
 	return [NSArray arrayWithArray:tmp];
-}
-
-
-#pragma mark GameKit delegate
-
--(void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController
-{
-	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-	[[app navController] dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void) leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController
-{
-	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-	[[app navController] dismissViewControllerAnimated:YES completion:nil];
 }
 @end
