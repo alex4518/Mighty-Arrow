@@ -9,12 +9,6 @@
 #import "ShortestPathStep.h"
 #import "Hero.h"
 
-
-
-id actionMoveX;
-id actionMoveY;
-id actionMoveDone;
-
 @interface Enemy : CCSprite 
     
 
