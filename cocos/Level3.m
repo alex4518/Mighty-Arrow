@@ -104,7 +104,8 @@ static Level3* Level3Layer;
     
     if (CGRectIntersectsRect(hero.boundingBox, self.exitRect )) {
         
-        [[CCDirector sharedDirector] replaceScene: [Level4 scene]];
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
+                                                   transitionWithDuration:2 scene:[Level4 scene]]];
         
     }
 }
