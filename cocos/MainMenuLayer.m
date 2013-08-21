@@ -43,11 +43,6 @@
                                     target:layer
                                     selector:@selector(startGame:)];
     
-    CCMenuItemImage *loadGameButton = [CCMenuItemImage
-                                    itemWithNormalImage:@"load-game.png"
-                                    selectedImage:@"load-game-selected.png"
-                                    target:layer
-                                    selector:@selector(startGame:)];
     
     CCMenuItemImage *controlsButton = [CCMenuItemImage
                                        itemWithNormalImage:@"controls.png"
@@ -67,7 +62,7 @@
                                        target:layer
                                        selector:@selector(startGame:)];
     
-    CCMenu *menu = [CCMenu menuWithItems: newGameButton, loadGameButton, controlsButton, settingsButton, aboutButton,  nil];
+    CCMenu *menu = [CCMenu menuWithItems: newGameButton, controlsButton, settingsButton, aboutButton,  nil];
     [menuLayer addChild: menu];
     
     menu.position = ccp(winSize.width/2 + 150, 120);
