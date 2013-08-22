@@ -33,7 +33,7 @@
 -(id) initWithHeroImage
 {
     self.level = kHeroInitialLevel;
-    currentXP = kHeroInitialXp;
+    self.currentXP = kHeroInitialXp;
     self.heroHealth = kHeroHealth;
     self.heroDamageFromLevelUp = 0;
     self.canShoot = YES;
@@ -55,10 +55,10 @@
 }
 
 -(void) recieveXP:(int)xpPoints {
-    if (currentXP + xpPoints < 100) {
-        currentXP += xpPoints;
+    if (self.currentXP + xpPoints < 100) {
+        self.currentXP += xpPoints;
     } else {
-        currentXP += xpPoints - 100;
+        self.currentXP += xpPoints - 100;
         _level++;
         self.heroDamageFromLevelUp = self.heroDamageFromLevelUp + 5;
     }

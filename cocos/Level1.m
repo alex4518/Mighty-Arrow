@@ -118,6 +118,11 @@ static Level1* Level1Layer;
     
     if (CGRectIntersectsRect(hero.boundingBox, self.exitRect )) {
         
+        self.lev = hero.level;
+        self.health = hero.heroHealth;
+        self.damage = hero.heroDamageFromLevelUp;
+        self.xp = hero.currentXP;
+        
         [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                    transitionWithDuration:2 scene:[Level2 scene]]];
         

@@ -36,6 +36,12 @@
 @property(nonatomic,strong) CCTMXLayer *bgLayer ;
 @property(nonatomic,strong) CCTMXLayer *metaLayer ;
 
+@property (readwrite, nonatomic) int lev;
+@property (readwrite, nonatomic) int damage;
+@property (readwrite, nonatomic) int health;
+@property (readwrite, nonatomic) int xp;
+
+
 
 @property(nonatomic,strong) id <GameLayerProtocol> delegate;
 

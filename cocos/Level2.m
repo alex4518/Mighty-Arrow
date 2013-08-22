@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 alex. All rights reserved.
 //
 
+#import "Level1.h"
 #import "Level2.h"
 #import "Level3.h"
 #import "Skeleton.h"
@@ -39,6 +40,16 @@ static Level2* Level2Layer;
         [self addChild:self.themap z:-1];
     }
     
+    GameLayer* game = [GameLayer sharedGameLayer];
+    
+    Hero* hero = [game defaultHero];
+    
+    Level1* lev1 = [Level1 Level1Layer];
+    
+    hero.heroDamageFromLevelUp = lev1.damage;
+    hero.level = lev1.lev;
+    hero.heroHealth = lev1.health;
+    hero.currentXP = lev1.xp;
     
     
     CCTMXObjectGroup *objectGroup = [self.themap objectGroupNamed:@"Objects"];
@@ -116,6 +127,12 @@ static Level2* Level2Layer;
     Hero* hero = [game defaultHero];
     
     if (CGRectIntersectsRect(hero.boundingBox, self.exitRect )) {
+        
+        self.lev = hero.level;
+        self.health = hero.heroHealth;
+        self.damage = hero.heroDamageFromLevelUp;
+        self.xp = hero.currentXP;
+
         
         [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                    transitionWithDuration:2 scene: [Level3 scene]]];

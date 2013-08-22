@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 alex. All rights reserved.
 //
 
+#import "Level2.h"
 #import "Level3.h"
 #import "Level4.h"
 #import "Lizard.h"
@@ -38,7 +39,16 @@ static Level3* Level3Layer;
         [self addChild:self.themap z:-1];
     }
     
+    GameLayer* game = [GameLayer sharedGameLayer];
     
+    Hero* hero = [game defaultHero];
+    
+    Level2* lev2 = [Level2 Level2Layer];
+    
+    hero.heroDamageFromLevelUp = lev2.damage;
+    hero.level = lev2.lev;
+    hero.heroHealth = lev2.health;
+    hero.currentXP = lev2.xp;
     
     CCTMXObjectGroup *objectGroup = [self.themap objectGroupNamed:@"Objects"];
     NSAssert(objectGroup != nil, @"tile map has no objects object layer");
@@ -103,6 +113,11 @@ static Level3* Level3Layer;
     Hero* hero = [game defaultHero];
     
     if (CGRectIntersectsRect(hero.boundingBox, self.exitRect )) {
+        
+        self.lev = hero.level;
+        self.health = hero.heroHealth;
+        self.damage = hero.heroDamageFromLevelUp;
+        self.xp = hero.currentXP;
         
         [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                    transitionWithDuration:2 scene:[Level4 scene]]];

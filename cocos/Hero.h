@@ -26,7 +26,6 @@ typedef enum
     Direction myDirection;
     int realX;
     int realY;
-    int currentXP;
 }
 
 +(id) hero;
@@ -44,6 +43,8 @@ typedef enum
 @property (readwrite, nonatomic) int level;
 @property (readwrite, nonatomic) int heroDamageFromLevelUp;
 @property (readwrite, nonatomic) int heroHealth;
+@property (readwrite, nonatomic) int currentXP;
+
 @property (readwrite, nonatomic) BOOL canShoot;
 
 - (int) getDamage;

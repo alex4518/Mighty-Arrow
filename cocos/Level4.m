@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 alex. All rights reserved.
 //
 
+#import "Level3.h"
 #import "Level4.h"
 #import "SmallPotion.h"
 #import "LargePotion.h"
@@ -38,7 +39,16 @@ static Level4* Level4Layer;
         [self addChild:self.themap z:-1];
     }
     
+    GameLayer* game = [GameLayer sharedGameLayer];
     
+    Hero* hero = [game defaultHero];
+    
+    Level3* lev3 = [Level3 Level3Layer];
+    
+    hero.heroDamageFromLevelUp = lev3.damage;
+    hero.level = lev3.lev;
+    hero.heroHealth = lev3.health;
+    hero.currentXP = lev3.xp;
     
     CCTMXObjectGroup *objectGroup = [self.themap objectGroupNamed:@"Objects"];
     NSAssert(objectGroup != nil, @"tile map has no objects object layer");
