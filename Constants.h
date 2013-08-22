@@ -20,11 +20,14 @@
 #define kSpiderHealth 10
 #define kSpiderDamage 15
 
-#define kLizardHealth 10
+#define kLizardHealth 20
 #define kLizardDamage 20
 
 #define kBossHealth 60
 #define kBossDamage 30
+
+
+#define kReceiveXP 35
 
 
 

@@ -14,9 +14,6 @@
 
 
 
-int xpPoints = 101;
-
-
 @implementation Enemy
 
 -(id) init {
@@ -288,6 +285,7 @@ int xpPoints = 101;
     
     if (CGRectIntersectsRect(hero.arrowBoundingBox, self.enemyBoundingBox)) {
         
+        
         self.health = self.health - hero.getDamage;
         
         [hero.arrow removeFromParentAndCleanup:YES];
@@ -295,7 +293,7 @@ int xpPoints = 101;
         if (self.health <= 0) {
         
         [game removeChild:self cleanup:YES];
-        [hero recieveXP:xpPoints];
+        [hero recieveXP:kReceiveXP];
         }
     }
     if (CGRectIntersectsRect(hero.heroBoundingBox, self.enemyBoundingBox)) {

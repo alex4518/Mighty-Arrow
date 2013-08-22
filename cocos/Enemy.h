@@ -12,10 +12,6 @@
 @interface Enemy : CCSprite 
     
 
-
-@property (readonly, nonatomic) int initialHitPoints;
-@property (readonly, nonatomic) int hitPoints;
-
 @property (nonatomic, retain) NSMutableArray *spOpenSteps;
 @property (nonatomic, retain) NSMutableArray *spClosedSteps;
 @property (nonatomic, retain) NSMutableArray *shortestPath;
@@ -26,7 +22,6 @@
 @property (nonatomic, strong) CCAnimation *walkDownAnim;
 
 @property (nonatomic, readwrite) int health;
-@property (readonly, nonatomic) int xpPoints;
 
 - (CGRect) enemyBoundingBox;
 - (CGRect)eyesightBoundingBox;

@@ -24,6 +24,7 @@
         
         [self scheduleUpdate];
         
+        self.health = kLizardHealth;
 	}
 	return self;
 }

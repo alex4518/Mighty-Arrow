@@ -24,6 +24,8 @@
         
         [self scheduleUpdate];
         
+        self.health = kSpiderHealth;
+        
 	}
 	return self;
 }
