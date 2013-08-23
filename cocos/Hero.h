@@ -26,6 +26,7 @@ typedef enum
     Direction myDirection;
     int realX;
     int realY;
+    ALuint soundEffectID;
 }
 
 +(id) hero;

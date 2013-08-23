@@ -149,6 +149,9 @@
         
         if (self.numberOfRunningActions == 0) {
             [self runAction:self.walkRightAction];
+          
+          [[SimpleAudioEngine sharedEngine] stopEffect:soundEffectID];
+          soundEffectID = [[SimpleAudioEngine sharedEngine] playEffect:@"Walking.mp3"];
         }
     }
     else if (aJoystick.velocity.x == -1.0f){
@@ -162,6 +165,9 @@
         
         if (self.numberOfRunningActions == 0) {
             [self runAction:self.walkLeftAction];
+            
+            [[SimpleAudioEngine sharedEngine] stopEffect:soundEffectID];
+            soundEffectID = [[SimpleAudioEngine sharedEngine] playEffect:@"Walking.mp3"];
         }
     }
     else if (aJoystick.velocity.y == 1.0f){
@@ -175,6 +181,9 @@
         
         if (self.numberOfRunningActions == 0) {
             [self runAction:self.walkUpAction];
+            
+            [[SimpleAudioEngine sharedEngine] stopEffect:soundEffectID];
+            soundEffectID = [[SimpleAudioEngine sharedEngine] playEffect:@"Walking.mp3"];
         }
     }
     else if (aJoystick.velocity.y == -1.0f){
@@ -188,7 +197,9 @@
         
         if (self.numberOfRunningActions == 0) {
             [self runAction:self.walkDownAction];
-
+            
+            [[SimpleAudioEngine sharedEngine] stopEffect:soundEffectID];
+            soundEffectID = [[SimpleAudioEngine sharedEngine] playEffect:@"Walking.mp3"];
         }
     }
     else if (self.attackButton.active == YES) {
@@ -206,7 +217,9 @@
         
     else {
         [self stopAllActions];
-    }    
+        
+        [[SimpleAudioEngine sharedEngine] stopEffect:soundEffectID];
+    }
 }
 
 - (void)shoot {

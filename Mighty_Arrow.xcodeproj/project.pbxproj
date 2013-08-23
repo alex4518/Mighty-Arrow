@@ -28,6 +28,7 @@
 		F40B05F017AAB9F900CF4CFC /* Celestial_Aeon_Project_-_Suspicion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F40B05EF17AAB9F800CF4CFC /* Celestial_Aeon_Project_-_Suspicion.mp3 */; };
 		F463290A176745AF006AED9E /* ShortestPathStep.m in Sources */ = {isa = PBXBuildFile; fileRef = F4632909176745AF006AED9E /* ShortestPathStep.m */; };
 		F463291B17678892006AED9E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F463291A17678892006AED9E /* Default@2x.png */; };
+		F46D520617C7BED9005040A8 /* Walking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F46D520517C7BED9005040A8 /* Walking.mp3 */; };
 		F481B7BE174D691100A89166 /* game_events.png in Resources */ = {isa = PBXBuildFile; fileRef = F481B7BC174D691100A89166 /* game_events.png */; };
 		F4929247174EA15E00A69018 /* InputLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4929246174EA15E00A69018 /* InputLayer.m */; };
 		F4929248174EA8A600A69018 /* ColoredCircleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = F481B7DB174E30FB00A89166 /* ColoredCircleSprite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -238,6 +239,7 @@
 		F4632908176745AF006AED9E /* ShortestPathStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortestPathStep.h; path = cocos/ShortestPathStep.h; sourceTree = "<group>"; };
 		F4632909176745AF006AED9E /* ShortestPathStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortestPathStep.m; path = cocos/ShortestPathStep.m; sourceTree = "<group>"; };
 		F463291A17678892006AED9E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		F46D520517C7BED9005040A8 /* Walking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Walking.mp3; sourceTree = "<group>"; };
 		F481B7BC174D691100A89166 /* game_events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_events.png; sourceTree = "<group>"; };
 		F481B7D6174E30CF00A89166 /* SneakyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
 		F481B7D7174E30CF00A89166 /* SneakyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SneakyButton.m; sourceTree = "<group>"; };
@@ -692,6 +694,7 @@
 				F40B05C617A96C6400CF4CFC /* lev_25.tmx */,
 				F40B05B417A9493F00CF4CFC /* lev309.tmx */,
 				F4D0640B17A171B900A80E55 /* Shoot arrow from bow.mp3 */,
+				F46D520517C7BED9005040A8 /* Walking.mp3 */,
 				F4D0640917A170E700A80E55 /* Warfare Arrow.mp3 */,
 				F4D063D6179EBA1000A80E55 /* tilebs.png */,
 				F4D063D4179EB9FC00A80E55 /* BiGZZ.jpg */,
@@ -1366,6 +1369,7 @@
 				F40B05EC17AAADAC00CF4CFC /* menu-image.png in Resources */,
 				F40B05EE17AAB1E100CF4CFC /* hitWall.wav in Resources */,
 				F40B05F017AAB9F900CF4CFC /* Celestial_Aeon_Project_-_Suspicion.mp3 in Resources */,
+				F46D520617C7BED9005040A8 /* Walking.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
