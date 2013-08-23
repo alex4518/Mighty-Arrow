@@ -285,10 +285,11 @@
     
     if (CGRectIntersectsRect(hero.arrowBoundingBox, self.enemyBoundingBox)) {
         
+        [hero.arrow removeFromParentAndCleanup:YES];
+                    
         
         self.health = self.health - hero.getDamage;
         
-        [hero.arrow removeFromParentAndCleanup:YES];
         
         if (self.health <= 0) {
         
