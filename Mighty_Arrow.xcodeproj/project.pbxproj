@@ -251,7 +251,7 @@
 		F481B7DF174E30FB00A89166 /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
 		F4929245174EA15E00A69018 /* InputLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputLayer.h; sourceTree = "<group>"; };
 		F4929246174EA15E00A69018 /* InputLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputLayer.m; sourceTree = "<group>"; };
-		F4BF013716E7A69D00337261 /* Mighty Sword.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mighty Sword.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4BF013716E7A69D00337261 /* Mighty Arrow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mighty Arrow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BF013A16E7A69D00337261 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F4BF013C16E7A69D00337261 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		F4BF013E16E7A69E00337261 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -641,7 +641,7 @@
 		F4BF013816E7A69D00337261 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F4BF013716E7A69D00337261 /* Mighty Sword.app */,
+				F4BF013716E7A69D00337261 /* Mighty Arrow.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1277,7 +1277,7 @@
 			);
 			name = Mighty_Arrow;
 			productName = cocos;
-			productReference = F4BF013716E7A69D00337261 /* Mighty Sword.app */;
+			productReference = F4BF013716E7A69D00337261 /* Mighty Arrow.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1573,7 +1573,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "Mighty Sword";
+				PRODUCT_NAME = "Mighty Arrow";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1593,7 +1593,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "Mighty Sword";
+				PRODUCT_NAME = "Mighty Arrow";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
