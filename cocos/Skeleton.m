@@ -25,7 +25,7 @@
         
         [self scheduleUpdate];
         
-        self.health = 50;
+        self.health = kSkeletonHealth;
         
 	}
 	return self;

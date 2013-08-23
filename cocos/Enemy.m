@@ -286,15 +286,13 @@
     if (CGRectIntersectsRect(hero.arrowBoundingBox, self.enemyBoundingBox)) {
         
         [hero.arrow removeFromParentAndCleanup:YES];
-                    
+        hero.arrow = nil;
         
-        self.health = self.health - hero.getDamage;
-        
+        self.health -= hero.getDamage;
         
         if (self.health <= 0) {
-        
-        [game removeChild:self cleanup:YES];
-        [hero recieveXP:kReceiveXP];
+            [game removeChild:self cleanup:YES];
+            [hero recieveXP:kReceiveXP];
         }
     }
     if (CGRectIntersectsRect(hero.heroBoundingBox, self.enemyBoundingBox)) {
