@@ -193,6 +193,8 @@
     }
     else if (self.attackButton.active == YES) {
         
+        [self.arrow stopAllActions];
+        [self.arrow removeFromParentAndCleanup:YES];
         [self stopAllActions];
         
         if (self.numberOfRunningActions == 0) {
