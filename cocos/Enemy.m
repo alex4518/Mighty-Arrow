@@ -325,9 +325,8 @@
     
     if (hero.heroHealth <= 0) {
     
-    CCScene *gameOverScene = [GameOverLayer scene];
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
-                                                   transitionWithDuration:3 scene:gameOverScene]];
+        CCScene *gameOverScene = [GameOverLayer scene];
+        [[CCDirector sharedDirector] replaceScene:gameOverScene];
     }
 }
 
