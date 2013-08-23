@@ -18,7 +18,6 @@
 
 -(id) initWithEnemyImage
 {
-	// Loading the Hero's sprite using a sprite frame name (eg the filename)
 	if ((self = [super initWithSpriteFrameName:@"skeleton-right.png"]))
 	{
         [self initAnimations];

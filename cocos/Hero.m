@@ -193,14 +193,13 @@
     }
     else if (self.attackButton.active == YES) {
         
-       /* [self.arrow stopAllActions];
-        [self.arrow removeFromParentAndCleanup:YES];*/
+      
         [self stopAllActions];
         
-        if (self.numberOfRunningActions == 0 && self.arrow.numberOfRunningActions ==0) {
+    if (self.numberOfRunningActions == 0 && self.arrow.numberOfRunningActions ==0) {
             
             
-            [self shoot];
+        [self shoot];
             
         }
     }
