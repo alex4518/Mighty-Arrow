@@ -26,7 +26,6 @@ typedef enum
     Direction myDirection;
     int realX;
     int realY;
-    ALuint soundEffectID;
 }
 
 +(id) hero;
@@ -45,6 +44,8 @@ typedef enum
 @property (readwrite, nonatomic) int heroDamageFromLevelUp;
 @property (readwrite, nonatomic) int heroHealth;
 @property (readwrite, nonatomic) int currentXP;
+@property (nonatomic, assign) ALuint soundEffectID;
+
 
 @property (readwrite, nonatomic) BOOL canShoot;
 

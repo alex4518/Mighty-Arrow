@@ -11,6 +11,7 @@
 #import "GameLayer.h"
 #import "GameOverLayer.h"
 #import "Constants.h"
+#import "SimpleAudioEngine.h"
 
 
 
@@ -322,6 +323,9 @@
     }
     
     if (hero.heroHealth <= 0) {
+        
+        [[SimpleAudioEngine sharedEngine] stopEffect:hero.soundEffectID];
+
     
         CCScene *gameOverScene = [GameOverLayer scene];
         [[CCDirector sharedDirector] replaceScene:gameOverScene];
