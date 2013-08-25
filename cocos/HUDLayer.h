@@ -10,7 +10,9 @@
 @interface HUDLayer : CCLayer {
     
     CCLabelTTF * _statusLabel;
-
+    CCLabelTTF * _label;
+    CCSprite* healthBar;
+    CCProgressTimer* progressTimer;
 }
 
  - (void)setStatusString:(NSString *)string;

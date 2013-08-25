@@ -116,6 +116,7 @@ static Level1* Level1Layer;
     
     Hero* hero = [game defaultHero];
     
+    
     if (CGRectIntersectsRect(hero.boundingBox, self.exitRect )) {
         
         self.lev = hero.level;

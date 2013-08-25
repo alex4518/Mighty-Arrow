@@ -31,13 +31,12 @@
 }
 
 -(id) initWithHeroImage
-{
+{    
     self.level = kHeroInitialLevel;
     self.currentXP = kHeroInitialXp;
     self.heroHealth = kHeroHealth;
     self.heroDamageFromLevelUp = 0;
-    self.canShoot = YES;
-    
+    self.canShoot = YES; 
     
 	// Loading the Hero's sprite using a sprite frame name (eg the filename)
 	if ((self = [super initWithSpriteFrameName:@"right.png"]))

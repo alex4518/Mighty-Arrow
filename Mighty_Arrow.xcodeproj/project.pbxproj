@@ -29,6 +29,7 @@
 		F463290A176745AF006AED9E /* ShortestPathStep.m in Sources */ = {isa = PBXBuildFile; fileRef = F4632909176745AF006AED9E /* ShortestPathStep.m */; };
 		F463291B17678892006AED9E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F463291A17678892006AED9E /* Default@2x.png */; };
 		F46D520617C7BED9005040A8 /* Walking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F46D520517C7BED9005040A8 /* Walking.mp3 */; };
+		F46D520C17C9FD71005040A8 /* health-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = F46D520B17C9FD71005040A8 /* health-bar.png */; };
 		F481B7BE174D691100A89166 /* game_events.png in Resources */ = {isa = PBXBuildFile; fileRef = F481B7BC174D691100A89166 /* game_events.png */; };
 		F4929247174EA15E00A69018 /* InputLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4929246174EA15E00A69018 /* InputLayer.m */; };
 		F4929248174EA8A600A69018 /* ColoredCircleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = F481B7DB174E30FB00A89166 /* ColoredCircleSprite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -240,6 +241,7 @@
 		F4632909176745AF006AED9E /* ShortestPathStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortestPathStep.m; path = cocos/ShortestPathStep.m; sourceTree = "<group>"; };
 		F463291A17678892006AED9E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		F46D520517C7BED9005040A8 /* Walking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Walking.mp3; sourceTree = "<group>"; };
+		F46D520B17C9FD71005040A8 /* health-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "health-bar.png"; sourceTree = "<group>"; };
 		F481B7BC174D691100A89166 /* game_events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_events.png; sourceTree = "<group>"; };
 		F481B7D6174E30CF00A89166 /* SneakyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
 		F481B7D7174E30CF00A89166 /* SneakyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SneakyButton.m; sourceTree = "<group>"; };
@@ -1253,6 +1255,7 @@
 		F4D7DC321745021000521C59 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F46D520B17C9FD71005040A8 /* health-bar.png */,
 				F40B05E717AAA57700CF4CFC /* Default-568h@2x.png */,
 				F40B05E517AAA29200CF4CFC /* Icon@2x.png */,
 				F40B05A617A9224000CF4CFC /* chars.png */,
@@ -1370,6 +1373,7 @@
 				F40B05EE17AAB1E100CF4CFC /* hitWall.wav in Resources */,
 				F40B05F017AAB9F900CF4CFC /* Celestial_Aeon_Project_-_Suspicion.mp3 in Resources */,
 				F46D520617C7BED9005040A8 /* Walking.mp3 in Resources */,
+				F46D520C17C9FD71005040A8 /* health-bar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

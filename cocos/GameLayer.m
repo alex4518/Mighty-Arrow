@@ -71,7 +71,8 @@ static GameLayer* sharedGameLayer;
 
     [hero setPosition:ccp(100 , 100)];
     [self addChild:hero];
- 
+    
+    
     [self scheduleUpdate];
     
     [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
