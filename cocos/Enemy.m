@@ -294,6 +294,8 @@
         if (self.health <= 0) {
             [game removeChild:self cleanup:YES];
             [hero recieveXP:kReceiveXP];
+            
+            
         }
     }
     if (CGRectIntersectsRect(hero.heroBoundingBox, self.enemyBoundingBox)) {

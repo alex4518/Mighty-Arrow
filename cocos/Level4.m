@@ -13,6 +13,8 @@
 #import "Spider.h"
 #import "Skeleton.h"
 #import "Boss.h"
+#import "EndSceneLayer.h"
+#import "SimpleAudioEngine.h"
 
 @implementation Level4
 
@@ -61,6 +63,7 @@ static Level4* Level4Layer;
             int y = [spawnPoint[@"y"] integerValue]/2;
             
             Boss* boss = [Boss boss];
+            boss.tag = 2;
             [boss setPosition:ccp(x,y)];
             [self addChild:boss];
         }
@@ -114,10 +117,23 @@ static Level4* Level4Layer;
     
 }
 
+-(Boss*) defaultBoss
+{
+	CCNode* node = [self getChildByTag:2];
+	return (Boss*)node;
+}
+
 - (void) update:(ccTime)delta {
     
     [self.delegate setJoystickToHero];
     [_hud setStatusString:[NSString stringWithFormat:@"Level: %d", [self defaultHero].level]];
+    
+    
+    if ([self defaultBoss].health <= 0) {
+        
+        [[CCDirector sharedDirector] replaceScene:[EndSceneLayer scene]];
+        
+    }
 }
 
 +(CCScene *) scene

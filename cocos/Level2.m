@@ -13,6 +13,7 @@
 #import "Spider.h"
 #import "SmallPotion.h"
 #import "LargePotion.h"
+#import "SimpleAudioEngine.h"
 
 
 @implementation Level2
@@ -43,6 +44,7 @@ static Level2* Level2Layer;
     GameLayer* game = [GameLayer sharedGameLayer];
     
     Hero* hero = [game defaultHero];
+    
     
     Level1* lev1 = [Level1 Level1Layer];
     
@@ -127,6 +129,8 @@ static Level2* Level2Layer;
     Hero* hero = [game defaultHero];
     
     if (CGRectIntersectsRect(hero.boundingBox, self.exitRect )) {
+        
+        [[SimpleAudioEngine sharedEngine] stopEffect:hero.soundEffectID];
         
         self.lev = hero.level;
         self.health = hero.heroHealth;

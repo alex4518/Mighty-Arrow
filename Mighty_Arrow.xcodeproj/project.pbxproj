@@ -167,6 +167,9 @@
 		F4BF02DC16E7A6A600337261 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BF02DB16E7A6A600337261 /* AppDelegate.m */; };
 		F4BF02DF16E7A6A600337261 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BF02DE16E7A6A600337261 /* GameLayer.m */; };
 		F4BF02E216E7A6A600337261 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BF02E116E7A6A600337261 /* IntroLayer.m */; };
+		F4C29A1C17CCB12F00FC409F /* EndSceneLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C29A1B17CCB12F00FC409F /* EndSceneLayer.m */; };
+		F4C29A1E17CCB19000FC409F /* hero-front.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C29A1D17CCB19000FC409F /* hero-front.png */; };
+		F4C29A2017CCB19E00FC409F /* isabella-front.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C29A1F17CCB19E00FC409F /* isabella-front.png */; };
 		F4D062DC178C5DA300A80E55 /* Skeleton.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D062DB178C5DA300A80E55 /* Skeleton.m */; };
 		F4D062EA178D65C000A80E55 /* skeleton-back-left-step.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D062DE178D65C000A80E55 /* skeleton-back-left-step.png */; };
 		F4D062EB178D65C000A80E55 /* skeleton-back-right-step.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D062DF178D65C000A80E55 /* skeleton-back-right-step.png */; };
@@ -535,6 +538,10 @@
 		F4BF02DE16E7A6A600337261 /* GameLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		F4BF02E016E7A6A600337261 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		F4BF02E116E7A6A600337261 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		F4C29A1A17CCB12F00FC409F /* EndSceneLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndSceneLayer.h; sourceTree = "<group>"; };
+		F4C29A1B17CCB12F00FC409F /* EndSceneLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndSceneLayer.m; sourceTree = "<group>"; };
+		F4C29A1D17CCB19000FC409F /* hero-front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hero-front.png"; sourceTree = "<group>"; };
+		F4C29A1F17CCB19E00FC409F /* isabella-front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "isabella-front.png"; sourceTree = "<group>"; };
 		F4D062DA178C5DA300A80E55 /* Skeleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skeleton.h; sourceTree = "<group>"; };
 		F4D062DB178C5DA300A80E55 /* Skeleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skeleton.m; sourceTree = "<group>"; };
 		F4D062DE178D65C000A80E55 /* skeleton-back-left-step.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skeleton-back-left-step.png"; sourceTree = "<group>"; };
@@ -1144,6 +1151,8 @@
 		F4D063601798330D00A80E55 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				F4C29A1A17CCB12F00FC409F /* EndSceneLayer.h */,
+				F4C29A1B17CCB12F00FC409F /* EndSceneLayer.m */,
 				F46D521017CBC454005040A8 /* AboutLayer.h */,
 				F46D521117CBC455005040A8 /* AboutLayer.m */,
 				F46D520D17CBBCB4005040A8 /* ControlsLayer.h */,
@@ -1265,6 +1274,8 @@
 		F4D7DC321745021000521C59 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F4C29A1F17CCB19E00FC409F /* isabella-front.png */,
+				F4C29A1D17CCB19000FC409F /* hero-front.png */,
 				F46D520B17C9FD71005040A8 /* health-bar.png */,
 				F40B05E717AAA57700CF4CFC /* Default-568h@2x.png */,
 				F40B05E517AAA29200CF4CFC /* Icon@2x.png */,
@@ -1384,6 +1395,8 @@
 				F40B05F017AAB9F900CF4CFC /* Celestial_Aeon_Project_-_Suspicion.mp3 in Resources */,
 				F46D520617C7BED9005040A8 /* Walking.mp3 in Resources */,
 				F46D520C17C9FD71005040A8 /* health-bar.png in Resources */,
+				F4C29A1E17CCB19000FC409F /* hero-front.png in Resources */,
+				F4C29A2017CCB19E00FC409F /* isabella-front.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1531,6 +1544,7 @@
 				F40B05CE17AA693400CF4CFC /* SoundMenu.m in Sources */,
 				F46D520F17CBBCB5005040A8 /* ControlsLayer.m in Sources */,
 				F46D521217CBC456005040A8 /* AboutLayer.m in Sources */,
+				F4C29A1C17CCB12F00FC409F /* EndSceneLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

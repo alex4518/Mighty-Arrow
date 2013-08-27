@@ -9,6 +9,7 @@
 #import "MainMenuLayer.h"
 #import "GameLayer.h"
 #import "Level1.h"
+#import "EndSceneLayer.h"
 #import "ControlsLayer.h"
 #import "AboutLayer.h"
 #import "SoundMenu.h"

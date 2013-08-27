@@ -13,6 +13,7 @@
 #import "Lizard.h"
 #import "SmallPotion.h"
 #import "LargePotion.h"
+#import "SimpleAudioEngine.h"
 
 @implementation Level1
 
@@ -97,6 +98,7 @@ static Level1* Level1Layer;
     for (spawnPoint in [objectGroup objects]) {
         if ([[spawnPoint valueForKey:@"exits"] intValue] == 1){
             
+            
              self.exitRect = CGRectMake([spawnPoint[@"x"] floatValue]/2, [spawnPoint[@"y"] floatValue]/2,
                                          [spawnPoint[@"x"] floatValue]/2 + [spawnPoint[@"width"] floatValue]/2,+ [spawnPoint[@"y"] floatValue]/2 + [spawnPoint[@"height"] floatValue]/2);
         }
@@ -118,6 +120,9 @@ static Level1* Level1Layer;
     
     
     if (CGRectIntersectsRect(hero.boundingBox, self.exitRect )) {
+        
+        [[SimpleAudioEngine sharedEngine] stopEffect:hero.soundEffectID];
+
         
         self.lev = hero.level;
         self.health = hero.heroHealth;

@@ -7,6 +7,7 @@
 //
 
 #import "Boss.h"
+#import "EndSceneLayer.h"
 
 @implementation Boss
 
