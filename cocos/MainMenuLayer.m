@@ -9,6 +9,8 @@
 #import "MainMenuLayer.h"
 #import "GameLayer.h"
 #import "Level1.h"
+#import "ControlsLayer.h"
+#import "AboutLayer.h"
 #import "SoundMenu.h"
 #import "SimpleAudioEngine.h"
 
@@ -48,7 +50,7 @@
                                        itemWithNormalImage:@"controls.png"
                                        selectedImage:@"controls-selected.png"
                                        target:layer
-                                       selector:@selector(startGame:)];
+                                       selector:@selector(controls:)];
     
     CCMenuItemImage *settingsButton = [CCMenuItemImage
                                        itemWithNormalImage:@"settings.png"
@@ -60,7 +62,7 @@
                                        itemWithNormalImage:@"about.png"
                                        selectedImage:@"about-selected.png"
                                        target:layer
-                                       selector:@selector(startGame:)];
+                                       selector:@selector(about:)];
     
     CCMenu *menu = [CCMenu menuWithItems: newGameButton, controlsButton, settingsButton, aboutButton,  nil];
     [menuLayer addChild: menu];
@@ -78,9 +80,19 @@
     [[CCDirector sharedDirector] replaceScene:[Level1 scene]];
 }
 
+- (void) controls: (id) sender
+{
+    [[CCDirector sharedDirector] replaceScene:[ControlsLayer scene]];
+}
+
 - (void) setttings: (id) sender
 {
     [[CCDirector sharedDirector] replaceScene:[SoundMenu scene]];
+}
+
+- (void) about: (id) sender
+{
+    [[CCDirector sharedDirector] replaceScene:[AboutLayer scene]];
 }
 
 -(id) init

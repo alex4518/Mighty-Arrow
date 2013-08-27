@@ -37,12 +37,8 @@
         progressTimer.midpoint = ccp(0,0);
         progressTimer.barChangeRate = ccp(1,0);
         progressTimer.position = CGPointMake(winSize.width * 0.18, winSize.height * 0.93);
-
         
         [self addChild:progressTimer];
-
-
-        //[self addChild:healthBar];
         
         [self scheduleUpdate];
 
@@ -51,6 +47,7 @@
 }
 
 - (void)setStatusString:(NSString *)string {
+    
     _statusLabel.string = string;
 }
 
@@ -60,7 +57,6 @@
     
     Hero* hero = [game defaultHero];
     
-    //healthBar.scaleX = hero.heroHealth / (float)kHeroHealth;
     progressTimer.percentage = hero.heroHealth;
 }
 

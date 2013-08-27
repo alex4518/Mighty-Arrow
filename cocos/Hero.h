@@ -45,7 +45,6 @@ typedef enum
 @property (readwrite, nonatomic) int heroDamageFromLevelUp;
 @property (readwrite, nonatomic) int heroHealth;
 @property (readwrite, nonatomic) int currentXP;
-@property (nonatomic, strong) CCProgressTimer* progressTimer;
 @property (nonatomic, assign) ALuint soundEffectID;
 
 
