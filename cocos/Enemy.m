@@ -261,7 +261,7 @@
 
 -(void) update:(ccTime)delta {
     
-    static int playerInvincibleCount = 35;
+    static int playerInvincibleCount = 15;
     static BOOL playerHit;
     
     GameLayer* game = [GameLayer sharedGameLayer];
@@ -303,7 +303,7 @@
         // Hero can't shoot while taking damage
         hero.canShoot = NO;
         
-        if (playerInvincibleCount == 35) {
+        if (playerInvincibleCount == 15) {
             
         playerHit = YES;
             
@@ -320,7 +320,7 @@
             playerInvincibleCount--;
         } else {
             playerHit = NO;
-            playerInvincibleCount = 35;
+            playerInvincibleCount = 15;
         }
     }
     
