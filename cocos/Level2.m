@@ -138,8 +138,7 @@ static Level2* Level2Layer;
         self.xp = hero.currentXP;
 
         
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
-                                                   transitionWithDuration:2 scene: [Level3 scene]]];
+        [[CCDirector sharedDirector] replaceScene:[Level3 scene]];
         
     }
 }

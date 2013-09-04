@@ -122,8 +122,7 @@ static Level3* Level3Layer;
         self.damage = hero.heroDamageFromLevelUp;
         self.xp = hero.currentXP;
         
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
-                                                   transitionWithDuration:2 scene:[Level4 scene]]];
+        [[CCDirector sharedDirector] replaceScene:[Level4 scene]];
         
     }
 }

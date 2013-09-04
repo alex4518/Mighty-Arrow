@@ -117,7 +117,7 @@
     GameLayer* game = [GameLayer sharedGameLayer];
 
     
-    CGPoint velocity = ccpMult(aJoystick.velocity, 2000 * delta);
+    CGPoint velocity = ccpMult(aJoystick.velocity, 6000 * delta);
     
     CGPoint position = CGPointMake(self.position.x + velocity.x * delta, self.position.y + velocity.y * delta);
     CGPoint tileCoord = [game tileCoordForPosition:position];
