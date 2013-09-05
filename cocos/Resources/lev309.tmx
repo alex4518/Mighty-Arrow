@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="dg_grounds32" tilewidth="32" tileheight="32">
+  <image source="dg_grounds32.png" trans="ff00ff" width="288" height="608"/>
+ </tileset>
+ <tileset firstgid="172" name="tilebs" tilewidth="32" tileheight="32">
+  <image source="tilebs.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="428" name="game_events" tilewidth="32" tileheight="32">
+  <image source="game_events.png" width="96" height="32"/>
+  <tile id="1">
+   <properties>
+    <property name="Blocked" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt2TEKgDAMQNHMgnfoKTv18C461qaYahL/8AdRh4cRIlYRqc7az2bv25x1ObTX48CBA0dGRxkUyaE9txuFw9ZhOWs4cODA8UfHXVEcM+HA0US/76zaj3DkmyscOHDEcZTBMY71jiL9nTOiQ/N8cOCYdfT62vFWDYfpXD3Ny/uBA4dXR5bv8ywOj/9rccQumyNDB4EZu8c=
+  </data>
+ </layer>
+ <layer name="Trees" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztlslOwzAQhht4AHjZvgFv0NdgO1U5sN0QEtsBbuwcitiXK9tvqZas0dgZx5PErfJLvxzcJny/ZsbpYNDLalh0TVBfHDvdGxX8dd3cQ4VnhOTj5bRS8Ncx0spgnzMM8PuyceySPG33bqgehtd+HlOLVXgNXoc34M36eEFxTCOmZjH3W5n7t7BuwzvwLrwXTRivqr6hn0vqcggfwcfwCXxaH69TXcCX8BV8Dd8kPm8Cj8neQ+Izq2T66hnrC/wKv8Hvic+cTNexszadw+gb/oF/4T+zkXh2TZzrcrq2kUNbNkfp7LWVQ/PstfNh+8rkOUiik/Npnr0mh62FXVNzSPk0z9796WrqoZVDyqd59toc5UAvh5RP8+x162FnJDWHlE/77NVW7ny9erWtM/jc8/cS5mN5jmaEZm1Lt/AdfC/8fqgmbTFxn3/An/CXwv/XykSZKDfHXKCnF+BFYW+7cxDijpkXykmZKHcsc4xSauHrCZvP5ab9FDsXTcrldLloPi6v5lxoyuWi/cP1U5M9liIpV0795BNlbPqcbUqSufDNVNdyWSRz4Sqn2lS9+3x7RjnNetW7j+7l1EshVZ2xOfUSJ2k/0Zy51Uf6zpb8duxS0nd2ym/HR/ipBlvd+0Jq4oxqgrOXnrj6zELNZoGR06xyz6MktfB9p69j/voHvpcHLw==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="enemy1" x="1170" y="1040" width="16" height="16">
+   <properties>
+    <property name="Skeleton" value="1"/>
+   </properties>
+  </object>
+  <object name="enemy2" x="1419" y="1453" width="3" height="3">
+   <properties>
+    <property name="Spider" value="1"/>
+   </properties>
+  </object>
+  <object name="enemy3" x="547" y="802" width="16" height="16">
+   <properties>
+    <property name="Skeleton" value="1"/>
+   </properties>
+  </object>
+  <object name="enemy4" x="1436" y="625" width="16" height="16">
+   <properties>
+    <property name="Spider" value="1"/>
+   </properties>
+  </object>
+  <object name="enemy5" x="1214" y="145" width="16" height="16">
+   <properties>
+    <property name="Skeleton" value="1"/>
+   </properties>
+  </object>
+  <object name="enemy6" x="266" y="308" width="16" height="16">
+   <properties>
+    <property name="Spider" value="1"/>
+   </properties>
+  </object>
+  <object name="enemy7" x="958" y="475" width="16" height="16">
+   <properties>
+    <property name="Skeleton" value="1"/>
+   </properties>
+  </object>
+  <object name="smallPotion" x="1470" y="346" width="16" height="16">
+   <properties>
+    <property name="SmallPotions" value="1"/>
+   </properties>
+  </object>
+  <object name="exit" x="1211" y="16" width="16" height="16">
+   <properties>
+    <property name="exits" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="Meta" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztV1sOwyAM6+5/lt1x2kclivLGgVBhadpYixMnJMB1Hdz4flZ7EAfle/9fO+Z+R21mxM7Dj9YzgptH8smTC4tfs9euZO//jIqBhztTjxTj0Vi3PO0nG9q6kdafxInSQXHNig9aR+TZKNC9dpUOtJ0KOhCooKN6fVj8Q9V6lg6rf0eH3dcZOhC2tPnZ/RBpK3s/36l3Hxxkoq+p/n71plpZqcdjV8rJTJ+oex2yByN5uDsM53M0H5bziIeXG2u6kBg9O3Hz25i139Q7FUDFutfH5QVZoyNrtZ/X+67xIvOB0uGZi8wBondw3Np4Rp9F3W2oMWUDYY97FuHj5mv3KES/1HzycGkxzs4/4o5m2fukXlYV2r5Y/YxtXU/oHomEZ8/O3NcRsMY+enYcqd+MOKE5q+Xz4AmuJqvnbAcfKezq9xthyYV01z55rI0f30fL6Q==
+  </data>
+ </layer>
+</map>
