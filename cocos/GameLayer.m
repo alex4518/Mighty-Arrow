@@ -1,8 +1,8 @@
 //
 //  GameLayer.m
-//  cocos
+//  Mighty Sword
 //
-//  Created by alex on 06/03/2013.
+//  Created by Alexandros Almpanis on 06/03/2013.
 //  Copyright alex 2013. All rights reserved.
 //
 
@@ -23,7 +23,7 @@
 
 @implementation GameLayer
 
-
+// Singleton Accessor
 static GameLayer* sharedGameLayer;
 +(GameLayer*) sharedGameLayer
 {
@@ -38,6 +38,7 @@ static GameLayer* sharedGameLayer;
     
     HUDLayer *hud = [HUDLayer node];
     
+    //Initialize GameLayer with the HUD Layer added
     GameLayer *layer = [[GameLayer alloc] initWithHUD:hud];
 	
 	// add layer as a child to scene
@@ -81,15 +82,16 @@ static GameLayer* sharedGameLayer;
 
 }
 
+// Initialize with HUD Layer added
 - (id)initWithHUD:(HUDLayer *)hud
 {
     if ((self = [self init])) {
         _hud = hud;
-        // Rest of method...
     }
     return self;
 }
 
+// Return hero added in Game Layer
 -(Hero*) defaultHero
 {
 	CCNode* node = [self getChildByTag:1];
@@ -97,12 +99,14 @@ static GameLayer* sharedGameLayer;
 	return (Hero*)node;
 }
 
+// Convert pixels to tile coordinates
 - (CGPoint)tileCoordForPosition:(CGPoint)position {
     int x = position.x*2 / _themap.tileSize.width;
     int y = ((_themap.mapSize.height * _themap.tileSize.height) - (position.y*2)) / _themap.tileSize.height;
     return ccp(x, y);
 }
 
+// Convert tile coordinates to pixel
 - (CGPoint)positionForTileCoord:(CGPoint)tileCoord {
     int x = ((tileCoord.x) * _themap.tileSize.width) + _themap.tileSize.width/2;
     int y = (_themap.mapSize.height * _themap.tileSize.height) - (tileCoord.y * _themap.tileSize.height) - _themap.tileSize.height/2;
@@ -119,6 +123,7 @@ static GameLayer* sharedGameLayer;
     }
 }
 
+// Check if tile has properties
 -(BOOL)isProp:(NSString*)prop atTileCoord:(CGPoint)tileCoord forLayer:(CCTMXLayer *)layer {
     if (![self isValidTileCoord:tileCoord]) return NO;
     int gid = [layer tileGIDAt:tileCoord];
@@ -127,10 +132,12 @@ static GameLayer* sharedGameLayer;
     return [properties objectForKey:prop] != nil;
 }
 
+// Check if tile is walkable
 -(BOOL)isBlockedAtTileCoord:(CGPoint)tileCoord {
     return [self isProp:@"Blocked" atTileCoord:tileCoord forLayer:_metaLayer];
 }
 
+// Find walkable adjacent tiles around the enemy
 - (NSArray *)walkableAdjacentTilesCoordForTileCoord:(CGPoint)tileCoord
 {
 	NSMutableArray *tmp = [NSMutableArray arrayWithCapacity:4];

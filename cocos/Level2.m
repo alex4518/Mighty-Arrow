@@ -2,7 +2,7 @@
 //  Level2.m
 //  Mighty Sword
 //
-//  Created by alex on 25/07/2013.
+//  Created by Alexandros Almpanis on 25/07/2013.
 //  Copyright (c) 2013 alex. All rights reserved.
 //
 

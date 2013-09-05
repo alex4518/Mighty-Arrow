@@ -1,8 +1,8 @@
 //
 //  Hero.m
-//  cocos
+//  Mighty Sword
 //
-//  Created by alex on 04/06/2013.
+//  Created by Alexandros Almpanis on 04/06/2013.
 //  Copyright 2013 alex. All rights reserved.
 //
 
@@ -49,7 +49,7 @@
 }
 
 -(int) getDamage {
-    
+    // Return initial damage and extra damage from level up
     return kHeroInitialDamage + self.heroDamageFromLevelUp;
 }
 
@@ -57,9 +57,11 @@
     if (self.currentXP + xpPoints < 100) {
         self.currentXP += xpPoints;
     } else {
+        // Reset xpPoints
         self.currentXP += xpPoints - 100;
+        // Increase level
         _level++;
-        self.heroDamageFromLevelUp = self.heroDamageFromLevelUp + 5;
+        self.heroDamageFromLevelUp = self.heroDamageFromLevelUp + 2;
     }
 }
 
@@ -77,8 +79,10 @@
 
 -(void) update:(ccTime)delta {
     
+    // Singleton Accessor
     GameLayer* game = [GameLayer sharedGameLayer];
     
+    // Get the size of map in pixels
     float mapWidth = (game.themap.mapSize.width * game.themap.tileSize.width)/2;
     float mapHeight = (game.themap.mapSize.height * game.themap.tileSize.height)/2;
     
@@ -120,9 +124,12 @@
     CGPoint velocity = ccpMult(aJoystick.velocity, 2000 * delta);
     
     CGPoint position = CGPointMake(self.position.x + velocity.x * delta, self.position.y + velocity.y * delta);
+    // Convert pixels to tiles
     CGPoint tileCoord = [game tileCoordForPosition:position];
     int tileGid = [game.metaLayer tileGIDAt:tileCoord];
     if (tileGid) {
+        
+        // Get properties from tiles
         NSDictionary *properties = [game.themap propertiesForGID:tileGid];
         if (properties) {
             NSString *collision = properties[@"Blocked"];
@@ -135,6 +142,7 @@
         }
     }
     
+    // Move hero according to the velocity of joystick
     self.position = CGPointMake(self.position.x + velocity.x * delta, self.position.y + velocity.y * delta);
 
     
@@ -225,7 +233,7 @@
     
     GameLayer* game = [GameLayer sharedGameLayer];
     
-    
+    // Get last direction form joystick and load the appropriate arrow image
     switch (myDirection) {
         case DirectionRight:
             realX = (game.themap.mapSize.width * game.themap.tileSize.width)/2;

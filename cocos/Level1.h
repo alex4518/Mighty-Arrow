@@ -2,7 +2,7 @@
 //  Level1.h
 //  Mighty Sword
 //
-//  Created by alex on 20/07/2013.
+//  Created by Alexandros Almpanis on 20/07/2013.
 //  Copyright 2013 alex. All rights reserved.
 //
 

@@ -1,8 +1,8 @@
 //
 //  Enemy.h
-//  cocos
+//  Mighty Sword
 //
-//  Created by alex on 04/06/2013.
+//  Created by Alexandros Almpanis on 04/06/2013.
 //  Copyright 2013 alex. All rights reserved.
 //
 

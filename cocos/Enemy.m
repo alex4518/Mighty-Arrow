@@ -1,8 +1,8 @@
 //
 //  Enemy.m
-//  cocos
+//  Mighty Sword
 //
-//  Created by alex on 04/06/2013.
+//  Created by Alexandros Almpanis on 04/06/2013.
 //  Copyright 2013 alex. All rights reserved.
 //
 
@@ -268,12 +268,12 @@
     
     Hero* hero = [game defaultHero];
     
-        
+    // Check if hero is inside enemy's eyesight
     if (CGRectIntersectsRect(hero.heroBoundingBox, self.eyesightBoundingBox)) {
 
         if (self.numberOfRunningActions == 0) {
 
-        
+            // Chase hero
             [self moveTowardHero];
         }
             
@@ -283,7 +283,7 @@
         [self stopAllActions];
     }
     
-    
+    // Check for collision between arrow and enemy
     if (CGRectIntersectsRect(hero.arrowBoundingBox, self.enemyBoundingBox)) {
         
         [hero.arrow removeFromParentAndCleanup:YES];
@@ -298,6 +298,7 @@
             
         }
     }
+    // Check for collision between hero and enemy
     if (CGRectIntersectsRect(hero.heroBoundingBox, self.enemyBoundingBox)) {
         
         // Hero can't shoot while taking damage
@@ -315,6 +316,7 @@
         hero.canShoot = YES;
     }
     
+    // Hero is invincible for 15 frames
     if(playerHit) {
         if(playerInvincibleCount > 0) {
             playerInvincibleCount--;

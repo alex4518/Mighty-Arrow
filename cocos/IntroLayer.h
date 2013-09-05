@@ -1,8 +1,8 @@
 //
 //  IntroLayer.h
-//  cocos
+//  Mighty Sword
 //
-//  Created by alex on 06/03/2013.
+//  Created by Alexandros Almpanis on 06/03/2013.
 //  Copyright alex 2013. All rights reserved.
 //
 
